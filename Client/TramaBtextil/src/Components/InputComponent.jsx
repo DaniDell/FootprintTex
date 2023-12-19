@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { FormControl, InputLabel, Select, MenuItem, Button} from '@mui/material';
 
+
 const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculateClick })  => {
+
+  const [composition, setComposition] = useState('');
+
   return (
     <div>
       <Box mb={1.5}>
         <FormControl fullWidth>
           <InputLabel>Composición del textil</InputLabel>
-          <Select  label="Composición del textil" onChange={(e) => onTextileCompositionChange(e.target.value)}>
+          <Select  label="Composición del textil"
+          value={composition}
+          onChange={(e) => {
+            setComposition(e.target.value);
+            onTextileCompositionChange(e.target.value); // Asegúrate de pasar el valor correcto
+          }}>
             <MenuItem value="algodon">Algodón</MenuItem>
             <MenuItem value="poliester">Poliéster</MenuItem>
-            <MenuItem value="lana">Lana</MenuItem>
-            {/* Agrega aquí más opciones según sea necesario */}
-          </Select>
+            <MenuItem value="Mix de composiciones">Mix de composiciones</MenuItem>
+            </Select>
         </FormControl>
       </Box>
       <Box mb={1.5}>

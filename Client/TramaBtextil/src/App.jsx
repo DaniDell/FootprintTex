@@ -12,7 +12,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 function App() {
   const dispatch = useDispatch();
   const { waterImpact, carbonImpact } = useSelector(state => state.impact);
-  const [composition, setComposition] = useState(''); 
+  const [composition, setComposition] = useState('algodon'); 
   const [kilos, setKilos] = useState(0);
 
   const handleInputChange = (value) => {
@@ -25,7 +25,7 @@ function App() {
   };
 
   const handleCompositionChange = (value) => {
-    setComposition(value);
+    setComposition(value || '');
     handleInputChange(kilos);
   };
 
@@ -36,7 +36,7 @@ function App() {
       <Container >
       <div style={{ padding: '10px' }}>
         <Typography variant="h6" gutterBottom >
-          Mitigación de tu huella textil.
+         Completá los datos:
         </Typography>
         </div>
         <Grid container spacing={3}>

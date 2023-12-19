@@ -10,7 +10,7 @@ const Navbar = () => {
             <Toolbar>
                 
                 <Typography variant="h6" style={{ flexGrow: 1 }}>
-                Calculadora de impacto
+                Caluladora de reciclaje
                 </Typography>
                 {/* Puedes agregar enlaces de navegación aquí */}
                

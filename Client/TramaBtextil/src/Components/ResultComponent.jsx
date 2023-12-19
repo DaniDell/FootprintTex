@@ -1,16 +1,20 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 const ResultComponent = ({ waterImpact, carbonImpact }) => {
-  return (
-    <div>
-        <Typography variant="h6" gutterBottom >
-         Tu acción ha evitado:
-        </Typography>
-      <Typography variant="h6">Huella hídrica: {waterImpact} litros</Typography>
-      <Typography variant="h6">Huella de carbono: {carbonImpact} kg</Typography>
-    </div>
-  );
+    return (
+        <Card>
+            <CardContent>
+                <Typography variant="h5" >
+                    <u>Mitigación de huella</u>
+                </Typography>
+                <Typography variant="h6">{waterImpact} litros de agua</Typography>
+                <Typography variant="h6">{carbonImpact} Kg CO2 equivalente</Typography>
+            </CardContent>
+        </Card>
+    );
 };
 
 export default ResultComponent;
