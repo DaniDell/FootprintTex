@@ -7,6 +7,7 @@ import { setImpact } from './redux/actions';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import { Container, Grid, Typography } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline'; 
 
 function App() {
   const dispatch = useDispatch();
@@ -30,9 +31,10 @@ function App() {
 
   return (
     <div >
+      <CssBaseline />
       <Navbar />
       <Container >
-        <div style={{ padding: '10px' }}>
+      <div style={{ padding: '10px' }}>
         <Typography variant="h6" gutterBottom >
           Mitigación de tu huella textil.
         </Typography>
@@ -41,6 +43,7 @@ function App() {
           <Grid item xs={12} sm={6}>
             <InputComponent onInputChange={handleInputChange} onTextileCompositionChange={handleCompositionChange} onCalculateClick={handleCalculateClick} />
           </Grid>
+          
           <Grid item xs={12} sm={6}>
             <ResultComponent waterImpact={waterImpact} carbonImpact={carbonImpact} />
           </Grid>
