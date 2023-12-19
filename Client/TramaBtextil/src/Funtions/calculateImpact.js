@@ -4,11 +4,11 @@ export function calculateImpact(kilos, composition) {
 
     switch (composition) {
         case 'algodon':
-            waterImpact = (kilos * 1021); // Suponiendo que cada kilo de algodón reutilizado ahorra 500 litros de agua
+            waterImpact = (kilos * 1114); // Suponiendo que cada kilo de algodón reutilizado ahorra 500 litros de agua
             carbonImpact = (kilos * (1.43 - 0.08)).toFixed(2); // Suponiendo que cada kilo de algodón ahorra
             break;
         case 'poliester':
-            waterImpact = (kilos * 1021); // Suponiendo que cada kilo de poliéster reutilizado ahorra 600 litros de agua
+            waterImpact = (kilos * 929); // Suponiendo que cada kilo de poliéster reutilizado ahorra 600 litros de agua
             carbonImpact = (kilos * (2.05 - 1.26)).toFixed(2); // Suponiendo que cada kilo de poliéster reutilizado ahorra 2.5 kg de CO2
             break;
         case 'Mix de composiciones':
