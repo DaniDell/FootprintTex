@@ -15,7 +15,7 @@ const Footer = () => {
         <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener">
           <InstagramIcon />
         </Link>
-        <Link href="https://www.linkedin.com/in/company/trama-b-textil" target="_blank" rel="noopener">
+        <Link href="https://www.linkedin.com/company/trama-b-textil/" target="_blank" rel="noopener">
           <LinkedInIcon />
         </Link>
       </Box>
