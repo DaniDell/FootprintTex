@@ -36,7 +36,7 @@ function App() {
       <Container >
       <div style={{ padding: '10px' }}>
         <Typography variant="h6" gutterBottom >
-         <em style={{ fontWeight: 'normal', fontSize: 'smaller' }}>Realizá tu calculo en vivo:</em>
+         <p style={{ fontWeight: 'normal', fontSize: 'smaller' }}>Realizá tu calculo en vivo*:</p>
         </Typography>
         </div>
         <Grid container spacing={3}>
@@ -46,7 +46,9 @@ function App() {
           
           <Grid item xs={12} sm={6}>
             <ResultComponent waterImpact={waterImpact} carbonImpact={carbonImpact} />
+            <p>*Los valores son aproximados esta es una vesión de desarrollo para promover la educación ambiental.</p>
           </Grid>
+          
         </Grid>
       </Container>
       <Footer />
