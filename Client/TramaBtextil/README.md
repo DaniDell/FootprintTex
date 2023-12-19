@@ -1,8 +1,13 @@
-# React + Vite
+# Trama B Textil App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación permite calcular el impacto ambiental basado en la composición textil y la cantidad de kilos gestionados.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Selección de la composición del textil mediante un menú desplegable.
+- Ingreso de la cantidad de kilos gestionados mediante un campo de texto numérico.
+
+## Tecnologías Utilizadas
+
+- React: Biblioteca de JavaScript para construir interfaces de usuario.
+- Material-UI: Biblioteca de componentes React basada en Material Design.
