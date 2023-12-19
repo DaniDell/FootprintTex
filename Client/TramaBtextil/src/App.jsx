@@ -46,7 +46,7 @@ function App() {
           
           <Grid item xs={12} sm={6}>
             <ResultComponent waterImpact={waterImpact} carbonImpact={carbonImpact} />
-            <p>*Los valores son aproximados esta es una vesión de desarrollo para promover la educación ambiental.</p>
+            <p>*Los valores son aproximados en esta versión para educción ambiental. </p>
           </Grid>
           
         </Grid>
