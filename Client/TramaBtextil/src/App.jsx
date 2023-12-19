@@ -36,7 +36,7 @@ function App() {
       <Container >
       <div style={{ padding: '10px' }}>
         <Typography variant="h6" gutterBottom >
-         Completá los datos:
+         <em style={{ fontWeight: 'normal', fontSize: 'smaller' }}>Realizá tu calculo en vivo:</em>
         </Typography>
         </div>
         <Grid container spacing={3}>
