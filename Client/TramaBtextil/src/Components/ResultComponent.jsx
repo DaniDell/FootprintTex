@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
 import { Box } from '@mui/system';
 
 const ResultComponent = ({
@@ -49,31 +49,26 @@ const ResultComponent = ({
         
           <Box>
             <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={dataCarbon}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="closeloop" fill={COLORS[1]} name="Ciclo cerrado" />
-                <Bar dataKey="landfill" fill={COLORS[0]} name="Vertedero" />
-              </BarChart>
+            <BarChart data={dataCarbon} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+  <XAxis dataKey="name" />
+  <YAxis />
+  <Tooltip />
+  <Legend />
+  <Bar dataKey="closeloop" fill="#8884d8" name="Ciclo cerrado">
+    <LabelList dataKey="closeloop" position="top" />
+  </Bar>
+  <Bar dataKey="landfill" fill="#82ca9d" name="Vertedero">
+    <LabelList dataKey="landfill" position="top" />
+  </Bar>
+</BarChart>
             </ResponsiveContainer>
             <Typography variant="h6" sx={{ fontSize: '1rem', marginBottom: '35px', textAlign: 'center' }}>{`Reducción CO2: ${carbonReductionPercentage.toFixed(2)}%`}</Typography>
           </Box>
 
-          <Box display="flex" justifyContent="center" flexWrap="wrap">
-          <Box sx={{ marginRight: '20px' }}>
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={dataWater}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="closeloop" fill={COLORS[1]} name="Ciclo cerrado" />
-                <Bar dataKey="landfill" fill={COLORS[0]} name="Vertedero" />
-              </BarChart>
-            </ResponsiveContainer>
-            <Typography variant="h6" sx={{ fontSize: '1rem', marginBottom: '5px', textAlign: 'center' }}>{`Reducción hídrica: ${waterReductionPercentage.toFixed(2)}%`}</Typography>
+          <Box display="flex" justifyContent="center" >
+          <Box>
+
+            <Typography variant="h6" sx={{ fontSize: '1rem', marginBottom: '5px',  }}>{`Reducción hídrica: ${waterReductionPercentage.toFixed(2)}%`}</Typography>
             <Typography variant="body2" sx={{ fontSize: '0.9rem', marginBottom: '10px', textAlign: 'center' }}>{`${Math.round(waterMitigated).toLocaleString('es-ES')} Litros de agua ahorrados`}</Typography>
             <Typography variant="body2" sx={{ fontSize: '1rem', marginBottom: '10px', fontWeight: 'bold', textAlign: 'center' }}>{`${Math.round(waterMitigated / 900).toLocaleString('es-ES')} Años de consumo humano`}</Typography>
           </Box>
