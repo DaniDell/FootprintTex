@@ -29,7 +29,7 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
         <TextField 
           type="number"
           onChange={(e) => onInputChange(e.target.value)}
-          label="Kilos gestionados"
+          label="kilos gestionados"
           fullWidth
         />
       </Box>

@@ -1,24 +1,41 @@
-export function calculateImpact(kilos, composition) {
-    let waterImpact;
-    let carbonImpact;
+export function calculateImpact(kilograms, composition) {
+    console.log(`Entrada - Kilograms: ${kilograms}, Composition: ${composition}`);
+
+    if (isNaN(kilograms) || typeof composition !== 'string') {
+        throw new Error('Invalid input');
+    }
+    let waterImpactLandfill;
+    let waterImpactCloseloop;
+    let carbonImpactLandfill;
+    let carbonImpactCloseloop;
 
     switch (composition) {
         case 'algodon':
-            waterImpact = (kilos * 1114); // Suponiendo que cada kilo de algodón reutilizado ahorra 500 litros de agua
-            carbonImpact = (kilos * (1.43 - 0.08)).toFixed(2); // Suponiendo que cada kilo de algodón ahorra
+            waterImpactLandfill = (kilograms * 1114); 
+            waterImpactCloseloop = (kilograms * 500); 
+            carbonImpactLandfill = (kilograms * 1.43);
+            carbonImpactCloseloop = (kilograms * 0.08);
             break;
         case 'poliester':
-            waterImpact = (kilos * 929); // Suponiendo que cada kilo de poliéster reutilizado ahorra 600 litros de agua
-            carbonImpact = (kilos * (2.05 - 1.26)).toFixed(2); // Suponiendo que cada kilo de poliéster reutilizado ahorra 2.5 kg de CO2
+            waterImpactLandfill = (kilograms * 929); 
+            waterImpactCloseloop = (kilograms * 600); 
+            carbonImpactLandfill = (kilograms * 2.05);
+            carbonImpactCloseloop = (kilograms * 1.26);
             break;
         case 'Mix de composiciones':
-            waterImpact = (kilos * 1021); // Suponiendo que cada kilo de lana reutilizado ahorra 700 litros de agua
-            carbonImpact = (kilos * 1.7).toFixed(2); // Suponiendo que cada kilo de lana reutilizado ahorra 3 kg de CO2
+            waterImpactLandfill = (kilograms * 1021); 
+            waterImpactCloseloop = (kilograms * 700); 
+            carbonImpactLandfill = (kilograms * 1.7);
+            carbonImpactCloseloop = (kilograms * 3);
             break;
         default:
-            waterImpact = (kilos * 1021); // Valores por defecto
-            carbonImpact = (kilos * 1.7).toFixed(2); // Valores por defecto
+            waterImpactLandfill = (kilograms * 1021);
+            waterImpactCloseloop = (kilograms * 700);
+            carbonImpactLandfill = (kilograms * 1.7);
+            carbonImpactCloseloop = (kilograms * 3);
     }
 
-    return { waterImpact, carbonImpact };
+    console.log(`Salida - waterImpactLandfill: ${waterImpactLandfill}, waterImpactCloseloop: ${waterImpactCloseloop}, carbonImpactLandfill: ${carbonImpactLandfill}, carbonImpactCloseloop: ${carbonImpactCloseloop}`);
+
+    return { waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop };
 }

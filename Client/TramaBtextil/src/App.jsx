@@ -10,47 +10,65 @@ import { Container, Grid, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
 
 function App() {
+  // Redux dispatch function
   const dispatch = useDispatch();
-  const { waterImpact, carbonImpact } = useSelector(state => state.impact);
-  const [composition, setComposition] = useState('algodon'); 
-  const [kilos, setKilos] = useState(0);
 
+  // Selecting state from Redux store
+  const { waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop } = useSelector(state => state.impact);
+
+  // Local state for composition and kilograms
+  const [composition, setComposition] = useState('algodon'); 
+  const [kilograms, setkilograms] = useState(0);
+
+  // Handler for input change
   const handleInputChange = (value) => {
-    setKilos(value); // Almacena el valor actual de kilos gestionados
+    setkilograms(value); // Store the current value of managed kilograms
   };
 
+  // Handler for calculate button click
   const handleCalculateClick = () => {
-    const impact = calculateImpact(kilos, composition);
+    const impact = calculateImpact(kilograms, composition);
     dispatch(setImpact(impact));
   };
 
+  // Handler for composition change
   const handleCompositionChange = (value) => {
     setComposition(value || '');
-    handleInputChange(kilos);
+    handleInputChange(kilograms);
   };
 
   return (
-    <div >
+    <div>
       <CssBaseline />
       <Navbar />
-      <Container >
-      <div style={{ padding: '10px' }}>
-        <Typography variant="h6" gutterBottom >
-         <p style={{ fontWeight: 'normal', fontSize: 'smaller' }}>Realizá tu calculo en vivo*:</p>
-        </Typography>
+      <Container>
+        <div style={{ padding: '10px' }}>
+          <Typography variant="h6" gutterBottom>
+            <p style={{ fontWeight: 'normal', fontSize: 'smaller' }}>Realizá tu calculo en vivo*:</p>
+          </Typography>
         </div>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <InputComponent onInputChange={handleInputChange} onTextileCompositionChange={handleCompositionChange} onCalculateClick={handleCalculateClick} />
+            <InputComponent 
+              onInputChange={handleInputChange} 
+              onTextileCompositionChange={handleCompositionChange} 
+              onCalculateClick={handleCalculateClick} 
+            />
           </Grid>
-          
           <Grid item xs={12} sm={6}>
-            <ResultComponent waterImpact={waterImpact} carbonImpact={carbonImpact} />
-            <p>*Los valores son aproximados en esta versión para educción ambiental. </p>
+          <ResultComponent 
+            waterImpactLandfill={waterImpactLandfill} 
+            waterImpactCloseloop={waterImpactCloseloop} 
+            carbonImpactLandfill={carbonImpactLandfill} 
+            carbonImpactCloseloop={carbonImpactCloseloop} 
+          />
+            <p>*Los valores son de referencia. Versión para educción ambiental. </p>
+          
           </Grid>
           
         </Grid>
       </Container>
+      
       <Footer />
     </div>
   );
