@@ -64,7 +64,7 @@ const ResultComponent = ({
               <>
                 <Typography variant="body2" sx={{ fontSize: '0.1 rem', marginBottom: '5px', textAlign: 'center' }}>{`Realizando separación en origen y reciclaje mecánico, la huella hídrica se reduce en un ${waterReductionPercentage.toFixed(2)}% para las fibras elegidas=`}</Typography>
         <Typography variant="h6" sx={{ fontSize: '0.85rem', marginBottom: '5px', textAlign: 'center' }}>
-          {`💧${Number(waterMitigated).toLocaleString('es-ES')} Lts. = ${Number((waterMitigated / 900).toFixed(1)).toLocaleString('es-ES')} años de consumo humano`}
+          {`💧${Number((waterMitigated).toFixed(1)).toLocaleString('es-ES')} Lts. = ${Number((waterMitigated / 900).toFixed(1)).toLocaleString('es-ES')} años de consumo humano`}
         </Typography>
               </>
             )} </Box>
