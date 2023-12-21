@@ -13,7 +13,7 @@ export function calculateImpact(kilograms, composition) {
         case 'algodon':
             waterImpactLandfill = (kilograms * 1114); 
             waterImpactCloseloop = (kilograms * 500); 
-            carbonImpactLandfill = (kilograms * 1.43);
+            carbonImpactLandfill = (kilograms * 1.19);
             carbonImpactCloseloop = (kilograms * 0.08);
             break;
         case 'poliester':
