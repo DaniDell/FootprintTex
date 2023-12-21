@@ -12,7 +12,7 @@ const Navbar = () => {
                        Calculadora de reciclaje </Typography>
                 <IconButton edge="start" color="inherit" aria-label="ver más">
                     <a href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener noreferrer">
-                        <img src="/logo.svg" alt="Logo" style={{ marginRight: '0px', height: '50px', flexGrow: 1, color: 'inherit' }} />
+                        <img src="/logo.svg" alt="Logo" style={{ marginRight: '0px', height: '50px', width: '50px', flexGrow: 1, color: 'inherit' }} />
                     </a>
                 </IconButton>
             </Toolbar>

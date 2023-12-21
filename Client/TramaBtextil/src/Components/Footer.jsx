@@ -13,10 +13,10 @@ const Footer = () => {
       <Typography variant="body" align="center">
         Trama B Textil 
       </Typography>
-        <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener">
+        <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener" aria-label="Instagram de Trama B Textil">
           <InstagramIcon />
         </Link>
-        <Link href="https://www.linkedin.com/company/trama-b-textil/" target="_blank" rel="noopener">
+        <Link href="https://www.linkedin.com/company/trama-b-textil/" target="_blank" rel="noopener" aria-label="LinkedIn de Trama B Textil">
           <LinkedInIcon />
         </Link>
       </Box>

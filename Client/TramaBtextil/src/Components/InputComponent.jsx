@@ -11,17 +11,19 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
     <div>
       <Box mb={1.5}>
         <FormControl fullWidth>
-          <InputLabel>Composición base del textil</InputLabel>
-          <Select  label="Composición base del textil"
-          value={composition}
-          onChange={(e) => {
-            setComposition(e.target.value);
-            onTextileCompositionChange(e.target.value); // Asegúrate de pasar el valor correcto
-          }}>
-            <MenuItem value="algodon">Algodón</MenuItem>
-            <MenuItem value="poliester">Poliéster</MenuItem>
-            <MenuItem value="Mezcla sin definición">Mezcla sin definición</MenuItem>
-            </Select>
+          <InputLabel id="textile-composition-label">Composición base del textil</InputLabel>
+          <Select  
+            labelId="textile-composition-label"
+            label="Composición base del textil"
+            value={composition}
+            onChange={(e) => {
+              setComposition(e.target.value);
+              onTextileCompositionChange(e.target.value); // Asegúrate de pasar el valor correcto
+            }}>
+              <MenuItem value="algodon">Algodón</MenuItem>
+              <MenuItem value="poliester">Poliéster</MenuItem>
+              <MenuItem value="Mezcla sin definición">Mezcla sin definición</MenuItem>
+          </Select>
         </FormControl>
       </Box>
       <Grid container spacing={2} alignItems="center">
