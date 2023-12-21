@@ -28,7 +28,7 @@ const ResultComponent = ({
 
   const dataCarbon = [
     {
-      name: 'Kilos CO2 eq',
+      name: '',
       landfill: carbonImpactLandfill,
       closeloop: carbonImpactCloseloop,
       difference: Math.abs(carbonImpactLandfill - carbonImpactCloseloop).toFixed(2),
@@ -42,30 +42,31 @@ const ResultComponent = ({
           Mitigación de {dataCarbon[0].difference} CO2 eq:
         </Typography>
 
-        <Box>
-          <ResponsiveContainer width="100%" height={180}>
-            <BarChart data={dataCarbon} margin={{ top: 5, right: 10, left: 0, bottom: 5, fontSize: '0.8rem' }}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">  
-              </Bar>
-              <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Ciclo cerrado">
-                <LabelList dataKey="closeloop" position="top" />
-              </Bar>
-              <Bar dataKey="difference" stackId="stack" fill={COLORS[2]} name={`Reducción de CO2 del ${carbonReductionPercentage.toFixed(2)}%`}>
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-          <Typography variant="h5" sx={{ marginBottom: '5px', textAlign: 'center' }}></Typography>
-        </Box>
+        <ResponsiveContainer width="100%" height={150}>
+          <BarChart data={dataCarbon} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
+            <XAxis dataKey="name" />
+            <YAxis hide={true} />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">  
+              <LabelList dataKey="landfill" position="bottom" />
+            </Bar>
+            <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Ciclo cerrado">
+              <LabelList dataKey="closeloop" position="bottom" />
+            </Bar>
+            <Bar dataKey="difference" stackId="stack" fill={COLORS[2]} name={`Reducción de CO2 del ${carbonReductionPercentage.toFixed(2)}%`}>
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
 
         <Box display="flex" justifyContent="center">
           <Box>
-            <Typography variant="body2" sx={{ fontSize: '0.1 rem', marginBottom: '0px', textAlign: 'center' }}>{`Mediante el reciclaje mecánico + separación en origen la huella hídica se reduce en un ${waterReductionPercentage.toFixed(2)}% representando:`}</Typography>
-            <Typography variant="h6" sx={{ fontSize: '0.8rem', marginBottom: '5px', textAlign: 'center' }}>{`💧${(waterMitigated.toFixed(0)).toLocaleString('es-ES')} Lts. = ${(waterMitigated.toFixed(0) / 900).toLocaleString('es-ES')} años de consumo humano`}</Typography>
-          </Box>
+            {waterReductionPercentage > 0 && waterMitigated > 0 && (
+              <>
+                <Typography variant="body2" sx={{ fontSize: '0.1 rem', marginBottom: '0px', textAlign: 'center' }}>{`**Realizando separaión en origen y reciclaje mecánico la huella hídica se reduce en un ${waterReductionPercentage.toFixed(2)}% para fibras elegida represntando:`}</Typography>
+                <Typography variant="h6" sx={{ fontSize: '0.85rem', marginBottom: '5px', textAlign: 'center' }}>{`💧${(waterMitigated.toFixed(0)).toLocaleString('es-ES')} Lts. = ${(waterMitigated.toFixed(0) / 900).toLocaleString('es-ES')} años de consumo humano`}</Typography>
+              </>
+            )} </Box>
         </Box>
       </CardContent>
     </Card>
