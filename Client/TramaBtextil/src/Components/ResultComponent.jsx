@@ -50,7 +50,7 @@ const ResultComponent = ({
             <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">  
               <LabelList dataKey="landfill" position="bottom" />
             </Bar>
-            <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Ciclo cerrado">
+            <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Gestión y reciclaje">
               <LabelList dataKey="closeloop" position="bottom" />
             </Bar>
             <Bar dataKey="difference" stackId="stack" fill={COLORS[2]} name={`Reducción de CO2 del ${carbonReductionPercentage.toFixed(2)}%`}>
