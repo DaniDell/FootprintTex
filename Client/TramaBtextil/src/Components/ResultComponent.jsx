@@ -29,8 +29,8 @@ const ResultComponent = ({
   const dataCarbon = [
     {
       name: '',
-      landfill: carbonImpactLandfill,
-      closeloop: carbonImpactCloseloop,
+      landfill: (carbonImpactLandfill).toFixed(2),
+      closeloop: (carbonImpactCloseloop).toFixed(2),
       difference: Math.abs(carbonImpactLandfill - carbonImpactCloseloop).toFixed(2),
     },
   ];
