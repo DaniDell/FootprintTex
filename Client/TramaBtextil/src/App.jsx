@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import { Container, Grid, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   // Redux dispatch function
@@ -76,7 +77,7 @@ function App() {
           
         </Grid>
       </Container>
-      
+      <SpeedInsights />
       <Footer />
     </div>
   );
