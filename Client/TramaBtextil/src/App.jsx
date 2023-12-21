@@ -60,7 +60,7 @@ function App() {
               onCalculateClick={handleCalculateClick} 
             />
              <Typography variant="body2" sx={{ fontSize: '0.55rem', marginTop: '20px', textAlign: 'center', fontStyle: 'italic', color: 'gray' }}>
-             Datos de CO2 proporcionados por Idemat Sustainability (Universidad Tecnológica de Delft). La información está licenciada bajo CC BY-4.0 (Creative Commons Attribution 4.0 International License).
+             *Versión para educación ambiental: Datos de CO2 proporcionados por Idemat Sustainability (Universidad Tecnológica de Delft). La información está licenciada bajo CC BY-4.0 (Creative Commons Attribution 4.0 International License).
  Más información en <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>.
         </Typography>
           </Grid>
@@ -71,8 +71,7 @@ function App() {
             carbonImpactLandfill={carbonImpactLandfill} 
             carbonImpactCloseloop={carbonImpactCloseloop} 
           />
-            <p>*Versión para educación ambiental. </p>
-          
+                    
           </Grid>
           
         </Grid>
