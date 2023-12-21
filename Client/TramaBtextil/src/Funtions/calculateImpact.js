@@ -35,7 +35,6 @@ export function calculateImpact(kilograms, composition) {
             carbonImpactCloseloop = (kilograms * 3);
     }
 
-    console.log(`Salida - waterImpactLandfill: ${waterImpactLandfill}, waterImpactCloseloop: ${waterImpactCloseloop}, carbonImpactLandfill: ${carbonImpactLandfill}, carbonImpactCloseloop: ${carbonImpactCloseloop}`);
 
     return { waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop };
 }

@@ -39,7 +39,7 @@ const ResultComponent = ({
     <Card sx={{ backgroundColor: '#f8f8f8', width: '100%' }}>
       <CardContent>
         <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: '10px', fontSize: '1.5rem' }}>
-          Mitigación de huella:
+          Mitigación de huella {dataCarbon[0].difference} CO2 eq:
         </Typography>
 
         <Box>
@@ -49,7 +49,7 @@ const ResultComponent = ({
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="landfill" fill={COLORS[0]} name="Vertedero">  
+              <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">  
               </Bar>
               <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Ciclo cerrado">
                 <LabelList dataKey="closeloop" position="top" />
