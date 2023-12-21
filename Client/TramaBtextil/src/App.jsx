@@ -47,7 +47,7 @@ function App() {
       <CssBaseline />
       <Navbar />
       <Container>
-        <div style={{ padding: '10px' }}>
+        <div>
           <Typography variant="h6" gutterBottom>
             <p style={{ fontWeight: 'normal', fontSize: 'smaller' }}>Realizá tu calculo en vivo*:</p>
           </Typography>

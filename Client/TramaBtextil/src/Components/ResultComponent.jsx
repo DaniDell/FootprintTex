@@ -37,14 +37,14 @@ const ResultComponent = ({
 
   return (
     <Card sx={{ backgroundColor: '#f8f8f8', width: '100%' }}>
-      <CardContent>
-        <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: '10px', fontSize: '1.5rem' }}>
+      <CardContent sx={{  marginBottom: '30px'}}>
+        <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: '10px', fontSize: '1.2rem' }}>
           Mitigación de huella {dataCarbon[0].difference} CO2 eq:
         </Typography>
 
         <Box>
-          <ResponsiveContainer width="100%" height={150}>
-            <BarChart data={dataCarbon} margin={{ top: 5, right: 15, left: 2, bottom: 5 }}>
+          <ResponsiveContainer width="100%" height={180}>
+            <BarChart data={dataCarbon} margin={{ top: 5, right: 10, left: 0, bottom: 5, fontSize: '0.8rem' }}>
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
@@ -63,8 +63,8 @@ const ResultComponent = ({
 
         <Box display="flex" justifyContent="center">
           <Box>
-            <Typography variant="body2" sx={{ fontSize: '0.8 rem', marginBottom: '5px', textAlign: 'center' }}>{`Mediante el reciclaje mecánico con separación en origen la huella hídica se reduce en un ${waterReductionPercentage.toFixed(2)}% en esta fibra representando:`}</Typography>
-            <Typography variant="h6" sx={{ fontSize: '1rem', marginBottom: '10px', textAlign: 'center' }}>{`💧${(waterMitigated.toFixed(0)).toLocaleString('es-ES')} Lts. = ${(waterMitigated.toFixed(1) / 900).toLocaleString('es-ES')} Años de consumo humano`}</Typography>
+            <Typography variant="body2" sx={{ fontSize: '0.1 rem', marginBottom: '0px', textAlign: 'center' }}>{`Mediante el reciclaje mecánico + separación en origen la huella hídica se reduce en un ${waterReductionPercentage.toFixed(2)}% representando:`}</Typography>
+            <Typography variant="h6" sx={{ fontSize: '0.8rem', marginBottom: '20px', textAlign: 'center' }}>{`💧${(waterMitigated.toFixed(0)).toLocaleString('es-ES')} Lts. = ${(waterMitigated.toFixed(1) / 900).toLocaleString('es-ES')} Años de consumo humano`}</Typography>
           </Box>
         </Box>
       </CardContent>
