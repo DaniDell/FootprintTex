@@ -11,8 +11,8 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
     <div>
       <Box mb={1.5}>
         <FormControl fullWidth>
-          <InputLabel>Composición del textil</InputLabel>
-          <Select  label="Composición del textil"
+          <InputLabel>Composición base del textil</InputLabel>
+          <Select  label="Composición base del textil"
           value={composition}
           onChange={(e) => {
             setComposition(e.target.value);
@@ -20,7 +20,7 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
           }}>
             <MenuItem value="algodon">Algodón</MenuItem>
             <MenuItem value="poliester">Poliéster</MenuItem>
-            <MenuItem value="Mix de composiciones">Mix de composiciones</MenuItem>
+            <MenuItem value="Mezcla sin definición">Mezcla sin definición</MenuItem>
             </Select>
         </FormControl>
       </Box>

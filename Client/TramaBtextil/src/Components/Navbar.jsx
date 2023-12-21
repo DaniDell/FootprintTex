@@ -9,7 +9,7 @@ const Navbar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="body" style={{ flexGrow: 1, marginLeft: '10px' }}>
-                       Calculadora de reciclaje textil
+                       Calculadora de reciclaje textil mecánico (sin uso de agua).
                 </Typography>
                 {/* Puedes agregar enlaces de navegación aquí */}
                 <IconButton edge="start" color="inherit" aria-label="menu">

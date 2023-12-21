@@ -22,7 +22,7 @@ export function calculateImpact(kilograms, composition) {
             carbonImpactLandfill = (kilograms * 2.05);
             carbonImpactCloseloop = (kilograms * 1.26);
             break;
-        case 'Mix de composiciones':
+        case 'Mezcla sin definición':
             waterImpactLandfill = (kilograms * 1021); 
             waterImpactCloseloop = (kilograms * 700); 
             carbonImpactLandfill = (kilograms * 1.7);
