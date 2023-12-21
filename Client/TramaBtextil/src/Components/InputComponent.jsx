@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import { FormControl, InputLabel, Select, MenuItem, Button} from '@mui/material';
-
+import { FormControl, InputLabel, Select, MenuItem, Button, Grid } from '@mui/material';
 
 const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculateClick })  => {
 
@@ -25,19 +24,22 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
             </Select>
         </FormControl>
       </Box>
-      <Box mb={1.5}>
-        <TextField 
-          type="number"
-          onChange={(e) => onInputChange(e.target.value)}
-          label="kilos gestionados"
-          fullWidth
-        />
-      </Box>
-      <Box mb={1.5}>
-        <Button variant="contained" color="primary" onClick={onCalculateClick}>
-          Calcular
-        </Button>
-      </Box>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={8}>
+          <TextField 
+            type="number"
+            onChange={(e) => onInputChange(e.target.value)}
+            label="kilos gestionados"
+            fullWidth
+            size="small"
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <Button variant="contained" color="primary" onClick={onCalculateClick}>
+            Calcular
+          </Button>
+        </Grid>
+      </Grid>
     </div>
   );
 };

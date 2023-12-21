@@ -1,5 +1,5 @@
 export function calculateImpact(kilograms, composition) {
-    console.log(`Entrada - Kilograms: ${kilograms}, Composition: ${composition}`);
+   
 
     if (isNaN(kilograms) || typeof composition !== 'string') {
         throw new Error('Invalid input');

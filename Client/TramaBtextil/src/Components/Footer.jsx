@@ -7,7 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
   return (
-    <Box sx={{ p: 1, position: 'fixed', bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f8f8f8', width: "100%" }}>
+    <Box sx={{ p: 1, position: 'fixed', bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffff', width: "100%" }}>
        
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, p: 0}}>
       <Typography variant="body" align="center">

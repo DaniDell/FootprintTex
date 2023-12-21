@@ -39,7 +39,7 @@ const ResultComponent = ({
     <Card sx={{ backgroundColor: '#f8f8f8', width: '100%' }}>
       <CardContent sx={{  marginBottom: '30px'}}>
         <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: '10px', fontSize: '1.2rem' }}>
-          Mitigación de huella {dataCarbon[0].difference} CO2 eq:
+          Mitigación de {dataCarbon[0].difference} CO2 eq:
         </Typography>
 
         <Box>
@@ -64,7 +64,7 @@ const ResultComponent = ({
         <Box display="flex" justifyContent="center">
           <Box>
             <Typography variant="body2" sx={{ fontSize: '0.1 rem', marginBottom: '0px', textAlign: 'center' }}>{`Mediante el reciclaje mecánico + separación en origen la huella hídica se reduce en un ${waterReductionPercentage.toFixed(2)}% representando:`}</Typography>
-            <Typography variant="h6" sx={{ fontSize: '0.8rem', marginBottom: '20px', textAlign: 'center' }}>{`💧${(waterMitigated.toFixed(0)).toLocaleString('es-ES')} Lts. = ${(waterMitigated.toFixed(1) / 900).toLocaleString('es-ES')} Años de consumo humano`}</Typography>
+            <Typography variant="h6" sx={{ fontSize: '0.8rem', marginBottom: '5px', textAlign: 'center' }}>{`💧${(waterMitigated.toFixed(0)).toLocaleString('es-ES')} Lts. = ${(waterMitigated.toFixed(0) / 900).toLocaleString('es-ES')} años de consumo humano`}</Typography>
           </Box>
         </Box>
       </CardContent>
