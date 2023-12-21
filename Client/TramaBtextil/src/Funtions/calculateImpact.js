@@ -23,16 +23,16 @@ export function calculateImpact(kilograms, composition) {
             carbonImpactCloseloop = (kilograms * 1.26);
             break;
         case 'Mezcla sin definición':
-            waterImpactLandfill = (kilograms * 1021); 
-            waterImpactCloseloop = (kilograms * 700); 
-            carbonImpactLandfill = (kilograms * 1.7);
-            carbonImpactCloseloop = (kilograms * 3);
+            waterImpactLandfill = (kilograms * 1022);
+            waterImpactCloseloop = (kilograms * 550);
+            carbonImpactLandfill = (kilograms * 1.45);
+            carbonImpactCloseloop = (kilograms * 0.67);
             break;
         default:
-            waterImpactLandfill = (kilograms * 1021);
-            waterImpactCloseloop = (kilograms * 700);
-            carbonImpactLandfill = (kilograms * 1.7);
-            carbonImpactCloseloop = (kilograms * 3);
+            waterImpactLandfill = (kilograms * 1022);
+            waterImpactCloseloop = (kilograms * 550);
+            carbonImpactLandfill = (kilograms * 1.45);
+            carbonImpactCloseloop = (kilograms * 0.67);
     }
 
 
