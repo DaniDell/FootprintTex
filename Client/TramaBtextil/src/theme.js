@@ -19,6 +19,10 @@ const theme = createTheme({
         color: '#4a4a46', // Color del texto para variant="h6"
         fontSize: '1.5rem', // Tamaño de fuente personalizado
       },
+      h5: {
+        fontSize: '2rem',
+        color: '#5E7A64',
+      },
     },
   },
 });
