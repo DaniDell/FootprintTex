@@ -39,9 +39,11 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
 
   const handleCalculateClick = () => {
     onCalculateClick();
-    window.scrollTo(0,document.body.scrollHeight);
+    setTimeout(() => {
+      window.scrollTo(0,document.body.scrollHeight);
+    }, 0);
   };
-
+  
   return (
     <div>
       <Box mb={1.5}>

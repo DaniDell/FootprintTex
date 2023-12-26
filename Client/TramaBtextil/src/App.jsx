@@ -50,7 +50,7 @@ function App() {
       <Container>
         <div>
           <Typography variant="h6" gutterBottom>
-            <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
+            <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px', marginTop: '80px' }}>Realizá tu calculo en vivo*:</p>
           </Typography>
         </div>
         <Grid container spacing={3}>
