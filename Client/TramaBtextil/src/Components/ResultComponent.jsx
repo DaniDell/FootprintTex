@@ -11,7 +11,7 @@ const ResultComponent = ({
   carbonImpactLandfill,
   carbonImpactCloseloop,
 }) => {
-  const COLORS = ['#747373', '#538D60', '#68BEC6'];
+  const COLORS = ['#747373', '#538D60', '#ffffff'];
 
   const calculateReductionPercentage = (impactLandfill, impactCloseloop) => {
     if (impactLandfill === 0) return 0;
