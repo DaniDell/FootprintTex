@@ -37,6 +37,11 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
     }
   };
 
+  const handleCalculateClick = () => {
+    onCalculateClick();
+    window.scrollTo(0,document.body.scrollHeight);
+  };
+
   return (
     <div>
       <Box mb={1.5}>
@@ -59,6 +64,11 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
           <TextField 
             type="text"
             onChange={handleKilosChange}
+            onKeyPress={(event) => {
+              if (!/[0-9]/.test(event.key)) {
+                event.preventDefault();
+              }
+            }}
             label="kilos gestionados"
             fullWidth
             size="small"
@@ -67,7 +77,7 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
           />
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained" color="primary" onClick={onCalculateClick} disabled={!isValid}>
+          <Button variant="contained" color="primary" onClick={handleCalculateClick} disabled={!isValid}>
             Calcular
           </Button>
         </Grid>

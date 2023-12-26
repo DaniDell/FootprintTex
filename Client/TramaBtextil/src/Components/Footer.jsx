@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <Box sx={{ p: 1, position: 'fixed', bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffff', width: "100%" }}>
        
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, p: 0}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, p: 0}}>
       <Typography variant="body" align="center">
-        Trama B Textil 
+        Descubrí Trama B Textil en: 
       </Typography>
         <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener" aria-label="Instagram de Trama B Textil">
           <InstagramIcon />

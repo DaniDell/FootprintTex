@@ -2,6 +2,9 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
+    background: {
+      default: '#FFF2DE',
+    },
     text: {
       primary: '#4a4a46', 
     },
@@ -25,8 +28,15 @@ const theme = createTheme({
       },
     },
   },
+  components: {
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#FFFFFF',
+        },
+      },
+    },
+  },
 });
 
 export default theme;
-
-

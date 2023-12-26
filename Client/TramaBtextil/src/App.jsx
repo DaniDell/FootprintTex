@@ -78,6 +78,7 @@ function App() {
         </Grid>
       </Container>
       <SpeedInsights />
+      <div style={{ padding: '30px' }}></div>
       <Footer />
     </div>
   );
