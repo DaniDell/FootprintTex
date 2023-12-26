@@ -42,11 +42,15 @@ const ResultComponent = ({
     return value;
   };
 
+  function formatNumber(num) {
+    return Number(num).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  }
+
   return (
-    <Card sx={{ backgroundColor: '#F6E2C5', width: '100%' }}>
+    <Card sx={{ backgroundColor: '#E6E6E6', width: '100%' }}>
       <CardContent sx={{  marginBottom: '0px'}}>
         <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: '0px', fontSize: '1.2rem' }}>
-          {Math.abs(dataCarbon[0].difference) < 0.0001 ? "👆Descubrí el impacto positivo de gestionar tus descartes textiles" : `Mitiga ${dataCarbon[0].difference} CO2 eq:`}
+          {Math.abs(dataCarbon[0].difference) < 0.0001 ? "👆Descubrí el impacto positivo de gestionar tus descartes textiles" : `Mitiga ${formatNumber(dataCarbon[0].difference)} Kg de CO2 eq:`}
         </Typography>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={dataCarbon} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
@@ -61,7 +65,7 @@ const ResultComponent = ({
               <LabelList dataKey="closeloop" position="bottom" />
             </Bar>
            
-             <Bar dataKey="difference" stackId="stack" fill={COLORS[2]} name={`Reduce el ${carbonReductionPercentage.toFixed(2)}% de CO2 eq`}>
+            <Bar dataKey="difference" stackId="stack" fill={COLORS[2]} name={`CO2: Se reduce en ${formatNumber(carbonReductionPercentage)}%`}>
             </Bar>
           </BarChart>
         </ResponsiveContainer>
@@ -70,10 +74,10 @@ const ResultComponent = ({
           <Box>
             {waterReductionPercentage > 0 && waterMitigated > 0 && (
               <>
-                <Typography variant="body2" sx={{ fontSize: '0.1 rem', marginBottom: '5px', textAlign: 'center' }}>{`Realizando separación en origen y reciclaje mecánico, la huella hídrica se reduce en un ${waterReductionPercentage.toFixed(2)}% para las fibras elegidas `}</Typography>
+                <Typography variant="body2" sx={{ fontSize: '0.5 rem', marginBottom: '5px', textAlign: 'center' }}>{`Realizando separación en origen y reciclaje mecánico, la huella hídrica se reduce en un ${formatNumber(waterReductionPercentage)}% para estas fibras** `}</Typography>
                 <hr />
-        <Typography variant="h6" sx={{ fontSize: '0.85rem', marginBottom: '0px', textAlign: 'center' }}>
-          {`💧${Number((waterMitigated).toFixed(1)).toLocaleString('es-ES')} Lts. = ${Number((waterMitigated / 900).toFixed(1)).toLocaleString('es-ES')} años de consumo humano`}
+        <Typography variant="h6" sx={{ fontSize: '1rem', marginBottom: '0px', textAlign: 'center' }}>
+          {`💧${formatNumber(waterMitigated)} Lts. = ${formatNumber(waterMitigated / 900)} años de consumo humano`}
         </Typography>
               </>
             )} </Box>

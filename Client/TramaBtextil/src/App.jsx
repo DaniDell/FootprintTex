@@ -6,7 +6,7 @@ import { calculateImpact } from './Funtions/calculateImpact';
 import { setImpact } from './redux/actions';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography, Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -47,25 +47,24 @@ function App() {
     <div>
       <CssBaseline />
       <Navbar />
+      <Box maxWidth={800} margin="auto">
       <Container>
         <div>
           <Typography variant="h6" gutterBottom>
-            <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px', marginTop: '80px' }}>Realizá tu calculo en vivo*:</p>
+            <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px', marginTop: '100px' }}>Realizá tu calculo en vivo*:</p>
           </Typography>
         </div>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
+        
             <InputComponent 
               onInputChange={handleInputChange} 
               onTextileCompositionChange={handleCompositionChange} 
               onCalculateClick={handleCalculateClick} 
             />
-            <Typography variant="body2" sx={{ fontSize: '0.6rem', marginTop: '20px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
+            <Typography variant="body2" sx={{ fontSize: '0.6rem', margin: '25px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
               *Versión para educación ambiental: Datos de CO2 proporcionados por Idemat Sustainability (Universidad Tecnológica de Delft). La información está licenciada bajo CC BY-4.0.
               Más información en <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>.
             </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6}>
+                   <Grid item xs={12} sm={6}>
           <ResultComponent 
             waterImpactLandfill={waterImpactLandfill} 
             waterImpactCloseloop={waterImpactCloseloop} 
@@ -75,8 +74,9 @@ function App() {
                     
           </Grid>
           
-        </Grid>
+        
       </Container>
+      </Box>
       <SpeedInsights />
       <div style={{ padding: '30px' }}></div>
       <Footer />
