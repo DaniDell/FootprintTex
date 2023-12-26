@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 
 const Navbar = () => {
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar>
                 <Typography variant="h6" style={{ flexGrow: 1, marginLeft: '9px' }}>
                        Calculadora de reciclaje textil </Typography>
