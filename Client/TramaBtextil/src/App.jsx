@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { calculateImpact } from './Funtions/calculateImpact';
 import { setImpact } from './redux/actions';

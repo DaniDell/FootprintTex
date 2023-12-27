@@ -1,32 +1,18 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, lazy } from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  Legend,
-  ResponsiveContainer,
-  LabelList,
-} from 'recharts';
 import { Box } from '@mui/system';
+const CarbonChart = lazy(() => import("./CarbonChartGrafic"));
 
 const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop }) => {
-  const COLORS = ['#747373', '#5E7A64', '#ffffff'];
-
-  const calculateReductionPercentage = (impactLandfill, impactCloseloop) => {
-    if (impactLandfill === 0) return 0;
-    return ((impactLandfill - impactCloseloop) / impactLandfill) * 100;
-  };
-
   const waterReductionPercentage = useMemo(
-    () => calculateReductionPercentage(waterImpactLandfill, waterImpactCloseloop),
+    () => ((waterImpactLandfill - waterImpactCloseloop) / waterImpactLandfill) * 100,
     [waterImpactLandfill, waterImpactCloseloop]
   );
 
   const carbonReductionPercentage = useMemo(
-    () => calculateReductionPercentage(carbonImpactLandfill, carbonImpactCloseloop),
+    () => ((carbonImpactLandfill - carbonImpactCloseloop) / carbonImpactLandfill) * 100,
     [carbonImpactLandfill, carbonImpactCloseloop]
   );
 
@@ -43,13 +29,6 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
     ],
     [carbonImpactLandfill, carbonImpactCloseloop]
   );
-
-  const renderLegendText = (value, entry) => {
-    if (entry.dataKey === 'difference') {
-      return <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span>;
-    }
-    return value;
-  };
 
   function formatNumber(num) {
     return Number(num).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
@@ -71,20 +50,8 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
             ? "👆Descubrí el impacto positivo de gestionar tus descartes textiles"
             : `Mitiga ${formatNumber(dataCarbon[0].difference)} Kg de CO2 eq:`}
         </Typography>
-        <ResponsiveContainer width="100%" height={200}>
-          <BarChart data={dataCarbon} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
-            <XAxis dataKey="name" />
-            <Legend formatter={renderLegendText} />
-            <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">
-              <LabelList dataKey="landfill" position="bottom" />
-            </Bar>
-            <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Gestión y reciclaje">
-              <LabelList dataKey="closeloop" position="bottom" />
-            </Bar>
-            <Bar dataKey="difference" stackId="stack" fill={COLORS[2]} name={`CO2: Se reduce en ${formatNumber(carbonReductionPercentage)}%`}>
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+
+        <CarbonChart data={dataCarbon} carbonReductionPercentage={carbonReductionPercentage} formatNumber={formatNumber}/>
 
         <Box display="flex" justifyContent="center">
           <Box>
