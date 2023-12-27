@@ -64,7 +64,7 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={8}>
           <TextField 
-            type="text"
+            type="number"
             onChange={handleKilosChange}
             onKeyPress={(event) => {
               if (!/[0-9]/.test(event.key)) {
@@ -79,7 +79,7 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
           />
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained" color="primary" onClick={handleCalculateClick} disabled={!isValid}>
+          <Button fullWidth variant="contained" color="primary" onClick={handleCalculateClick} disabled={!isValid}>
             Calcular
           </Button>
         </Grid>

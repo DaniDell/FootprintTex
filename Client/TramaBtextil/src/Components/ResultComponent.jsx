@@ -6,7 +6,6 @@ import {
   BarChart,
   Bar,
   XAxis,
-  YAxis,
   Legend,
   ResponsiveContainer,
   LabelList,
@@ -75,7 +74,6 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={dataCarbon} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
             <XAxis dataKey="name" />
-            <YAxis hide={true} />
             <Legend formatter={renderLegendText} />
             <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">
               <LabelList dataKey="landfill" position="bottom" />
@@ -109,6 +107,14 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
                     textAlign: 'center',
                   }}
                 >{`💧${formatNumber(waterMitigated)} Lts. = ${formatNumber(waterMitigated / 900)} años de consumo humano`}</Typography>
+                <a 
+                  href="https://emf.thirdlight.com/link/2axvc7eob8zx-za4ule/@/preview/1?o" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '0.5rem', textAlign: 'center', display: 'block' }}
+                >
+                  **Cálculo estimado con datos proporcionados por la Fundación Ellen MacArthur.
+                </a>
               </>
             )}
           </Box>
