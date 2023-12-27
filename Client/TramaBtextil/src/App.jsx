@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import InputComponent from './Components/InputComponent';
-import ResultComponent from './Components/ResultComponent';
 import { calculateImpact } from './Funtions/calculateImpact';
 import { setImpact } from './redux/actions';
 import Navbar from './Components/Navbar';
@@ -9,6 +8,7 @@ import Footer from './Components/Footer';
 import { Container, Grid, Typography, Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
 import { SpeedInsights } from '@vercel/speed-insights/react';
+const ResultComponent = lazy(() => import('./Components/ResultComponent'));
 
 function App() {
   // Redux dispatch function
@@ -29,7 +29,6 @@ function App() {
   // Handler for calculate button click
   const handleCalculateClick = () => {
     if (!kilograms || !composition) {
-      alert('Por favor, rellene todos los campos.');
       return;
     }
 
