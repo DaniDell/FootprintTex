@@ -1,6 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import InputComponent from './Components/InputComponent';
 import { calculateImpact } from './Funtions/calculateImpact';
 import { setImpact } from './redux/actions';
 import Navbar from './Components/Navbar';
@@ -8,6 +7,7 @@ import Footer from './Components/Footer';
 import { Container, Grid, Typography, Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
 import { SpeedInsights } from '@vercel/speed-insights/react';
+const InputComponent = lazy(() => import('./Components/InputComponent'));
 const ResultComponent = lazy(() => import('./Components/ResultComponent'));
 
 function App() {

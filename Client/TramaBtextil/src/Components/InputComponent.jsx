@@ -40,7 +40,7 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
   const handleCalculateClick = () => {
     onCalculateClick();
     setTimeout(() => {
-      window.scrollTo(0,document.body.scrollHeight);
+      document.body.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }, 0);
   };
   
