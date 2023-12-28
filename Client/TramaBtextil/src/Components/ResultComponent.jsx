@@ -47,7 +47,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
           }}
         >
           {Math.abs(dataCarbon[0].difference) < 0.0001
-            ? "👆Descubrí el impacto positivo de gestionar tus descartes textiles"
+            ? "Descubrí el impacto positivo de gestionar tus descartes textiles"
             : `Mitiga ${formatNumber(dataCarbon[0].difference)} Kg de CO2 eq:`}
         </Typography>
 
