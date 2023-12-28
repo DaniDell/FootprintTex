@@ -24,7 +24,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
         name: '',
         landfill: carbonImpactLandfill.toFixed(2),
         closeloop: carbonImpactCloseloop.toFixed(2),
-        difference: Math.abs(carbonImpactLandfill - carbonImpactCloseloop).toFixed(2),
+        mitiga: Math.abs(carbonImpactLandfill - carbonImpactCloseloop).toFixed(2),
       },
     ],
     [carbonImpactLandfill, carbonImpactCloseloop]
@@ -46,9 +46,9 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
             fontSize: '1.2rem',
           }}
         >
-          {Math.abs(dataCarbon[0].difference) < 0.0001
+          {Math.abs(dataCarbon[0].mitiga) < 0.0001
             ? "Descubrí el impacto positivo de gestionar tus descartes textiles"
-            : `Mitiga ${formatNumber(dataCarbon[0].difference)} Kg de CO2 eq:`}
+            : `Mitiga ${formatNumber(dataCarbon[0].mitiga)} Kg de CO2 eq:`}
         </Typography>
 
         <CarbonChart data={dataCarbon} carbonReductionPercentage={carbonReductionPercentage} formatNumber={formatNumber}/>
