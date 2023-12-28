@@ -6,7 +6,7 @@ const COLORS = ['#747373', '#5E7A64', '#ffffff'];
 
 const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) => {
   return (
-    <ResponsiveContainer width="100%" height={200}>
+    <ResponsiveContainer width="100%" height={180}>
       <BarChart data={data} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : value} />

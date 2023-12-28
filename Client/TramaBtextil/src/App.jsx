@@ -48,9 +48,11 @@ function App() {
       <Navbar />
       <Box maxWidth={800} margin="auto">
       <Container>
-        <div>
+        <div style={{  marginTop: '90px' }}>
           <Typography variant="h6" gutterBottom>
-            <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px', marginTop: '100px' }}>Realizá tu calculo en vivo*:</p>
+            {waterImpactLandfill === 0 && (
+              <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
+            )}
           </Typography>
         </div>
         
