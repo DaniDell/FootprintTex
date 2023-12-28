@@ -78,9 +78,9 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
                   href="https://emf.thirdlight.com/link/2axvc7eob8zx-za4ule/@/preview/1?o" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  style={{ fontSize: '0.5rem', textAlign: 'center', display: 'block' }}
+                  style={{ fontSize: '12px', textAlign: 'center', display: 'block' }}
                 >
-                  **Cálculo estimado con datos Fundación Ellen MacArthur.
+                  **datos Fundación Ellen MacArthur.
                 </a>
               </>
             )}

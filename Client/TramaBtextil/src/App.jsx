@@ -48,7 +48,7 @@ function App() {
       <Navbar />
       <Box maxWidth={800} margin="auto">
       <Container>
-        <div style={{  marginTop: '90px' }}>
+        <div style={{  marginTop: '80px' }}>
           <Typography variant="h6" gutterBottom>
             {waterImpactLandfill === 0 && (
               <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
@@ -61,9 +61,9 @@ function App() {
               onTextileCompositionChange={handleCompositionChange} 
               onCalculateClick={handleCalculateClick} 
             />
-            <Typography variant="body2" sx={{ fontSize: '0.6rem', margin: '25px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
-              *Versión para educación ambiental: Datos de CO2 proporcionados por Idemat Sustainability (Universidad Tecnológica de Delft). La información está licenciada bajo CC BY-4.0.
-              Más información en <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>.
+            <Typography variant="body2" sx={{ fontSize: '12px', margin: '25px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
+              *en base a datos de <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
+               
             </Typography>
                    <Grid item xs={12} sm={6}>
           <ResultComponent 
