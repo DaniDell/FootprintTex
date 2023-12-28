@@ -80,7 +80,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
                   rel="noopener noreferrer"
                   style={{ fontSize: '0.5rem', textAlign: 'center', display: 'block' }}
                 >
-                  **Cálculo estimado con datos proporcionados por la Fundación Ellen MacArthur.
+                  **Cálculo estimado con datos Fundación Ellen MacArthur.
                 </a>
               </>
             )}
