@@ -9,7 +9,7 @@ const theme = createTheme({
       primary: '#4a4a46', 
     },
     primary: {
-      main: '#5E7A64', 
+      main: '#8B5982', 
     },
     secondary: {
       main: '#CACB4C', 
@@ -19,8 +19,8 @@ const theme = createTheme({
     fontFamily: 'poppins, sans-serif',
     styleOverrides: {
       h6: {
-        color: '#4a4a46', // Color del texto para variant="h6"
-        fontSize: '1.5rem', // Tamaño de fuente personalizado
+        color: '#4a4a46', 
+        fontSize: '1.5rem', 
       },
       h5: {
         fontSize: '2rem',

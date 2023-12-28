@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Box } from '@mui/system';
 const CarbonChart = lazy(() => import("./CarbonChartGrafic"));
+import svgBackground from "../assets/background.svg";
 
 const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop }) => {
   const waterReductionPercentage = useMemo(
@@ -35,7 +36,15 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
   }
 
   return (
-    <Card sx={{ backgroundColor: '#E6E6E6', width: '100%' }}>
+
+    <Card sx={{ 
+      width: '100%', 
+      backgroundImage: `url(${svgBackground})`, 
+      backgroundRepeat: 'repeat',
+      backgroundSize: 'contain', // or 'cover', or a specific size like '100px 100px'
+      backgroundPosition: 'start',
+    
+    }}>
       <CardContent sx={{ marginBottom: '0px' }}>
         <Typography
           variant="h5"
