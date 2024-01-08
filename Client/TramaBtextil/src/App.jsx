@@ -1,83 +1,18 @@
-import React, { useState, lazy } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { calculateImpact } from './Funtions/calculateImpact';
-import { setImpact } from './redux/actions';
+import React, { useState } from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import { Container, Grid, Typography, Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
 import { SpeedInsights } from '@vercel/speed-insights/react';
-const InputComponent = lazy(() => import('./Components/InputComponent'));
-const ResultComponent = lazy(() => import('./Components/ResultComponent'));
+import DemoCalculator from './Components/DemoCalculator';
 
 function App() {
-  // Redux dispatch function
-  const dispatch = useDispatch();
-
-  // Selecting state from Redux store
-  const { waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop } = useSelector(state => state.impact);
-
-  // Local state for composition and kilograms
-  const [composition, setComposition] = useState('algodon'); 
-  const [kilograms, setkilograms] = useState(0);
-
-  // Handler for input change
-  const handleInputChange = (value) => {
-    setkilograms(value); // Store the current value of managed kilograms
-  };
-
-  // Handler for calculate button click
-  const handleCalculateClick = () => {
-    if (!kilograms || !composition) {
-      return;
-    }
-
-    const impact = calculateImpact(kilograms, composition);
-    dispatch(setImpact(impact));
-  };
-
-  // Handler for composition change
-  const handleCompositionChange = (value) => {
-    setComposition(value || '');
-    handleInputChange(kilograms);
-  };
+ 
 
   return (
     <div>
       <CssBaseline />
       <Navbar />
-      <Box maxWidth={800} margin="auto">
-      <Container>
-        <div style={{  marginTop: '80px' }}>
-          <Typography variant="h6" gutterBottom>
-            {waterImpactLandfill === 0 && (
-              <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
-            )}
-          </Typography>
-        </div>
-        
-            <InputComponent 
-              onInputChange={handleInputChange} 
-              onTextileCompositionChange={handleCompositionChange} 
-              onCalculateClick={handleCalculateClick} 
-            />
-            <Typography variant="body2" sx={{ fontSize: '12px', margin: '25px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
-              *en base a datos de <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
-               
-            </Typography>
-                   <Grid item xs={12} sm={6}>
-          <ResultComponent 
-            waterImpactLandfill={waterImpactLandfill} 
-            waterImpactCloseloop={waterImpactCloseloop} 
-            carbonImpactLandfill={carbonImpactLandfill} 
-            carbonImpactCloseloop={carbonImpactCloseloop} 
-          />
-                    
-          </Grid>
-          
-        
-      </Container>
-      </Box>
+     <DemoCalculator />
       <SpeedInsights />
       <div style={{ padding: '30px' }}></div>
       <Footer />
