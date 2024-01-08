@@ -3,7 +3,7 @@ import React from 'react';
 const InformToPrint = () => {
   
     return (
-        <div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <p>InformToPrint</p>
         </div>
     );

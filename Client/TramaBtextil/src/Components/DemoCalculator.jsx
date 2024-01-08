@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { calculateImpact } from './../Funtions/calculateImpact';
 import { setImpact } from './../redux/actions'
 import { Container, Grid, Typography, Box } from '@mui/material';
-const InputComponent = lazy(() => import('../Utils/InputComponent'));
-const ResultComponent = lazy(() => import('../Utils/ResultComponent'));
+const InputComponent = lazy(() => import('./Utils/InputComponent'));
+const ResultComponent = lazy(() => import('./Utils/ResultComponent'));
 
 function DemoCalculator() {
  // Redux dispatch function
