@@ -1,87 +1,46 @@
-import React, { useState, lazy } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { calculateImpact } from './Funtions/calculateImpact';
-import { setImpact } from './redux/actions';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import { Container, Grid, Typography, Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline'; 
 import { SpeedInsights } from '@vercel/speed-insights/react';
-const InputComponent = lazy(() => import('./Components/InputComponent'));
-const ResultComponent = lazy(() => import('./Components/ResultComponent'));
+import Landing from "./Views/Landing";  
+import Login from "./Views/Login";
+import Home from "./Views/Home";
+import DetailUser from "./Views/DetailUser";  
+import UserProfile from "./Views/UserProfile";
+import ReceptionMeasure from "./Views/ReceptionMeasure"; 
+import DashHistoricalMeasure from "./Views/DashHistoricalMeasure";
+import InformToPrint from "./Views/InformToPrint";
+import AboutUs from "./Views/AboutUs";
+import FeedbackForm from "./Views/FeedbackForm";
+import ProtectedRoute from './Components/Utils/ProtectedRoute';
 
 function App() {
-  // Redux dispatch function
-  const dispatch = useDispatch();
-
-  // Selecting state from Redux store
-  const { waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop } = useSelector(state => state.impact);
-
-  // Local state for composition and kilograms
-  const [composition, setComposition] = useState('algodon'); 
-  const [kilograms, setkilograms] = useState(0);
-
-  // Handler for input change
-  const handleInputChange = (value) => {
-    setkilograms(value); // Store the current value of managed kilograms
-  };
-
-  // Handler for calculate button click
-  const handleCalculateClick = () => {
-    if (!kilograms || !composition) {
-      return;
-    }
-
-    const impact = calculateImpact(kilograms, composition);
-    dispatch(setImpact(impact));
-  };
-
-  // Handler for composition change
-  const handleCompositionChange = (value) => {
-    setComposition(value || '');
-    handleInputChange(kilograms);
-  };
+const user = true; // Cambia este valor para simular autenticación
 
   return (
-    <div>
-      <CssBaseline />
-      <Navbar />
-      <Box maxWidth={800} margin="auto">
-      <Container>
-        <div style={{  marginTop: '80px' }}>
-          <Typography variant="h6" gutterBottom>
-            {waterImpactLandfill === 0 && (
-              <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
-            )}
-          </Typography>
-        </div>
-        
-            <InputComponent 
-              onInputChange={handleInputChange} 
-              onTextileCompositionChange={handleCompositionChange} 
-              onCalculateClick={handleCalculateClick} 
-            />
-            <Typography variant="body2" sx={{ fontSize: '12px', margin: '25px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
-              *en base a datos de <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
-               
-            </Typography>
-                   <Grid item xs={12} sm={6}>
-          <ResultComponent 
-            waterImpactLandfill={waterImpactLandfill} 
-            waterImpactCloseloop={waterImpactCloseloop} 
-            carbonImpactLandfill={carbonImpactLandfill} 
-            carbonImpactCloseloop={carbonImpactCloseloop} 
-          />
-                    
-          </Grid>
-          
-        
-      </Container>
-      </Box>
-      <SpeedInsights />
-      <div style={{ padding: '30px' }}></div>
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <CssBaseline />
+        <Navbar />
+        <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/iniciar-sesion" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/detalle" element={<DetailUser />} />
+            <Route path="/nosotros" element={<AboutUs />} />
+            <Route path="/retroalimentacion" element={<FeedbackForm />} />
+          <Route path="/perfil" element={<ProtectedRoute canActivate={user} redirectPath='/iniciar-sesion' component={UserProfile} />} />
+          <Route path="/recepcion" element={<ProtectedRoute canActivate={user} redirectPath='/iniciar-sesion' component={ReceptionMeasure} />} />
+          <Route path="/historica" element={<ProtectedRoute canActivate={user} redirectPath='/iniciar-sesion' component={DashHistoricalMeasure} />} />
+          <Route path="/informe" element={<ProtectedRoute canActivate={user} redirectPath='/iniciar-sesion' component={InformToPrint} />} />
+          </Routes>
+        <SpeedInsights />
+        <div style={{ padding: '30px' }}></div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
