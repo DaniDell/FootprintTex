@@ -17,7 +17,7 @@ import FeedbackForm from "./Views/FeedbackForm";
 import ProtectedRoute from './Components/Utils/ProtectedRoute';
 
 function App() {
-const user = false; // Cambia este valor para simular autenticación
+const user = true; // Cambia este valor para simular autenticación
 
   return (
     <Router>
