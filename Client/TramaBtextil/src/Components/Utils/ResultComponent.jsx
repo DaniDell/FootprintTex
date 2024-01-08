@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Box } from '@mui/system';
 const CarbonChart = lazy(() => import("../Utils/CarbonChartGrafic"));
-import svgBackground from "../assets/background.svg";
+import svgBackground from "../../assets/background.svg";
 
 const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop }) => {
   const waterReductionPercentage = useMemo(
