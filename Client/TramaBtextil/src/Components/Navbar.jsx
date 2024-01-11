@@ -11,14 +11,15 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
 
 const pages = [
-  { text: "Home", path: "/home" },
-  { text: "Detalle", path: "/detalle" },
-  { text: "Nosotros", path: "/nosotros" },
-  { text: "Retroalimentación", path: "/retroalimentacion" },
+  { text: "Home  ", path: "/home" },
+  { text: "Quienes somos", path: "/nosotros" },
+  { text: "Buzón de sugerencias", path: "/retroalimentacion" },
 ];
 
 const settings = [
@@ -48,28 +49,39 @@ function Navbar({ user }) {
     setAnchorElUser(null);
   };
 
+  const navigate = useNavigate();
+
+  const handleUserChoice = () => {
+    const swalWithCustomButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'confirm-button-class',
+        denyButton: 'deny-button-class',
+        cancelButton: 'cancel-button-class'
+      },
+      buttonsStyling: false,
+      showCancelButton: true
+    });
+  
+    swalWithCustomButtons.fire({
+      title: "Todavía no estás logeado",
+      text: "Elige una opción a continuación:",
+      confirmButtonText: "Registrarse por primera vez",
+      cancelButtonText: "Iniciar sesión con mi cuenta"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirige al usuario a la página de registro
+        navigate('/registro');
+      } else if (result.isDismissed) {
+        // Redirige al usuario a la página de inicio de sesión
+        navigate('/iniciar-sesion');
+      }
+    });
+  };
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            to="/nosotros"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontWeight: 700,
-              letterSpacing: ".0rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Trama B Textil
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -131,7 +143,7 @@ function Navbar({ user }) {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontWeight: 700,
+              fontWeight: 100,
               color: "inherit",
               textDecoration: "none",
             }}
@@ -152,9 +164,18 @@ function Navbar({ user }) {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title={user ? "Open settings" : ""}>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Trama B" src="/static/images/avatar/2.jpg" />
+            <Tooltip title={user ? "Abrir" : "Por favor inicia sesión"}>
+              <IconButton
+                onClick={(event) => {
+                  if (user) {
+                    handleOpenUserMenu(event);
+                  } else {
+                    handleUserChoice();
+                  }
+                }}
+                sx={{ p: 0 }}
+              >
+                <Avatar alt="" src={user ? "" : "/path/to/empty/avatar"} />
               </IconButton>
             </Tooltip>
             <Menu
