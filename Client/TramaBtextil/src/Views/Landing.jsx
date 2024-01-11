@@ -5,7 +5,7 @@ const Landing = () => {
    
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <p>Landing</p>
+            
             <DemoCalculator />
             
         </div>
