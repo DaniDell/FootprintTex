@@ -17,10 +17,9 @@ import Swal from "sweetalert2";
 
 
 const pages = [
-  { text: "Home", path: "/home" },
-  { text: "Detalle", path: "/detalle" },
-  { text: "Nosotros", path: "/nosotros" },
-  { text: "Queremos saber tu opinión", path: "/retroalimentacion" },
+  { text: "Home  ", path: "/home" },
+  { text: "Quienes somos", path: "/nosotros" },
+  { text: "Buzón de sugerencias", path: "/retroalimentacion" },
 ];
 
 const settings = [
