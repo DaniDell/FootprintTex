@@ -14,19 +14,17 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
-
 const pages = [
-  { text: "Home  ", path: "/home" },
-  { text: "Quienes somos", path: "/nosotros" },
-  { text: "Buzón de sugerencias", path: "/retroalimentacion" },
+  { text: "🕸️ Sumar mi proyecto", path: "/iniciar-sesion" },
+  { text: "🤝 Quienes somos", path: "/nosotros" },
+  { text: "📨 Sugerencias", path: "/retroalimentacion" },
 ];
 
 const settings = [
-  { text: "Perfil", path: "/perfil" },
-  { text: "Recepción", path: "/recepcion" },
-  { text: "Histórica", path: "/historica" },
-  { text: "Informe", path: "/informe" },
+  { text: "Ver y editar mi perfil público", path: "/perfil" },
+  { text: "Generar un nuevo registro gestión", path: "/recepcion" },
+  { text: "Historia de gestión de materiales", path: "/historica" },
+  { text: "Salir de la cuenta", path: "/" },
 ];
 
 function Navbar({ user }) {
@@ -54,28 +52,30 @@ function Navbar({ user }) {
   const handleUserChoice = () => {
     const swalWithCustomButtons = Swal.mixin({
       customClass: {
-        confirmButton: 'confirm-button-class',
-        denyButton: 'deny-button-class',
-        cancelButton: 'cancel-button-class'
+        confirmButton: "confirm-button-class",
+        denyButton: "deny-button-class",
+        cancelButton: "cancel-button-class",
       },
       buttonsStyling: false,
-      showCancelButton: true
+      showCancelButton: true,
     });
-  
-    swalWithCustomButtons.fire({
-      title: "Todavía no estás logeado",
-      text: "Elige una opción a continuación:",
-      confirmButtonText: "Registrarse por primera vez",
-      cancelButtonText: "Iniciar sesión con mi cuenta"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Redirige al usuario a la página de registro
-        navigate('/registro');
-      } else if (result.isDismissed) {
-        // Redirige al usuario a la página de inicio de sesión
-        navigate('/iniciar-sesion');
-      }
-    });
+
+    swalWithCustomButtons
+      .fire({
+        title: "Todavía no estás logeado",
+        text: "Elige una opción a continuación:",
+        confirmButtonText: "Registrarse por primera vez",
+        cancelButtonText: "Iniciar sesión con mi cuenta",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          // Redirige al usuario a la página de registro
+          navigate("/registro");
+        } else if (result.isDismissed) {
+          // Redirige al usuario a la página de inicio de sesión
+          navigate("/iniciar-sesion");
+        }
+      });
   };
 
   return (
@@ -124,16 +124,18 @@ function Navbar({ user }) {
             </Menu>
           </Box>
 
-          <img
-            src="/logo.svg"
-            alt="Logo Trama B Textil"
-            style={{
-              display: { xs: "flex", md: "none" },
-              marginRight: "8px",
-              height: "40px",
-              width: "40px",
-            }}
-          />
+          <Link to="/home">
+            <img
+              src="/logo.svg"
+              alt="Logo Trama B Textil"
+              style={{
+                display: { xs: "flex", md: "none" },
+                marginRight: "8px",
+                height: "40px",
+                width: "40px",
+              }}
+            />
+          </Link>
           <Typography
             variant="h5"
             noWrap
@@ -175,7 +177,7 @@ function Navbar({ user }) {
                 }}
                 sx={{ p: 0 }}
               >
-                <Avatar alt="" src={user ? "" : "/path/to/empty/avatar"} />
+                <Avatar alt="" src={user ? "/path/to/empty/avatar" : ""} />
               </IconButton>
             </Tooltip>
             <Menu

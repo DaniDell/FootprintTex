@@ -6,29 +6,29 @@ import { Box } from '@mui/system';
 const CarbonChart = lazy(() => import("../Utils/CarbonChartGrafic"));
 import svgBackground from "../../assets/background.svg";
 
-const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop }) => {
+const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance, carbonImpactLandfill, carbonImpact2dnChance }) => {
   const waterReductionPercentage = useMemo(
-    () => ((waterImpactLandfill - waterImpactCloseloop) / waterImpactLandfill) * 100,
-    [waterImpactLandfill, waterImpactCloseloop]
+    () => ((waterImpactLandfill - waterImpact2dnChance) / waterImpactLandfill) * 100,
+    [waterImpactLandfill, waterImpact2dnChance]
   );
 
   const carbonReductionPercentage = useMemo(
-    () => ((carbonImpactLandfill - carbonImpactCloseloop) / carbonImpactLandfill) * 100,
-    [carbonImpactLandfill, carbonImpactCloseloop]
+    () => ((carbonImpactLandfill - carbonImpact2dnChance) / carbonImpactLandfill) * 100,
+    [carbonImpactLandfill, carbonImpact2dnChance]
   );
 
-  const waterMitigated = waterImpactLandfill - waterImpactCloseloop;
+  const waterMitigated = waterImpactLandfill - waterImpact2dnChance;
 
   const dataCarbon = useMemo(
     () => [
       {
         name: '',
         landfill: carbonImpactLandfill.toFixed(2),
-        closeloop: carbonImpactCloseloop.toFixed(2),
-        mitiga: Math.abs(carbonImpactLandfill - carbonImpactCloseloop).toFixed(2),
+        closeloop: carbonImpact2dnChance.toFixed(2),
+        mitiga: Math.abs(carbonImpactLandfill - carbonImpact2dnChance).toFixed(2),
       },
     ],
-    [carbonImpactLandfill, carbonImpactCloseloop]
+    [carbonImpactLandfill, carbonImpact2dnChance]
   );
 
   function formatNumber(num) {
@@ -73,7 +73,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpactCloseloop,
                     marginBottom: '5px',
                     textAlign: 'center',
                   }}
-                >{`Realizando separación en origen y reciclaje mecánico, la huella hídrica se reduce en un ${formatNumber(waterReductionPercentage)}% para estas fibras** `}</Typography>
+                >{`Realizando separación en origen la huella hídrica se reduce en un ${formatNumber(waterReductionPercentage)}% para estas fibras** `}</Typography>
                 <hr />
                 <Typography
                   variant="h6"

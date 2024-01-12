@@ -54,9 +54,12 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
             label="Composición base del textil"
             value={composition}
             onChange={handleCompositionChange}>
-              <MenuItem value="algodon">Algodón</MenuItem>
-              <MenuItem value="poliester">Poliéster</MenuItem>
-              <MenuItem value="Mezcla sin definición">Mezcla sin definición</MenuItem>
+              <MenuItem value="algodon Reciclado">Algodón Reciclado ♻️</MenuItem>
+              <MenuItem value="poliester Reciclado">Poliéster Reciclado ♻️</MenuItem>
+              <MenuItem value="Mezcla sin definición Reciclado">Mezcla sin definición Reciclado ♻️</MenuItem>
+              <MenuItem value="algodon Reutilizado">Algodón Recuperados 🔄</MenuItem>
+              <MenuItem value="poliester Reutilizado">Poliéster Recuperados 🔄</MenuItem>
+              <MenuItem value="Mezcla sin definición Reutilizado">Mezcla sin definición Recuperados 🔄</MenuItem>
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>
         </FormControl>
