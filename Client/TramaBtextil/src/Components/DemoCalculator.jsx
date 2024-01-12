@@ -11,7 +11,7 @@ function DemoCalculator() {
  const dispatch = useDispatch();
 
  // Selecting state from Redux store
- const { waterImpactLandfill, waterImpactCloseloop, carbonImpactLandfill, carbonImpactCloseloop } = useSelector(state => state.impact);
+ const { waterImpactLandfill, waterImpact2dnChance, carbonImpactLandfill, carbonImpact2dnChance } = useSelector(state => state.impact);
 
  // Local state for composition and kilograms
  const [composition, setComposition] = useState('algodon'); 
@@ -41,7 +41,7 @@ function DemoCalculator() {
  return (
 <Box maxWidth={800} margin="auto">
 <Container>
-  <div style={{  marginTop: '80px' }}>
+  <div >
     <Typography variant="h6" gutterBottom>
       {waterImpactLandfill === 0 && (
         <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
@@ -61,9 +61,9 @@ function DemoCalculator() {
              <Grid item xs={12} sm={6}>
     <ResultComponent 
       waterImpactLandfill={waterImpactLandfill} 
-      waterImpactCloseloop={waterImpactCloseloop} 
+      waterImpact2dnChance={waterImpact2dnChance} 
       carbonImpactLandfill={carbonImpactLandfill} 
-      carbonImpactCloseloop={carbonImpactCloseloop} 
+      carbonImpact2dnChance={carbonImpact2dnChance} 
     />
               
     </Grid>

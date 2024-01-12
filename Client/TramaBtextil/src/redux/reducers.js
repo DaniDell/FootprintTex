@@ -3,9 +3,9 @@ import { SET_IMPACT } from './actions';
 const initialState = {
   impact: {
     waterImpactLandfill: 0,
-    waterImpactCloseloop: 0,
+    waterImpact2dnChance: 0,
     carbonImpactLandfill: 0,
-    carbonImpactCloseloop: 0
+    carbonImpact2dnChance: 0
   }
 };
 
