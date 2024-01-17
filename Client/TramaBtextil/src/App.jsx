@@ -31,7 +31,7 @@ function App() {
           <Route path="/registro" element={<Register />} />
           <Route path="/iniciar-sesion" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/detalle" element={<DetailUser />} />
+          <Route path="/detalle/:id" element={<DetailUser />} />
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/retroalimentacion" element={<FeedbackForm />} />
           <Route

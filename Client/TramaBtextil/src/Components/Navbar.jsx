@@ -18,6 +18,7 @@ const pages = [
   { text: "🕸️ Sumar mi proyecto", path: "/iniciar-sesion" },
   { text: "🤝 Quienes somos", path: "/nosotros" },
   { text: "📨 Sugerencias", path: "/retroalimentacion" },
+  { text: "🧮 Probar Demo calculadora", path: "/" },
 ];
 
 const settings = [
@@ -76,6 +77,14 @@ function Navbar({ user }) {
           navigate("/iniciar-sesion");
         }
       });
+
+    // Añade los estilos después de que se haya mostrado el SweetAlert
+    const buttons = document.querySelectorAll('.swal2-confirm, .swal2-cancel');
+    buttons.forEach(button => {
+      button.style.fontFamily = 'Poppins, sans-serif';
+      button.style.border = 'none';
+      button.style.padding = '12px';
+    });
   };
 
   return (
@@ -83,7 +92,7 @@ function Navbar({ user }) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
+            <IconButton style={{ marginLeft: '0px', padding: '1px' }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -140,7 +149,7 @@ function Navbar({ user }) {
             variant="h5"
             noWrap
             component={Link}
-            to="/nosotros"
+            to="/home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -166,8 +175,8 @@ function Navbar({ user }) {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title={user ? "Abrir" : "Por favor inicia sesión"}>
-              <IconButton
+            <Tooltip title={user ? "Abrir" : "Inicia sesión"}>
+              <IconButton style={{ marginRight: '0px' }}
                 onClick={(event) => {
                   if (user) {
                     handleOpenUserMenu(event);
@@ -177,7 +186,7 @@ function Navbar({ user }) {
                 }}
                 sx={{ p: 0 }}
               >
-                <Avatar alt="" src={user ? "/path/to/empty/avatar" : ""} />
+                <Avatar alt="" src={user ? "  " : ""} />
               </IconButton>
             </Tooltip>
             <Menu
