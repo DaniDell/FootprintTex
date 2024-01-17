@@ -65,7 +65,8 @@ function DemoCalculator() {
       carbonImpactLandfill={carbonImpactLandfill} 
       carbonImpact2dnChance={carbonImpact2dnChance} 
     />
-              
+     <p>♻️ Gestión y reciclaje textil Hebra.circular</p> 
+     <p>🔄 Recirculación de descartes Segundas Oportunidades</p>          
     </Grid>
     
   

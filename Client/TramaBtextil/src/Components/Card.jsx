@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { IconButton, Button, Typography, Card, CardContent, CardActions } from "@mui/material";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Button, Typography, Card, CardContent, CardActions } from "@mui/material";
 import CardMedia from '@mui/material/CardMedia';
 
 
@@ -14,13 +13,14 @@ const StackedCard = ({
     ...props
 }) => {
     return (
-        <Card sx={{ width: 220, height: 450, margin: '1rem', display: 'flex', flexDirection: 'column' }}>
+        <Card sx={{ width: 340, height: 450, margin: '1rem', display: 'flex', flexDirection: 'column', boxShadow: '5px 5px 10px rgba(0,0,0,0.3)' }}>
             <CardMedia
                 component="img"
                 height="200px"
-                width= "200px"
+                width="200px"
                 image={image}
                 alt={title}
+                style={{ objectFit: 'contain', marginTop: '15px' }}
             />
             <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="div">
