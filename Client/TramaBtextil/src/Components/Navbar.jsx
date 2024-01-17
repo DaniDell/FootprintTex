@@ -140,7 +140,7 @@ function Navbar({ user }) {
             variant="h5"
             noWrap
             component={Link}
-            to="/nosotros"
+            to="/home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
