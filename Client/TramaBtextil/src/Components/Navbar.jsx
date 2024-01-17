@@ -76,6 +76,14 @@ function Navbar({ user }) {
           navigate("/iniciar-sesion");
         }
       });
+
+    // Añade los estilos después de que se haya mostrado el SweetAlert
+    const buttons = document.querySelectorAll('.swal2-confirm, .swal2-cancel');
+    buttons.forEach(button => {
+      button.style.fontFamily = 'Poppins, sans-serif';
+      button.style.border = 'none';
+      button.style.padding = '12px';
+    });
   };
 
   return (
