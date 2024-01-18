@@ -48,7 +48,7 @@ function DemoCalculator() {
   }, [dispatch]);
 
  return (
-<Box maxWidth={800} margin="auto">
+<Box maxWidth={800} height="auto">
 <Container>
   <div >
     <Typography variant="h6" gutterBottom>
@@ -75,8 +75,8 @@ function DemoCalculator() {
       carbonImpact2dnChance={carbonImpact2dnChance} 
     />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '0', fontSize: '0.8em', marginTop: '8px' }}>
-      <p>**♻️ Gestión y reciclaje mecánico de remanentes tizada.</p>
-      <p>**🔄 Recirculación de descartes por retazos o metros.</p>
+      <p>**♻️ Gestión y reciclaje remanentes de tizada.</p>
+      <p>**🔄 Textiles por metro para reutilizacion.</p>
     </div>       
     </Grid>
     
