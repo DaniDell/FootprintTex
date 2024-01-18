@@ -163,6 +163,7 @@ function Navbar({ user }) {
           >
             Trama B Textil
           </Typography>
+          {user && (
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title={user ? "Abrir" : "Inicia sesión"}>
               <IconButton style={{ marginRight: '0px' }}
@@ -206,6 +207,7 @@ function Navbar({ user }) {
               ))}
             </Menu>
           </Box>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
