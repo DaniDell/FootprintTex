@@ -1,7 +1,7 @@
-import React, { useState, lazy } from 'react';
+import React, { useState, useEffect, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { calculateImpact } from './../Funtions/calculateImpact';
-import { setImpact } from './../redux/actions'
+import { setImpact, clearImpact } from './../redux/actions'
 import { Container, Grid, Typography, Box } from '@mui/material';
 const InputComponent = lazy(() => import('./Utils/InputComponent'));
 const ResultComponent = lazy(() => import('./Utils/ResultComponent'));
@@ -19,6 +19,7 @@ function DemoCalculator() {
 
  // Handler for input change
  const handleInputChange = (value) => {
+  dispatch(clearImpact()); 
    setkilograms(value); // Store the current value of managed kilograms
  };
 
@@ -34,9 +35,17 @@ function DemoCalculator() {
 
  // Handler for composition change
  const handleCompositionChange = (value) => {
-   setComposition(value || '');
+  setComposition(value || '');
    handleInputChange(kilograms);
+   dispatch(clearImpact()); 
  };
+
+  // Use useEffect to dispatch clearImpact action when component unmounts
+  useEffect(() => {
+    return () => {
+      dispatch(clearImpact());
+    };
+  }, [dispatch]);
 
  return (
 <Box maxWidth={800} margin="auto">

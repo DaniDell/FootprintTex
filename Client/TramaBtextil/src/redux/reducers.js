@@ -1,4 +1,4 @@
-import { SET_IMPACT } from './actions';
+import { SET_IMPACT, CLEAR_IMPACT } from './actions';
 
 const initialState = {
   impact: {
@@ -16,6 +16,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         impact: action.payload
       };
+    case CLEAR_IMPACT:
+      return initialState;
     default:
       return state;
   }
