@@ -13,7 +13,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
         <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">
           <LabelList dataKey="landfill" position="bottom" />
         </Bar>
-        <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Gestión y reciclaje">
+        <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Huella reproceso**">
           <LabelList dataKey="closeloop" position="bottom" />
         </Bar>
         <Bar 
