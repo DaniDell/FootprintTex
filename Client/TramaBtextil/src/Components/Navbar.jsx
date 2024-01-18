@@ -15,10 +15,12 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const pages = [
-  { text: "🕸️ Sumar mi proyecto", path: "/iniciar-sesion" },
+  { text: "🧮 Probar calculadora demo", path: "/" },
+  { text: "🕸️ Encontrar proyectos alineados", path: "/home" },
+  { text: "🤚 Sumar mi proyecto", path: "/iniciar-sesion" },
   { text: "🤝 Quienes somos", path: "/nosotros" },
-  { text: "📨 Sugerencias", path: "/retroalimentacion" },
-  { text: "🧮 Probar Demo calculadora", path: "/" },
+  { text: "📨 Sugerencias aquí", path: "/retroalimentacion" },
+ 
 ];
 
 const settings = [
@@ -91,7 +93,7 @@ function Navbar({ user }) {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: "flex" }}>
             <IconButton style={{ marginLeft: '0px', padding: '1px' }}
               size="large"
               aria-label="account of current user"
@@ -117,7 +119,7 @@ function Navbar({ user }) {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: "block",
               }}
             >
               {pages.map((page, index) => (
@@ -138,7 +140,7 @@ function Navbar({ user }) {
               src="/logo.svg"
               alt="Logo Trama B Textil"
               style={{
-                display: { xs: "flex", md: "none" },
+                display: "flex",
                 marginRight: "8px",
                 height: "40px",
                 width: "40px",
@@ -152,7 +154,7 @@ function Navbar({ user }) {
             to="/home"
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: "flex",
               flexGrow: 1,
               fontWeight: 100,
               color: "inherit",
@@ -161,19 +163,6 @@ function Navbar({ user }) {
           >
             Trama B Textil
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.text}
-                component={Link}
-                to={page.path}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.text}
-              </Button>
-            ))}
-          </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title={user ? "Abrir" : "Inicia sesión"}>
               <IconButton style={{ marginRight: '0px' }}
