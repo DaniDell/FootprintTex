@@ -15,21 +15,22 @@ import InformToPrint from "./Views/InformToPrint";
 import AboutUs from "./Views/AboutUs";
 import FeedbackForm from "./Views/FeedbackForm";
 import Register from "./Views/Register";
-import Calculate from './Views/Calculate';
+import Calculate from "./Views/Calculate";
 import ProtectedRoute from "./Components/Utils/ProtectedRoute";
-
 
 function App() {
   const user = false; // Cambia este valor para simular autenticación
 
   return (
     <Router>
-      <div>
-        <CssBaseline />
+      <CssBaseline />
+      
+      <div style={{ width: '100vw' ,}}>
+        
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/calculadora" element={<Calculate/>} />
+          <Route path="/calculadora" element={<Calculate />} />
           <Route path="/registro" element={<Register />} />
           <Route path="/iniciar-sesion" element={<Login />} />
           <Route path="/home" element={<Home />} />
@@ -78,9 +79,10 @@ function App() {
           />
         </Routes>
         <SpeedInsights />
-        <div style={{ padding: "30px" }}></div>
+       
         <Footer />
       </div>
+    
     </Router>
   );
 }

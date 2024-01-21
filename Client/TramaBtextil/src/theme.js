@@ -15,6 +15,12 @@ const theme = createTheme({
     secondary: {
       main: '#CACB4C', 
     },
+    custom: {
+      main: '#5E7A64', 
+    },
+    custom2: {
+      main: '#F8F8F8', 
+    },
   },
   typography: {
     fontFamily: 'poppins, sans-serif',

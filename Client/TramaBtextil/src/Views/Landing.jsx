@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { CircularProgress } from "@mui/material";
 import { Button, Typography, Container, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import './Landing.css';
+import "./Landing.css";
 
 const Landing = () => {
   return (
@@ -11,94 +11,103 @@ const Landing = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        height: "115vh",
+        height: "100vh", // 100% of the viewport height
+        width: "100%", // 100% of the viewport width
+      
       }}
     >
-      <Suspense fallback={<CircularProgress />}>
-        <Container
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div style={{ marginTop: "35px" }}>
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Suspense fallback={<CircularProgress />}>
+          <div className="Land">
             <h1 className="h1-landing1">Impulsando cadenas de valor</h1>
             <h1 className="h1-landing2">de triple impacto textil</h1>
           </div>
-
+        </Suspense>
+        <Typography
+          variant="h6"
+          component="h2"
+          gutterBottom
+          style={{ opacity: 0.5 }}
+        >
+          Calculá tu huella textil y encontrá formas mitigar tu impacto
+        </Typography>
+        <Button
+          variant="contained"
+          color="custom2"
+          component={Link}
+          to="/calculadora"
+          style={{ marginTop: "20px", fontSize: "16px" }} // Aumenta el tamaño de la fuente a 20px
+        >
+          🧮 Probar nuestra calculadora demo
+        </Button>
+        <Button
+          variant="contained"
+          color="custom2"
+          component={Link}
+          to="/home"
+          style={{ marginTop: "20px", fontSize: "16px" }} // Aumenta el tamaño de la fuente a 20px
+        >
+          🕸️ Encontrar aliados
+        </Button>
+        <Box
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            marginTop: "40px",
+            position: "relative",
+            bottom: "0",
+            backgroundColor: "#f2f2f2",
+            width: "90%",
+            borderRadius: "25px",
+          }}
+        >
           <Typography
-            variant="h5"
-            component="h2"
+            variant="h6"
             gutterBottom
-            style={{ opacity: 0.5 }}
+            style={{ opacity: 0.5 , padding: "2px"}}
           >
-            Calculá tu impacto CO2 y posible mitigación
+            Entrá en esta red:
+          </Typography>
+          <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+          
+          <Typography variant="h8" gutterBottom style={{ opacity: 0.5 }}>
+            si es tu primera vez 
           </Typography>
           <Button
-            variant=""
+            variant="contained"
             color="primary"
             component={Link}
-            to="/calculadora"
-            style={{ marginTop: "20px", fontSize: "16px" }} // Aumenta el tamaño de la fuente a 20px
+            to="/registro"
+            style={{ margin: "10px" }}
           >
-            🧮 Probar calculadora demo
+            Regístrate aquí
           </Button>
+          
+          <Typography variant="h8" gutterBottom style={{ opacity: 0.5 }}>
+            o si ya estás registrado podrás
+          </Typography>
           <Button
-            variant=""
+            variant="contained"
             color="secondary"
             component={Link}
-            to="/home"
-            style={{ marginTop: "20px", fontSize: "16px" }} // Aumenta el tamaño de la fuente a 20px
+            to="/iniciar-sesion"
+            style={{ margin: "10px" }}
           >
-            🕸️ Encontrar aliados
+            Iniciar sesión
           </Button>
-          <Box
-            display="flex"
-            flexDirection="row"
-            flexWrap="wrap"
-            alignItems="center"
-            justifyContent="center"
-            style={{
-              margin: "30px",
-              position: "relative",
-              bottom: "0",
-              backgroundColor: "#f2f2f2",
-              width: "90vw",
-              borderRadius: "25px",
-            }}
-          >
-            <Typography variant="h6" gutterBottom style={{ opacity: 0.5, marginTop:"10px" }}>
-              Sumate a esta red
-            </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              component={Link}
-              to="/registro"
-              style={{ margin: "10px",  }}
-            >
-              Regístrate Ahora
-            </Button>
-            <Typography variant="h8" gutterBottom style={{ opacity: 0.5 }}>
-              si llegas por primera vez o
-            </Typography>
-            <Button
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/iniciar-sesion"
-              style={{ margin: "10px" }}
-            >
-              Iniciar Sesión
-            </Button>
-            <Typography variant="h8" gutterBottom style={{ opacity: 0.5 }}>
-              si ya estás registrado
-            </Typography>
-          </Box>
-        </Container>
-      </Suspense>
+          </div>
+        </Box>
+      </Container>
     </div>
   );
 };

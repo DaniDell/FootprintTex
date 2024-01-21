@@ -6,7 +6,7 @@ const Calculate = () => {
     
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '85vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 'auto' }}>
             <Suspense fallback={<CircularProgress />}>
                 <DemoCalculator />
             </Suspense>

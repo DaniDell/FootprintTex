@@ -76,7 +76,7 @@ function Navbar({ user }) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: "flex" }}>
-            <IconButton style={{ marginLeft: '0px', padding: '1px' }}
+            <IconButton style={{ marginLeft: '0px', padding: '0px' }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
