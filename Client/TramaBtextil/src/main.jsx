@@ -15,25 +15,12 @@ const customTheme = createTheme({
     fontFamily: 'Poppins, Arial, sans-serif',
   },
   components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-      
-      .confirm-button-class {
-        background-color: #CACB4C;
-        color: black;
-        border-radius: 5px;
-        padding: 5px;
-        margin: 5px;
-      }
-
-      .cancel-button-class {
-        background-color: #5E7A64;
-        color: white;
-        border-radius: 5px;
-        padding: 5px;
-        margin: 5px;
-      }
-      `,
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '500px', 
+        },
+      },
     },
   },
 });

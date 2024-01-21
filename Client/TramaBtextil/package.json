@@ -20,8 +20,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.21.1",
     "recharts": "^2.10.3",
-    "redux": "^5.0.0",
-    "sweetalert2": "^11.10.3"
+    "redux": "^5.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.3",

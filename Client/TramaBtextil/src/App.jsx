@@ -20,7 +20,7 @@ import ProtectedRoute from "./Components/Utils/ProtectedRoute";
 
 
 function App() {
-  const user = ""; // Cambia este valor para simular autenticación
+  const user = false; // Cambia este valor para simular autenticación
 
   return (
     <Router>
