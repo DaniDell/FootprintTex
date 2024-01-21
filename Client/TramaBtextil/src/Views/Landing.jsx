@@ -43,7 +43,7 @@ const Landing = () => {
           color="custom2"
           component={Link}
           to="/calculadora"
-          style={{ marginTop: "50px", fontSize: "15px" }} // Aumenta el tamaño de la fuente a 20px
+          style={{ marginTop: "30px", fontSize: "15px" }} // Aumenta el tamaño de la fuente a 20px
         >
           🧮 Probar nuestra calculadora demo
         </Button>
@@ -63,7 +63,7 @@ const Landing = () => {
           alignItems="center"
           justifyContent="center"
           style={{
-            marginTop: "40px",
+            marginTop: "60px",
             position: "relative",
             bottom: "0",
             backgroundColor: "#f2f2f2",
