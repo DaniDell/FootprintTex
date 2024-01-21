@@ -7,6 +7,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#4a4a46', 
+      secondary:  '#737373',
     },
     primary: {
       main: '#8B5982', 
@@ -25,6 +26,15 @@ const theme = createTheme({
       h5: {
         fontSize: '2rem',
         color: '#5E7A64',
+      },
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '500px', 
+        },
       },
     },
   },

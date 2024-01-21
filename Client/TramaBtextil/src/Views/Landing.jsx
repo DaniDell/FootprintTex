@@ -11,7 +11,7 @@ const Landing = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        height: "108vh",
+        height: "115vh",
       }}
     >
       <Suspense fallback={<CircularProgress />}>
@@ -41,20 +41,19 @@ const Landing = () => {
             color="primary"
             component={Link}
             to="/calculadora"
-            style={{ marginTop: "20px" }}
+            style={{ marginTop: "20px", fontSize: "16px" }} // Aumenta el tamaño de la fuente a 20px
           >
             🧮 Probar calculadora demo
           </Button>
           <Button
             variant=""
-            color="primary"
+            color="secondary"
             component={Link}
             to="/home"
-            style={{ marginTop: "20px" }}
+            style={{ marginTop: "20px", fontSize: "16px" }} // Aumenta el tamaño de la fuente a 20px
           >
-            🕸️ Encontrar proyectos alineados
+            🕸️ Encontrar aliados
           </Button>
-
           <Box
             display="flex"
             flexDirection="row"
@@ -67,6 +66,7 @@ const Landing = () => {
               bottom: "0",
               backgroundColor: "#f2f2f2",
               width: "90vw",
+              borderRadius: "25px",
             }}
           >
             <Typography variant="h6" gutterBottom style={{ opacity: 0.5, marginTop:"10px" }}>
@@ -77,7 +77,7 @@ const Landing = () => {
               color="primary"
               component={Link}
               to="/registro"
-              style={{ margin: "10px" }}
+              style={{ margin: "10px",  }}
             >
               Regístrate Ahora
             </Button>

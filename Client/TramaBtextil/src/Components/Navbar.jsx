@@ -12,13 +12,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import AlertDialog from "./AlertDialog";
 
 const pages = [
-  { text: "🧮 Probar calculadora demo", path: "/calculadora" },
-  { text: "🕸️ Encontrar proyectos alineados", path: "/home" },
+  { text: "🧮 Probar Demo calculadora", path: "/calculadora" },
+  { text: "🕸️ Red de proyectos alineados", path: "/home" },
   { text: "🤚 Sumar mi proyecto", path: "/iniciar-sesion" },
-  { text: "🤝 Quienes somos", path: "/nosotros" },
+  // { text: "🤝 Quienes somos", path: "/nosotros" },
   { text: "📨 Sugerencias aquí", path: "/retroalimentacion" },
  
 ];
@@ -33,6 +33,7 @@ const settings = [
 function Navbar({ user }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [openDialog, setOpenDialog] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -52,43 +53,24 @@ function Navbar({ user }) {
 
   const navigate = useNavigate();
 
-  const handleUserChoice = () => {
-    const swalWithCustomButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "confirm-button-class",
-        denyButton: "deny-button-class",
-        cancelButton: "cancel-button-class",
-      },
-      buttonsStyling: false,
-      showCancelButton: true,
-    });
-
-    swalWithCustomButtons
-      .fire({
-        title: "Todavía no estás logeado",
-        text: "Elige una opción a continuación:",
-        confirmButtonText: "Registrarse por primera vez",
-        cancelButtonText: "Iniciar sesión con mi cuenta",
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          // Redirige al usuario a la página de registro
-          navigate("/registro");
-        } else if (result.isDismissed) {
-          // Redirige al usuario a la página de inicio de sesión
-          navigate("/iniciar-sesion");
-        }
-      });
-
-    // Añade los estilos después de que se haya mostrado el SweetAlert
-    const buttons = document.querySelectorAll('.swal2-confirm, .swal2-cancel');
-    buttons.forEach(button => {
-      button.style.fontFamily = 'Poppins, sans-serif';
-      button.style.border = 'none';
-      button.style.padding = '12px';
-    });
+ 
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
   };
 
+  const handleCloseDialog = (option) => {
+    setOpenDialog(false);
+    if (option === 'register') {
+      navigate("/registro");
+    } else if (option === 'login') {
+      navigate("/iniciar-sesion");
+    }
+  };
+
+  const handleUserChoice = () => {
+    handleOpenDialog();
+  };
+  
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -135,36 +117,23 @@ function Navbar({ user }) {
             </Menu>
           </Box>
 
-          <Link to="/home">
-            <img
-              src="/logo.svg"
-              alt="Logo Trama B Textil"
-              style={{
-                display: "flex",
-                marginRight: "8px",
-                height: "40px",
-                width: "40px",
-              }}
-            />
-          </Link>
-          <Typography
-            variant="h5"
-            noWrap
-            component={Link}
-            to="/home"
-            sx={{
-              mr: 2,
-              display: "flex",
-              flexGrow: 1,
-              fontWeight: 100,
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Trama B Textil
-          </Typography>
-          {user && (
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+    <Link to="/">
+      <img
+        src="/logoTrama.svg"
+        alt="Logo Trama B Textil"
+        style={{
+          height: "40px",
+          width: "180px",
+        }}
+      />
+      
+    </Link>
+
+  </Box>
+
+          
+  <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
             <Tooltip title={user ? "Abrir" : "Inicia sesión"}>
               <IconButton style={{ marginRight: '0px' }}
                 onClick={(event) => {
@@ -207,10 +176,21 @@ function Navbar({ user }) {
               ))}
             </Menu>
           </Box>
-          )}
+          
         </Toolbar>
       </Container>
+      <AlertDialog
+      open={openDialog}
+      handleClose={() => handleCloseDialog(null)}
+      title="Debes logearte acceder a esta sección"
+      content="Elige una opción a continuación:"
+      confirmText="Registrate"
+      cancelText="Inicia sesión"
+      onConfirm={() => handleCloseDialog('register')}
+      onCancel={() => handleCloseDialog('login')}
+    />
     </AppBar>
+    
   );
 }
 
