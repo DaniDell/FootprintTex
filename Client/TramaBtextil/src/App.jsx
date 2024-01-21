@@ -15,6 +15,7 @@ import InformToPrint from "./Views/InformToPrint";
 import AboutUs from "./Views/AboutUs";
 import FeedbackForm from "./Views/FeedbackForm";
 import Register from "./Views/Register";
+import Calculate from './Views/Calculate';
 import ProtectedRoute from "./Components/Utils/ProtectedRoute";
 
 
@@ -28,6 +29,7 @@ function App() {
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/calculadora" element={<Calculate/>} />
           <Route path="/registro" element={<Register />} />
           <Route path="/iniciar-sesion" element={<Login />} />
           <Route path="/home" element={<Home />} />
