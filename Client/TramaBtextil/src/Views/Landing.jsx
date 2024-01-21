@@ -45,7 +45,7 @@ const Landing = () => {
           to="/calculadora"
           style={{ marginTop: "30px", fontSize: "15px" }} // Aumenta el tamaño de la fuente a 20px
         >
-          🧮 Probar nuestra calculadora demo
+        Probá la calculadora demo
         </Button>
         <Button
           variant="contained"
