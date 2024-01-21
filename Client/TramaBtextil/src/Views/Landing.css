@@ -1,12 +1,12 @@
 body {
-  margin: 0;
-  overflow-x: hidden; /* Añade esto para evitar el desbordamiento horizontal */
   text-align: center;
 }
 
 .Land {
   margin-top: 35px;
-  width: 100%; /* Cambia esto de 100vw a 100% */
+  overflow-x: hidden; /* Añade esto para evitar el desbordamiento horizontal */
+  overflow-y: auto; /* Añade esto para permitir el desplazamiento vertical cuando sea necesario */
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -64,7 +64,7 @@ body {
   
   @media (max-width: 400px) {
     .h1-landing1, .h1-landing2 {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     .h1-landing1 {
@@ -76,10 +76,10 @@ body {
 
   @media (max-width: 399px) {
     .h1-landing1, .h1-landing2 {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   
     .h1-landing1 {
-      margin-top: 30px;
+      margin-top: 0px;
     }
   }
