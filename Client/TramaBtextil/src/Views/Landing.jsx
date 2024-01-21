@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { CircularProgress } from "@mui/material";
 import { Button, Typography, Container, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import "../app.css";
+import './Landing.css';
 
 const Landing = () => {
   return (
@@ -69,8 +69,8 @@ const Landing = () => {
               width: "90vw",
             }}
           >
-            <Typography variant="h6" gutterBottom style={{ opacity: 0.5 }}>
-              Sumate a esta red:
+            <Typography variant="h6" gutterBottom style={{ opacity: 0.5, marginTop:"10px" }}>
+              Sumate a esta red
             </Typography>
             <Button
               variant="contained"
