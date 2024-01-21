@@ -15,7 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const pages = [
-  { text: "🧮 Probar calculadora demo", path: "/" },
+  { text: "🧮 Probar calculadora demo", path: "/calculadora" },
   { text: "🕸️ Encontrar proyectos alineados", path: "/home" },
   { text: "🤚 Sumar mi proyecto", path: "/iniciar-sesion" },
   { text: "🤝 Quienes somos", path: "/nosotros" },

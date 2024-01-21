@@ -12,7 +12,7 @@ const root = document.getElementById('root');
 const customTheme = createTheme({
   ...theme,
   typography: {
-    fontFamily: '"Poppins", Arial, sans-serif',
+    fontFamily: 'Poppins, Arial, sans-serif',
   },
   components: {
     MuiCssBaseline: {

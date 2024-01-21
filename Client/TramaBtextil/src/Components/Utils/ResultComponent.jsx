@@ -6,6 +6,11 @@ import { Box } from '@mui/system';
 const CarbonChart = lazy(() => import("../Utils/CarbonChartGrafic"));
 import svgBackground from "../../assets/background.svg";
 
+// Move formatNumber function outside of the component to avoid re-creation on each render
+function formatNumber(num) {
+  return Number(num).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+}
+
 const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance, carbonImpactLandfill, carbonImpact2dnChance }) => {
   const waterReductionPercentage = useMemo(
     () => ((waterImpactLandfill - waterImpact2dnChance) / waterImpactLandfill) * 100,
@@ -17,7 +22,8 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
     [carbonImpactLandfill, carbonImpact2dnChance]
   );
 
-  const waterMitigated = waterImpactLandfill - waterImpact2dnChance;
+  // Use useMemo for waterMitigated calculation
+  const waterMitigated = useMemo(() => waterImpactLandfill - waterImpact2dnChance, [waterImpactLandfill, waterImpact2dnChance]);
 
   const dataCarbon = useMemo(
     () => [
@@ -31,19 +37,13 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
     [carbonImpactLandfill, carbonImpact2dnChance]
   );
 
-  function formatNumber(num) {
-    return Number(num).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-  }
-
   return (
-
     <Card sx={{ 
       width: '100%', 
       backgroundImage: `url(${svgBackground})`, 
       backgroundRepeat: 'repeat',
       backgroundSize: 'contain', // or 'cover', or a specific size like '100px 100px'
       backgroundPosition: 'start',
-    
     }}>
       <CardContent sx={{ marginBottom: '0px' }}>
         <Typography

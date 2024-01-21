@@ -1,14 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
 body {
   font-family: 'Poppins', 'Open Sans', sans-serif;
-
 }
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
   text-align: center;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.h1-landing1 {
+  animation: slideInFromLeft 2s;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.8;
+  margin-top: 80px;
+  margin-bottom: 0em; 
+}
+
+@media (max-width: 400px) {
+  .h1-landing1 {
+    margin-top: 10px;
+    font-size: 3rem;
+  }
+}
+
+.h1-landing2 {
+  animation: slideInFromRight 2s;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.8;
+  margin-top: 0;
+  margin-bottom: 0.5em; 
+}
+
+@media (max-width: 400px) {
+  .h1-landing2 {
+    font-size: 3rem;
+  }
+}
