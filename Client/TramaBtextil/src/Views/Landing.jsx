@@ -52,29 +52,30 @@ const Landing = () => {
           color="custom2"
           component={Link}
           to="/home"
-          style={{ marginTop: "20px", fontSize: "15px" }} // Aumenta el tamaño de la fuente a 20px
+          style={{ marginTop: "20px", fontSize: "15px"}} // Aumenta el tamaño de la fuente a 20px
         >
           🕸️ Encontrar aliados
         </Button>
         <Box
-          display="flex"
-          flexDirection="row"
-          flexWrap="wrap"
-          alignItems="center"
-          justifyContent="center"
-          style={{
-            marginTop: "60px",
-            position: "relative",
-            bottom: "0",
-            backgroundColor: "#f2f2f2",
-            width: "90%",
-            borderRadius: "25px",
-          }}
-        >
+  display="flex"
+  flexDirection="row"
+  flexWrap="wrap"
+  alignItems="center"
+  justifyContent="center"
+  style={{
+    marginTop: "5rem",
+    position: 'relative', 
+    bottom: "60px", // Cambia '0' a '30px'
+    backgroundColor: "#f2f2f2",
+    width: "90%",
+    borderRadius: "25px",
+    padding: "5px"
+  }}
+>
           <Typography
             variant="h6"
             gutterBottom
-            style={{ opacity: 0.5 , padding: "2px"}}
+            style={{ opacity: 0.5 , padding: "5px",  marginTop: "0px",}}
           >
             Entrá en esta red:
           </Typography>
