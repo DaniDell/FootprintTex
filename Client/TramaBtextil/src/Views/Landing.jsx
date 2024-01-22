@@ -36,7 +36,7 @@ const Landing = () => {
           gutterBottom
           style={{ opacity: 0.5 }}
         >
-          Calculá tu huella textil y encontrá formas mitigar tu impacto
+          Calculá tu huella textil y descubrir formas mitigar tu impacto.
         </Typography>
         <Button
           variant="contained"
@@ -63,13 +63,11 @@ const Landing = () => {
   alignItems="center"
   justifyContent="center"
   style={{
-    marginTop: "5rem",
-    position: 'relative', 
-    bottom: "60px", // Cambia '0' a '30px'
+    marginTop: "2rem",
     backgroundColor: "#f2f2f2",
-    width: "90%",
+    width: "100%",
     borderRadius: "25px",
-    padding: "5px"
+    padding: "15px"
   }}
 >
           <Typography

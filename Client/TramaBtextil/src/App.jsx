@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -80,7 +80,7 @@ function App() {
         </Routes>
         <SpeedInsights />
        
-        <Footer />
+        {location.pathname !== "/" && <Footer />}
       </div>
     
     </Router>
