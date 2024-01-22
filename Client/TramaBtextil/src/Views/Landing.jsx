@@ -34,7 +34,7 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{ opacity: 0.7 }}
+          style={{ opacity: 0.8 }}
         >
           Calculá tu huella textil y descubrir formas mitigar tu impacto.
         </Typography>
