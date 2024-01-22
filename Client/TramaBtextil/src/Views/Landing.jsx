@@ -34,7 +34,7 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{ opacity: 0.5 }}
+          style={{ opacity: 0.7 }}
         >
           Calculá tu huella textil y descubrir formas mitigar tu impacto.
         </Typography>
@@ -73,13 +73,13 @@ const Landing = () => {
           <Typography
             variant="h6"
             gutterBottom
-            style={{ opacity: 0.5 , padding: "5px",  marginTop: "0px",}}
+            style={{ opacity: 0.8 , padding: "5px",  marginTop: "0px",}}
           >
             Entrá en esta red:
           </Typography>
           <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
           
-          <Typography variant="h8" gutterBottom style={{ opacity: 0.5 }}>
+          <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
             si es tu primera vez 
           </Typography>
           <Button
@@ -92,7 +92,7 @@ const Landing = () => {
             Regístrate aquí
           </Button>
           
-          <Typography variant="h8" gutterBottom style={{ opacity: 0.5 }}>
+          <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
             o si ya estás registrado podrás
           </Typography>
           <Button

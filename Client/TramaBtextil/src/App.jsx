@@ -25,7 +25,7 @@ function App() {
     <Router>
       <CssBaseline />
       
-      <div style={{ width: '100vw' ,}}>
+      <div style={{ width: '100vw', height: 'auto'}}>
         
         <Navbar user={user} />
         <Routes>
@@ -80,7 +80,7 @@ function App() {
         </Routes>
         <SpeedInsights />
        
-        {location.pathname !== "/" && <Footer />}
+      
       </div>
     
     </Router>

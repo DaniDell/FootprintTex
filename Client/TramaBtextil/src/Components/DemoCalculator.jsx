@@ -53,7 +53,7 @@ function DemoCalculator() {
   <div >
     <Typography variant="h6" gutterBottom>
       {waterImpactLandfill === 0 && (
-        <p style={{ fontWeight: 'normal', fontSize: 'smaller', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
+        <p style={{ fontWeight: 'normal', fontSize: 'large', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
       )}
     </Typography>
   </div>
