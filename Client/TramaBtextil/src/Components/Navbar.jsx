@@ -78,7 +78,7 @@ function Navbar({ user }) {
           <Box sx={{ flexGrow: 1, display: "flex" }}>
             <IconButton style={{ marginLeft: '0px', padding: '0px' }}
               size="large"
-              aria-label="account of current user"
+              aria-label="cuenta del usuario actual"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}

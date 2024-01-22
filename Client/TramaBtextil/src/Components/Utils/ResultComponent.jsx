@@ -42,7 +42,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
       width: '100%', 
       backgroundImage: `url(${svgBackground})`, 
       backgroundRepeat: 'repeat',
-      backgroundSize: 'contain', // or 'cover', or a specific size like '100px 100px'
+      backgroundSize: 'contain', 
       backgroundPosition: 'start',
     }}>
       <CardContent sx={{ marginBottom: '0px' }}>
