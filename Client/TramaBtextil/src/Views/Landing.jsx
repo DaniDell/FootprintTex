@@ -3,6 +3,7 @@ import { CircularProgress } from "@mui/material";
 import { Button, Typography, Container, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Landing.css";
+const HeadingComponent = React.lazy(() => import('../Components/HeadingComponent'));
 
 const Landing = () => {
   return (
@@ -25,10 +26,7 @@ const Landing = () => {
         }}
       >
         <Suspense fallback={<CircularProgress />}>
-          <div className="Land">
-            <h1 className="h1-landing1">Impulsando cadenas de valor</h1>
-            <h1 className="h1-landing2">de triple impacto textil</h1>
-          </div>
+        <HeadingComponent />
         </Suspense>
         <Typography
           variant="h6"
@@ -71,8 +69,9 @@ const Landing = () => {
   }}
 >
           <Typography
-            variant="h6"
+            variant="h5"
             gutterBottom
+            component="h1"
             style={{ opacity: 0.8 , padding: "5px",  marginTop: "0px",}}
           >
             Entrá en esta red:
