@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { Button, Typography, Card, CardContent, CardActions, Box } from "@mui/material";
+import { Button, Typography, Card, CardContent, CardActions, Box, MobileStepper, IconButton } from "@mui/material";
 import CardMedia from '@mui/material/CardMedia';
 import Label from './Utils/Label';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
 const StackedCard = ({
     title,
@@ -16,26 +14,50 @@ const StackedCard = ({
     ods,
     ...props
 }) => {
+    const [activeStep, setActiveStep] = useState(0);
+    const maxSteps = Array.isArray(image) ? image.length : 0;
+
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
     return (
         <Card sx={{ width: 340, height: 500, margin: '1rem', display: 'flex', flexDirection: 'column', boxShadow: '5px 5px 10px rgba(0,0,0,0.3)' }}>
-        {Array.isArray(image) && image.length > 1 ? (
-            <Carousel dynamicHeight={false} showThumbs={false}>
-                {image.map((img, index) => (
-                    <div key={index}>
-                        <img src={img} alt={title} />
-                    </div>
-                ))}
-            </Carousel>
-        ) : (
-            <CardMedia
-                component="img"
-                height="200px"
-                width="200px"
-                image={Array.isArray(image) ? image[0] : image}
-                alt={title}
-                style={{ objectFit: 'contain', marginTop: '15px' }}
-            />
-        )}
+         
+                <>
+                    <CardMedia
+                        component="img"
+                        height="200px"
+                        width="200px"
+                        image={image[activeStep]}
+                        alt={title}
+                        style={{ objectFit: 'contain', marginTop: '15px' }}
+                    />
+                    {Array.isArray(image) && image.length > 1 ? (
+                        <MobileStepper
+                            steps={maxSteps}
+                            position="static"
+                            variant="text"
+                            activeStep={activeStep}
+                            sx={{ '& .MuiMobileStepper-dot': { width: '10px', height: '10px' } }}
+                            nextButton={
+                                <IconButton size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+                                    <KeyboardArrowRight />
+                                </IconButton>
+                            }
+                            backButton={
+                                <IconButton size="small" onClick={handleBack} disabled={activeStep === 0}>
+                                    <KeyboardArrowLeft />
+                                </IconButton>
+                            }
+                        />
+                    ) : <div style={{ marginTop: '20px' }} />}
+                </>
+             
 
             <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="div">
