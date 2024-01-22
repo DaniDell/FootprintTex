@@ -36,7 +36,7 @@ const Landing = () => {
           gutterBottom
           style={{ opacity: 0.5 }}
         >
-          Calculá tu huella textil y encontrá formas mitigar tu impacto
+          Calculá tu huella textil y descubrir formas mitigar tu impacto.
         </Typography>
         <Button
           variant="contained"
