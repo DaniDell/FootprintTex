@@ -48,12 +48,12 @@ function DemoCalculator() {
   }, [dispatch]);
 
  return (
-<Box maxWidth={800} height="auto">
-<Container>
+<Box maxWidth={800} style={{ marginTop: '60px' }}>
+<Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
   <div >
     <Typography variant="h6" gutterBottom>
       {waterImpactLandfill === 0 && (
-        <p style={{ fontWeight: 'normal', fontSize: 'large', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
+        <p style={{ fontWeight: 'normal', fontSize: 'extra-large', marginLeft: '10px' }}>Realizá tu calculo en vivo*:</p>
       )}
     </Typography>
   </div>
@@ -63,7 +63,7 @@ function DemoCalculator() {
         onTextileCompositionChange={handleCompositionChange} 
         onCalculateClick={handleCalculateClick} 
       />
-      <Typography variant="body2" sx={{ fontSize: '12px', margin: '25px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
+      <Typography variant="body2" sx={{ fontSize: '12px', margin: '15px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
         *en base a datos de <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
          
       </Typography>
@@ -74,10 +74,10 @@ function DemoCalculator() {
       carbonImpactLandfill={carbonImpactLandfill} 
       carbonImpact2dnChance={carbonImpact2dnChance} 
     />
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '0', fontSize: '0.8em', marginTop: '8px' }}>
-      <p>**♻️ Gestión y reciclaje remanentes de tizada.</p>
-      <p>**🔄 Textiles por metro para reutilizacion.</p>
-    </div>       
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.8em', marginTop: '8px', flexWrap: 'wrap' }}>
+      <p style={{ lineHeight: '1', marginBottom: '0' }}>**♻️ Gestión y reciclaje remanentes de tizada.</p>
+      <p style={{ lineHeight: '1', marginTop: '0' }}>**🔄 Textiles por metro para reutilizacion.</p>
+    </div>      
     </Grid>
     
   

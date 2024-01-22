@@ -20,7 +20,7 @@ function AlertDialog({ open, handleClose, title, content, confirmText, cancelTex
                     {content}
                 </DialogContentText>
             </DialogContent>
-            <DialogActions style={{ margin: '16px' }}>
+            <DialogActions style={{ margin: '16px', justifyContent: 'center', alignItems: 'center' }}>
                 <Button variant="contained" onClick={onConfirm} color="primary">
                     {confirmText}
                 </Button>
