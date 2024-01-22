@@ -27,37 +27,45 @@ const StackedCard = ({
 
     return (
         <Card sx={{ width: 340, height: 500, margin: '1rem', display: 'flex', flexDirection: 'column', boxShadow: '5px 5px 10px rgba(0,0,0,0.3)' }}>
-         
-                <>
-                    <CardMedia
-                        component="img"
-                        height="200px"
-                        width="200px"
-                        image={image[activeStep]}
-                        alt={title}
-                        style={{ objectFit: 'contain', marginTop: '15px' }}
+            <>
+                <CardMedia
+                    component="img"
+                    height="200px"
+                    width="200px"
+                    image={image[activeStep]}
+                    alt={title}
+                    style={{ objectFit: 'contain', marginTop: '15px' }}
+                />
+                {Array.isArray(image) && image.length > 1 ? (
+                    <MobileStepper
+                        steps={maxSteps}
+                        position="static"
+                        variant="text"
+                        activeStep={activeStep}
+                        sx={{ '& .MuiMobileStepper-dot': { width: '10px', height: '10px' } }}
+                        nextButton={
+                            <IconButton 
+                                size="small" 
+                                onClick={handleNext} 
+                                disabled={activeStep === maxSteps - 1}
+                                aria-label="Siguiente imagen"
+                            >
+                                <KeyboardArrowRight />
+                            </IconButton>
+                        }
+                        backButton={
+                            <IconButton 
+                                size="small" 
+                                onClick={handleBack} 
+                                disabled={activeStep === 0}
+                                aria-label="Imagen anterior"
+                            >
+                                <KeyboardArrowLeft />
+                            </IconButton>
+                        }
                     />
-                    {Array.isArray(image) && image.length > 1 ? (
-                        <MobileStepper
-                            steps={maxSteps}
-                            position="static"
-                            variant="text"
-                            activeStep={activeStep}
-                            sx={{ '& .MuiMobileStepper-dot': { width: '10px', height: '10px' } }}
-                            nextButton={
-                                <IconButton size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-                                    <KeyboardArrowRight />
-                                </IconButton>
-                            }
-                            backButton={
-                                <IconButton size="small" onClick={handleBack} disabled={activeStep === 0}>
-                                    <KeyboardArrowLeft />
-                                </IconButton>
-                            }
-                        />
-                    ) : <div style={{ marginTop: '20px' }} />}
-                </>
-             
+                ) : <div style={{ marginTop: '20px' }} />}
+            </>
 
             <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="div">
@@ -76,7 +84,7 @@ const StackedCard = ({
                 ))}
             </Box>
             <CardActions>
-                <Button size="small" component={Link} to={redirection}>Conocer más</Button>
+                <Button size="small" component={Link} to={redirection} aria-label={`Conocer más sobre ${title}`}>Conocer más</Button>
             </CardActions>
         </Card>
     );
