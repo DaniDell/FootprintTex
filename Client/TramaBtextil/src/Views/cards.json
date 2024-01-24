@@ -7,9 +7,9 @@
         "redirection": "https://www.linkedin.com/company/trama-b-textil/",
         "ods": [
             
-            { "color": "#FF3A21", "text": "= género" },
-            { "color": "#C5192D", "text": "+ educación" },
-            { "color": "#19486A", "text": "Alianzas" }
+            { "color": "#FF3A21", "text": "5 : Igualdad de género" },
+            { "color": "#C5192D", "text": "4 : Educación de calidad" },
+            { "color": "#19486A", "text": "17: Alianzas" }
         ],
         "category": [
             { "symbol": "Educ.", "text": "educador" },
@@ -24,11 +24,11 @@
         "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREOYsTED7VwoFSQ8QKRiBwLT-16BGZXhPxjA&usqp=CAU","https://www.residuosprofesional.com/wp-content/uploads/2022/06/residuo-textill-berritex.jpg"],
         "redirection": "https://www.linkedin.com/company/hebra-circular/",
         "ods": [
-            { "color": "#BE8B2D", "text": "Produccion y consumo responsable" }, 
-            { "color": "#FF3A21", "text": "= género" },
-            { "color": "#C5192D", "text": "+ educación" },
-            { "color": "#DD1367", "text": "- desigualdades" },
-            { "color": "#19486A", "text": "Alianzas" }
+            { "color": "#BE8B2D", "text": "12:Produccion y consumo responsable" }, 
+            { "color": "#FF3A21", "text": "5 : Igualdad de género" },
+            { "color": "#C5192D", "text": "4 : Educación de calidad" },
+            { "color": "#DD1367", "text": "10: Reducción de las desigualdades" },
+            { "color": "#19486A", "text": "17: Alianzas" }
         ],
         "category": [
             { "symbol": "Educ.", "text": "educador" },
