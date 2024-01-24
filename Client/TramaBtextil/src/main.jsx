@@ -23,6 +23,15 @@ const customTheme = createTheme({
       },
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 769,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
 });
 
 ReactDOM.createRoot(root).render(

@@ -66,14 +66,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
           <Box>
             {waterReductionPercentage > 0 && waterMitigated > 0 && (
               <>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    fontSize: '0.5 rem',
-                    marginBottom: '5px',
-                    textAlign: 'center',
-                  }}
-                >{`Realizando separación en origen la huella hídrica se reduce en un ${formatNumber(waterReductionPercentage)}% para estas fibras** `}</Typography>
+               
                 <hr />
                 <Typography
                   variant="h6"
@@ -83,13 +76,21 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                     textAlign: 'center',
                   }}
                 >{`💧${formatNumber(waterMitigated)} Lts. = ${formatNumber(waterMitigated / 900)} años de consumo humano`}</Typography>
+                 <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: '0.5 rem',
+                    marginBottom: '5px',
+                    textAlign: 'center',
+                  }}
+                >{`Realizando separación en origen la huella hídrica se reduce en un ${formatNumber(waterReductionPercentage)}% `}</Typography>
                 <a 
                   href="https://emf.thirdlight.com/link/2axvc7eob8zx-za4ule/@/preview/1?o" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   style={{ fontSize: '12px', textAlign: 'center', display: 'block' }}
                 >
-                  **datos Fundación Ellen MacArthur.
+              (datos hídricos Fundación Ellen MacArthur)
                 </a>
               </>
             )}

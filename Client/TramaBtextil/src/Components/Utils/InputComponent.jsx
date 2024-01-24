@@ -48,18 +48,19 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
     <div>
       <Box mb={1.5}>
         <FormControl fullWidth error={!!compositionError}>
-          <InputLabel id="textile-composition-label">Composición base del textil</InputLabel>
+          <InputLabel id="textile-composition-label">Composición fibra textil </InputLabel>
           <Select  
             labelId="textile-composition-label"
-            label="Composición base del textil"
+            label="Composición base fibra textil"
             value={composition}
-            onChange={handleCompositionChange}>
-              <MenuItem value="algodon Reciclado">♻️ Algodón gestión para Reciclado </MenuItem>
-              <MenuItem value="poliester Reciclado">♻️ Poliéster gestión para Reciclado</MenuItem>
-              <MenuItem value="Mezcla sin definición Reciclado">♻️ Mezcla de fibras para Reciclado</MenuItem>
-              <MenuItem value="algodon Reutilizado">🔄 Tela de algodón recirculado</MenuItem>
-              <MenuItem value="poliester Reutilizado">🔄 Tela de Poliéster recirculado</MenuItem>
-              <MenuItem value="Mezcla sin definición Reutilizado">🔄 Tela mezcla de fibras recirculado</MenuItem>
+            onChange={handleCompositionChange}
+            sx={{ fontSize: '0.9rem', textAlign: 'left' }}> 
+            <MenuItem value="algodon Reciclado">♻️ Algodón gestión para Reciclado </MenuItem>
+            <MenuItem value="poliester Reciclado">♻️ Poliéster gestión para Reciclado</MenuItem>
+            <MenuItem value="Mezcla sin definición Reciclado">♻️ Mezcla de fibras para Reciclado</MenuItem>
+            <MenuItem value="algodon Reutilizado">🔄 Tela de algodón recirculado</MenuItem>
+            <MenuItem value="poliester Reutilizado">🔄 Tela de Poliéster recirculado</MenuItem>
+            <MenuItem value="Mezcla sin definición Reutilizado">🔄 Tela mezcla de fibras recirculado</MenuItem>
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>
         </FormControl>

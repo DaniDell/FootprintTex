@@ -77,10 +77,11 @@ function App() {
               />
             }
           />
+          
         </Routes>
         <SpeedInsights />
        
-      
+        <Footer />
       </div>
     
     </Router>

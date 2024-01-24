@@ -7,15 +7,15 @@ const HeadingComponent = React.lazy(() => import('../Components/HeadingComponent
 
 const Landing = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        height: "100vh", // 100% of the viewport height
-        width: "100%", // 100% of the viewport width
-      
-      }}
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    minHeight: "100vh", // Cambiado de height a minHeight
+    width: "100%",
+  }}
+
     >
       <Container
         style={{
@@ -23,6 +23,7 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          marginBottom: '60px'
         }}
       >
         <Suspense fallback={<CircularProgress />}>
@@ -43,7 +44,7 @@ const Landing = () => {
           to="/calculadora"
           style={{ marginTop: "30px", fontSize: "15px" }} // Aumenta el tamaño de la fuente a 20px
         >
-        Probá la calculadora demo
+        Probá nuestra calculadora de huella textil
         </Button>
         <Button
           variant="contained"
@@ -105,6 +106,7 @@ const Landing = () => {
           </Button>
           </div>
         </Box>
+
       </Container>
     </div>
   );
