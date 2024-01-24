@@ -1,11 +1,14 @@
 import StackedCard from '../Components/Card.jsx';
 import React from 'react';
 import cards from './cards.json';
+import SearchBar from '../Components/SearchBar.jsx';
 
 const Home = () => {
     
 
     return (
+        <div>
+        <SearchBar /> 
         <div style={{ 
             display: 'flex', 
             flexWrap: 'wrap', 
@@ -29,6 +32,7 @@ const Home = () => {
                     category={card.category}
                 />
             ))}
+        </div>
         </div>
     );
 };
