@@ -42,16 +42,16 @@ const Landing = () => {
           color="custom2"
           component={Link}
           to="/calculadora"
-          style={{ marginTop: "30px", fontSize: "15px" }} // Aumenta el tamaño de la fuente a 20px
+          style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
         >
-        Probá nuestra calculadora de huella textil
+        Probá la calculadora de huella y mitgación textil
         </Button>
         <Button
           variant="contained"
           color="custom2"
           component={Link}
           to="/home"
-          style={{ marginTop: "20px", fontSize: "15px"}} // Aumenta el tamaño de la fuente a 20px
+          style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#4a4a46'}} // Aumenta el tamaño de la fuente a 20px
         >
           🕸️ Encontrar aliados
         </Button>

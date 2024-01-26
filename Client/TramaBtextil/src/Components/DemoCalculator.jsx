@@ -60,7 +60,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          paddingBottom: isSmallScreen ? '40px' : '0px',
+          paddingBottom: isSmallScreen ? '0px' : '0px',
         }}>
         <Grid container spacing={2} justify="center" alignItems="center">
           <Grid item xs={12} sm={4}>
