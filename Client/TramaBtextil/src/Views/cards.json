@@ -12,9 +12,9 @@
             { "color": "#19486A", "text": "ODS 17: Alianzas" }
         ],
         "category": [
-            { "symbol": "Educ.", "text": "educador" },
-            { "symbol": "Ases.", "text": "asesoramiento" },
-            { "symbol": "Disñ.", "text": "Diseño" }
+            { "symbol": "Educación", "text": "educador" },
+            { "symbol": "Asesoramiento", "text": "asesoramiento" },
+            { "symbol": "Diseño", "text": "Diseño" }
         ]
     },
     {
@@ -24,16 +24,14 @@
         "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREOYsTED7VwoFSQ8QKRiBwLT-16BGZXhPxjA&usqp=CAU","https://www.residuosprofesional.com/wp-content/uploads/2022/06/residuo-textill-berritex.jpg"],
         "redirection": "https://www.linkedin.com/company/hebra-circular/",
         "ods": [
-            { "color": "#BE8B2D", "text": "ODS 12:Produccion y consumo responsable" }, 
-            { "color": "#FF3A21", "text": "ODS 5 : Igualdad de género" },
-            { "color": "#C5192D", "text": "ODS 4 : Educación de calidad" },
-            { "color": "#DD1367", "text": "ODS 10: Reducción de las desigualdades" },
+            { "color": "#BE8B2D", "text": "ODS 12:Produccion resp." }, 
+            { "color": "#FF3A21", "text": "ODS 5 : = de género" },
             { "color": "#19486A", "text": "ODS 17: Alianzas" }
         ],
         "category": [
-            { "symbol": "Educ.", "text": "educador" },
-            { "symbol": "Ases.", "text": "asesoramiento" },
-            { "symbol": "Fabr.", "text": "fabricante textil" }
+            { "symbol": "Educación", "text": "educador" },
+            { "symbol": "Asesoramiento", "text": "asesoramiento" },
+            { "symbol": "Manufactura", "text": "fabricante textil" }
         ]
     }
 ]

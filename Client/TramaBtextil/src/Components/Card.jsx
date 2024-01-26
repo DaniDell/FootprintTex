@@ -46,21 +46,21 @@ const StackedCard = ({
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
-avatar={
-<Avatar 
-  aria-label="recipe" 
-  src={image[0]}
-  sx={{ 
-    width: 100, 
-    height: 100,
-    img: {
-      objectFit: 'contain',
-    },
-  }}
->
-  {image}
-</Avatar>
-  }
+                avatar={
+                    <Avatar 
+                        aria-label="recipe" 
+                        src={image[0]}
+                        sx={{ 
+                            width: 100, 
+                            height: 100,
+                            img: {
+                                objectFit: 'contain',
+                            },
+                        }}
+                    >
+                        {image}
+                    </Avatar>
+                }
                 action={
                     <IconButton
                         aria-label="share"
@@ -85,6 +85,7 @@ avatar={
                 }
                 title={title}
                 subheader={subtitle}
+                sx={{ padding: '8px' }} // reduce padding here
             />
             
             
@@ -95,7 +96,7 @@ avatar={
             </Box>  
         
             <CardActions disableSpacing sx={{ height: '50px', backgroundColor: 'transparent' }}>
-            <Typography variant="body1" align="center" style={{ marginLeft: 12 }}>
+            <Typography variant="body1" align="center" style={{ marginLeft: 12, fontSize: '13px' }}>
 {Array.isArray(category) && category.map(cat => cat.symbol).join(' | ')}
   
 </Typography>
