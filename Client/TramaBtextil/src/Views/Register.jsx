@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react'; 
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button, Grid, Container, Autocomplete } from '@mui/material';
+import AlertDialog from '../Components/AlertDialog';
 
 const Register = () => {
-  const { register, control, handleSubmit, formState: { errors } } = useForm();
+    const { handleSubmit, control, register, formState: { errors } } = useForm({
+        defaultValues: {
+          category: []  // Establece un valor por defecto para evitar problemas con Autocomplete
+        },
+      });
+
+  const [isAlertOpen, setIsAlertOpen] = useState(false); 
 
     const onSubmit = data => {
         console.log(`Nombre: ${data.name}`);
@@ -11,6 +18,7 @@ const Register = () => {
         console.log(`Contraseña: ${data.password}`);
         console.log(`Categorías: ${data.category.map(cat => cat.symbol).join(', ')}`);
         // Aquí puedes enviar los datos a tu API
+        setIsAlertOpen(true);
     };
 
     const categories = [
@@ -18,6 +26,10 @@ const Register = () => {
         { symbol: "Asesoramiento", text: "asesoramiento" },
         { symbol: "Diseño", text: "Diseño" }
     ];
+
+    const handleCloseAlert = () => {
+        setIsAlertOpen(false);
+      };
 
     return (
         <Container maxWidth="sm" sx={{ paddingTop: '60px', paddingBottom: '60px' }}>
@@ -55,32 +67,49 @@ const Register = () => {
                         />
                     </Grid>
                     <Grid item xs={12}>
-                    <Controller
-                        name="category"
-                        control={control}
-                        defaultValue={[]}
-                        render={({ field: { onChange, value }, fieldState: { error } }) => (
-                            <Autocomplete
-                                multiple
-                                id="categories"
-                                options={categories}
-                                getOptionLabel={(option) => option.symbol}
-                                value={value}
-                                onChange={(e, newValue) => {
-                                    onChange(newValue);
-                                }}
-                                isOptionEqualToValue={(option, value) => option.symbol === value.symbol}
-                                renderInput={(params) => (
-                                    <TextField {...params} variant="outlined" label="Tu oferta de productos y servicios" placeholder="Elegí todas las que necesites" sx={{ marginBottom: '20px' }} />
-                                )}
-                            />
-                        )}
+                     <Controller
+              name="category"
+              control={control}
+              rules={{ required: 'Este campo es requerido' }}
+              render={({ field: { onChange, value }, fieldState: { error } }) => (
+                <Autocomplete
+                  multiple
+                  id="categories"
+                  options={categories}
+                  getOptionLabel={(option) => option.symbol}
+                  value={value}
+                  onChange={(e, newValue) => {
+                    onChange(newValue);
+                  }}
+                  isOptionEqualToValue={(option, value) => option.symbol === value.symbol}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      variant="outlined"
+                      label="Tu oferta de productos y servicios"
+                      placeholder="Elegí todas las que necesites"
+                      sx={{ marginBottom: '20px' }}
+                      error={Boolean(error)}
+                      helperText={error?.message}
                     />
+                  )}
+                />
+              )}
+            />
                     </Grid>
                     <Grid item xs={12}>
                         <Button type="submit" variant="contained" color="primary" fullWidth>Registrarse</Button>
                     </Grid>
                 </Grid>
+                <AlertDialog
+  open={isAlertOpen}
+  handleClose={handleCloseAlert}
+  title="Alerta de Desarrollo"
+  content="Esta es una aplicación en desarrollo. Los datos no se están procesando actualmente."
+  confirmText=""
+  cancelText="Cerrar"
+  onCancel={handleCloseAlert}
+/>
             </form>
         </Container>
     );

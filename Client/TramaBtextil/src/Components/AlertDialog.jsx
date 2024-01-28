@@ -21,12 +21,16 @@ function AlertDialog({ open, handleClose, title, content, confirmText, cancelTex
                 </DialogContentText>
             </DialogContent>
             <DialogActions style={{ margin: '16px', justifyContent: 'center', alignItems: 'center' }}>
-                <Button variant="contained" onClick={onConfirm} color="primary">
-                    {confirmText}
-                </Button>
-                <Button variant="contained" onClick={onCancel} color="secondary">
-                    {cancelText}
-                </Button>
+                {confirmText && (
+                    <Button variant="contained" onClick={onConfirm} color="primary">
+                        {confirmText}
+                    </Button>
+                )}
+                {cancelText && (
+                    <Button variant="contained" onClick={onCancel} color="secondary">
+                        {cancelText}
+                    </Button>
+                )}
             </DialogActions>
         </Dialog>
     );
