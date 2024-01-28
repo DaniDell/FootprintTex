@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, Legend, ResponsiveContainer, LabelList } from 'recharts';
 
-const COLORS = ['#747373', '#5E7A64', '#ffffff'];
+const COLORS = ['#747373', '#00947a', '#ffffff'];
 
 
 const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) => {
