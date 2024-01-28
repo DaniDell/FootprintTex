@@ -34,7 +34,7 @@ const FilterDialog = ({ open, handleClose }) => {
 
     return (
         <Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm'>
-            <DialogTitle>Filtrar por</DialogTitle>
+            <DialogTitle>Aquí podrás filtrar por</DialogTitle>
             <DialogContent>
                 <DialogContentText>
                      
@@ -42,7 +42,7 @@ const FilterDialog = ({ open, handleClose }) => {
 
                 <Paper elevation={3} sx={{ padding: '16px', marginBottom: '16px' }}>
                     <FormControl component="fieldset">
-                        <FormLabel component="legend">Categorías</FormLabel>
+                        <FormLabel component="legend" sx={{ paddingBottom: '16px', fontWeight: 'bold' }}>Tipo de actividad</FormLabel>
                         <FormControlLabel
                             control={<Checkbox checked={categoria.categoria1} onChange={handleCategoriaChange} name="categoria1" />}
                             label="Categoría 1"
@@ -60,7 +60,7 @@ const FilterDialog = ({ open, handleClose }) => {
 
                 <Paper elevation={3} sx={{ padding: '16px' }}>
                     <FormControl component="fieldset">
-                        <FormLabel component="legend">Compromisos</FormLabel>
+                        <FormLabel component="legend"sx={{ paddingBottom: '16px', fontWeight: 'bold' }}>ODS trabajados</FormLabel>
                         <FormControlLabel
                             control={<Checkbox checked={compromiso.compromiso1} onChange={handleCompromisoChange} name="compromiso1" />}
                             label="Compromiso 1"
@@ -75,10 +75,12 @@ const FilterDialog = ({ open, handleClose }) => {
                         />
                     </FormControl>
                 </Paper>
+                <p>Todavia en desarrollo, solo ilustrativo</p>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Cancelar</Button>
-                <Button onClick={handleClose}>Aplicar</Button>
+                
+                
+                <Button onClick={handleClose}>Cerrar</Button>
             </DialogActions>
         </Dialog>
     );

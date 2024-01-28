@@ -26,16 +26,16 @@ const SearchBar = () => {
   };
 
   return (
-    <Box display="flex" justifyContent="end" sx={{ margin: 2, gap: 1 }}>
+    <Box display="flex" justifyContent="end" sx={{ marginRight: 3, marginLeft: 3, marginTop: 2, gap: 1 }}>
       <RoundedTextField
         id="search"
-        label="Buscar"
+        label="DEMO: Aquí podrás buscar en breve."
         variant="outlined"
         size="small"
         sx={{
           boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
           borderRadius: "50px",
-          maxWidth: "auto",
+          width: '100%',
         }}
         InputProps={{
           endAdornment: (
