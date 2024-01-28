@@ -40,6 +40,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
   return (
     <Card sx={{ 
       width: '100%', 
+      height: '80%',
       backgroundImage: `url(${svgBackground})`, 
       backgroundRepeat: 'repeat',
       backgroundSize: 'contain', 
@@ -95,7 +96,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                 </a>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.8em', marginTop: '8px', flexWrap: 'wrap' }}>
               <p style={{ lineHeight: '1', marginBottom: '0' }}>**♻️ Gestión y reciclaje remanentes de tizada.</p>
-              <p style={{ lineHeight: '1', marginTop: '0' }}>**🔄 Textiles por metro para reutilizacion.</p>
+              <p style={{ lineHeight: '1', marginTop: '1' }}>**🔄 Textiles por metro para reutilizacion.</p>
             </div> 
               </>
             )}

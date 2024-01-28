@@ -52,8 +52,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   }, [dispatch]);
 
   return (
-    <Box maxWidth={1000} style={{ height: isSmallScreen ? 'auto' : 'auto',
-    overflowY: isSmallScreen ? 'auto' : 'hidden', paddingTop: isSmallScreen ? '50px' : '80px', }}>
+    <Box maxWidth={1000} >
             <Container
         style={{
           display: "flex",
