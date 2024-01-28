@@ -71,15 +71,16 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                 <Typography
                   variant="h6"
                   sx={{
-                    fontSize: '1rem',
+                    fontSize: '0.88rem',
                     marginBottom: '0px',
                     textAlign: 'center',
+                    fontWeight: 'bold',
                   }}
                 >{`💧${formatNumber(waterMitigated)} Lts. = ${formatNumber(waterMitigated / 900)} años de consumo humano`}</Typography>
                  <Typography
                   variant="body2"
                   sx={{
-                    fontSize: '0.5 rem',
+                    fontSize: '0.2 rem',
                     marginBottom: '5px',
                     textAlign: 'center',
                   }}
@@ -92,6 +93,10 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                 >
               (datos hídricos Fundación Ellen MacArthur)
                 </a>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.8em', marginTop: '8px', flexWrap: 'wrap' }}>
+              <p style={{ lineHeight: '1', marginBottom: '0' }}>**♻️ Gestión y reciclaje remanentes de tizada.</p>
+              <p style={{ lineHeight: '1', marginTop: '0' }}>**🔄 Textiles por metro para reutilizacion.</p>
+            </div> 
               </>
             )}
           </Box>

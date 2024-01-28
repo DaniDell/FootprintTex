@@ -60,8 +60,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          paddingBottom: isSmallScreen ? '0px' : '0px',
-        }}>
+          }}>
         <Grid container spacing={2} justify="center" alignItems="center">
           <Grid item xs={12} sm={4}>
             <InputComponent 
@@ -69,7 +68,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
               onTextileCompositionChange={handleCompositionChange} 
               onCalculateClick={handleCalculateClick} 
             />
-            <Typography variant="body2" sx={{ fontSize: '10px', margin: '10px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
+            <Typography variant="body2" sx={{ fontSize: '10px', marginTop: '10px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
               *en base a datos de <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer">Idemat</a>. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
             </Typography>
           </Grid>
@@ -80,10 +79,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
               carbonImpactLandfill={carbonImpactLandfill} 
               carbonImpact2dnChance={carbonImpact2dnChance} 
             />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.8em', marginTop: '8px', flexWrap: 'wrap' }}>
-              <p style={{ lineHeight: '1', marginBottom: '0' }}>**♻️ Gestión y reciclaje remanentes de tizada.</p>
-              <p style={{ lineHeight: '1', marginTop: '0' }}>**🔄 Textiles por metro para reutilizacion.</p>
-            </div> 
+            
           </Grid>
         </Grid>
       </Container>

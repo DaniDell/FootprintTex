@@ -85,12 +85,24 @@ const InputComponent = ({ onInputChange, onTextileCompositionChange, onCalculate
             value={composition}
             onChange={handleCompositionChange}
             sx={{ fontSize: '0.9rem', textAlign: 'left' }}> 
-            <MenuItem value="algodon Reciclado">♻️ Algodón gestión para Reciclado </MenuItem>
-            <MenuItem value="poliester Reciclado">♻️ Poliéster gestión para Reciclado</MenuItem>
-            <MenuItem value="Mezcla sin definición Reciclado">♻️ Mezcla de fibras para Reciclado</MenuItem>
-            <MenuItem value="algodon Reutilizado">🔄 Tela de algodón recirculado</MenuItem>
-            <MenuItem value="poliester Reutilizado">🔄 Tela de Poliéster recirculado</MenuItem>
-            <MenuItem value="Mezcla sin definición Reutilizado">🔄 Tela mezcla de fibras recirculado</MenuItem>
+<MenuItem value="algodon Reciclado" style={{ whiteSpace: 'normal' }}>
+  ♻️ Algodón gestión para Reciclado 
+</MenuItem>
+<MenuItem value="poliester Reciclado" style={{ whiteSpace: 'normal' }}>
+  ♻️ Poliéster gestión para Reciclado
+</MenuItem>
+<MenuItem value="Mezcla sin definición Reciclado" style={{ whiteSpace: 'normal' }}>
+  ♻️ Mezcla de fibras para Reciclado
+</MenuItem>
+<MenuItem value="algodon Reutilizado" style={{ whiteSpace: 'normal' }}>
+  🔄 Tela de algodón recirculado
+</MenuItem>
+<MenuItem value="poliester Reutilizado" style={{ whiteSpace: 'normal' }}>
+  🔄 Tela de Poliéster recirculado
+</MenuItem>
+<MenuItem value="Mezcla sin definición Reutilizado" style={{ whiteSpace: 'normal' }}>
+  🔄 Tela mezcla de fibras recirculado
+</MenuItem>
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>
         </FormControl>
