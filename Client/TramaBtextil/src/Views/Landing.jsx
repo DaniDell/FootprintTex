@@ -75,12 +75,12 @@ const Landing = () => {
             component="h1"
             style={{ opacity: 0.8 , padding: "5px",  marginTop: "0px",}}
           >
-            Entrá en esta red:
+            Sumate a esta red:
           </Typography>
           <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
           
           <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
-            si es tu primera vez 
+            Si es tu primera vez 
           </Typography>
           <Button
             variant="contained"
@@ -93,7 +93,7 @@ const Landing = () => {
           </Button>
           
           <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
-            o si ya estás registrado podrás
+            si ya estás registrado
           </Typography>
           <Button
             variant="contained"

@@ -108,7 +108,7 @@ const StackedCard = ({
                 >
                     
 
-                    <ExpandMoreIcon />
+                    <ExpandMoreIcon fontSize="large" />
                 </ExpandMore>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
