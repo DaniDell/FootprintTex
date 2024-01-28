@@ -144,7 +144,7 @@ const InputComponent = ({
         </FormControl>
       </Box>
       <Grid container spacing={2} alignItems="start">
-        <Grid item xs={7}>
+      <Grid item xs={8} sm={7}>
           <TextField
             type="number"
             onChange={handleKilosChange}
@@ -161,7 +161,7 @@ const InputComponent = ({
           />
         </Grid>
 
-        <Grid item xs={5}>
+        <Grid item xs={4} sm={5}>
           <Button
             fullWidth
             variant="contained"
