@@ -24,9 +24,14 @@ const Register = () => {
     };
 
     const categories = [
-        { symbol: "Educación", text: "educador" },
-        { symbol: "Asesoramiento", text: "asesoramiento" },
-        { symbol: "Diseño", text: "Diseño" }
+      { symbol: "Educación", text: "Educador" },
+      { symbol: "Asesoramiento", text: "Asesoramiento" },
+      { symbol: "Diseño", text: "Diseño" },
+      { symbol: "Manufactura", text: "Servicios de Manufactura" },
+      { symbol: "Materia Prima", text: "Proveedor de Materia Prima" },
+      { symbol: "Marketing", text: "Servicios de Marketing" },
+      { symbol: "Comercializacion", text: "Servicios de Comercialización" },
+      { symbol: "Mentorias", text: "Mentorias" },
     ];
 
     const handleCloseAlert = () => {
@@ -62,7 +67,7 @@ const Register = () => {
                             sx={{ marginBottom: '20px' }}
                         />
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <TextField
                             fullWidth
                             label="Contraseña"
@@ -72,7 +77,7 @@ const Register = () => {
                             helperText={errors.password?.message}
                             sx={{ marginBottom: '20px' }}
                         />
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12}>
                      <Controller
               name="category"
