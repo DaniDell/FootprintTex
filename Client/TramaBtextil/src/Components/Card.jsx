@@ -44,7 +44,7 @@ const StackedCard = ({
     };
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345, borderRadius: 5, boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",}}>
             <CardHeader
                 avatar={
                     <Avatar 
