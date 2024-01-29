@@ -33,7 +33,9 @@ const FilterDialog = ({ open, handleClose }) => {
     };
 
     return (
-        <Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm'>
+        <Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm' PaperProps={{
+            style: { borderRadius: 20 },
+          }}>
             <DialogTitle>Aquí podrás filtrar por</DialogTitle>
             <DialogContent>
                 <DialogContentText>
