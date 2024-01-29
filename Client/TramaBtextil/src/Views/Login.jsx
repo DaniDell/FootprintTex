@@ -9,7 +9,7 @@ const Login = () => {
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLScCKcLyQYpZISXeoT5AesDm-4wvAOJ8AZE5hFODfX-y8dLYdg/viewform?embedded=true" 
                 width="100%" 
-                height="3673" 
+                height="1807" 
                 frameBorder={0}
                 onLoad={() => setIsLoaded(true)}
                 style={{ display: isLoaded ? 'block' : 'none' }}
