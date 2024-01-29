@@ -147,7 +147,12 @@ const InputComponent = ({
       <Grid item xs={8} sm={7}>
           <TextField
             type="number"
-            onChange={handleKilosChange}
+            onChange={(event) => {
+              if (event.target.value.length > 7) {
+                event.target.value = event.target.value.slice(0, 7);
+              }
+              handleKilosChange(event);
+            }}
             onKeyPress={(event) => {
               if (!/[0-9]/.test(event.key)) {
                 event.preventDefault();

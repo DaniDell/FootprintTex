@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; 
+import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button, Grid, Container, Autocomplete } from '@mui/material';
 import AlertDialog from '../Components/AlertDialog';
@@ -11,6 +12,7 @@ const Register = () => {
       });
 
   const [isAlertOpen, setIsAlertOpen] = useState(false); 
+  const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(`Nombre: ${data.name}`);
@@ -29,6 +31,11 @@ const Register = () => {
 
     const handleCloseAlert = () => {
         setIsAlertOpen(false);
+      };
+
+      const handleConfirm = () => {
+        // Redirige al usuario a /iniciar-sesion cuando hagan clic en confirmar
+        navigate("/iniciar-sesion");
       };
 
     return (
@@ -106,9 +113,10 @@ const Register = () => {
   handleClose={handleCloseAlert}
   title="Alerta de Desarrollo"
   content="Esta es una aplicación en desarrollo. Los datos no se están procesando actualmente."
-  confirmText=""
+  confirmText="Participar de encuesta de desarrollo"
   cancelText="Cerrar"
   onCancel={handleCloseAlert}
+  onConfirm={handleConfirm}
 />
             </form>
         </Container>
