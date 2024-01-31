@@ -13,7 +13,7 @@ const Landing = () => {
     justifyContent: "center",
     alignItems: "flex-start",
     minHeight: "100vh", // Cambiado de height a minHeight
-    width: "100%",
+    width: "100vw",
   }}
 
     >
@@ -33,7 +33,7 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{ opacity: 0.8 }}
+          style={{margin: "4px", opacity: 0.8 }}
         >
           Calculá tu huella textil y descubrir formas mitigar tu impacto.
         </Typography>
@@ -42,19 +42,19 @@ const Landing = () => {
           color="custom2"
           component={Link}
           to="/calculadora"
-          style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
+          style={{ marginTop: "40px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
         >
-        Probá la calculadora de huella y mitgación textil
+        Medí tu huella textil
         </Button>
-        <Button
+        {/* <Button
           variant="contained"
           color="custom2"
           component={Link}
           to="/home"
-          style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#4a4a46'}} // Aumenta el tamaño de la fuente a 20px
+          style={{ marginTop: "60px", fontSize: "19px", color: '#fff', backgroundColor: '#4a4a46'}} // Aumenta el tamaño de la fuente a 20px
         >
           🕸️ Encontrar aliados
-        </Button>
+        </Button> */}
         <Box
   display="flex"
   flexDirection="row"
@@ -62,7 +62,7 @@ const Landing = () => {
   alignItems="center"
   justifyContent="center"
   style={{
-    marginTop: "2rem",
+    marginTop: "4rem",
     backgroundColor: "#f2f2f2",
     width: "100%",
     borderRadius: "25px",
@@ -77,7 +77,7 @@ const Landing = () => {
           >
             Sumate a esta red:
           </Typography>
-          <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+          {/* <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
           
           <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
             Si es tu primera vez 
@@ -94,7 +94,7 @@ const Landing = () => {
           
           <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
             si ya estás registrado
-          </Typography>
+          </Typography> */}
           <Button
             variant="contained"
             color="secondary"
@@ -102,9 +102,9 @@ const Landing = () => {
             to="/iniciar-sesion"
             style={{ margin: "10px" }}
           >
-            Iniciar sesión
+            Completá el cuestionario
           </Button>
-          </div>
+          {/* </div> */}
         </Box>
 
       </Container>

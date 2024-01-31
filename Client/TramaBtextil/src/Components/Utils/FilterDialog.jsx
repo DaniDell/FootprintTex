@@ -1,87 +1,83 @@
-import React from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormLabel from '@mui/material/FormLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Paper from '@mui/material/Paper';
+import React from "react";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogActions from "@mui/material/DialogActions";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import { CustomAccordion } from '../Utils/FilterExpand';
+import { Autocomplete, TextField } from '@mui/material';
 
 const FilterDialog = ({ open, handleClose }) => {
-    const [categoria, setCategoria] = React.useState({
-        categoria1: false,
-        categoria2: false,
-        categoria3: false,
-    });
+    const [categoria, setCategoria] = React.useState('');
+    const [compromiso, setCompromiso] = React.useState('');
+    const [checkboxGroupValues, setCheckboxGroupValues] = React.useState([]);
 
-    const [compromiso, setCompromiso] = React.useState({
-        compromiso1: false,
-        compromiso2: false,
-        compromiso3: false,
-    });
-
+    const options = ['Option 1', 'Option 2', 'Option 3']; 
+    
     const handleCategoriaChange = (event) => {
-        setCategoria({ ...categoria, [event.target.name]: event.target.checked });
+        setCategoria(event.target.value);
     };
 
     const handleCompromisoChange = (event) => {
-        setCompromiso({ ...compromiso, [event.target.name]: event.target.checked });
+        setCompromiso(event.target.value);
+    };
+
+    const handleCheckboxGroupChange = (event) => {
+        if (event.target.checked) {
+            setCheckboxGroupValues([...checkboxGroupValues, event.target.value]);
+        } else {
+            setCheckboxGroupValues(checkboxGroupValues.filter(value => value !== event.target.value));
+        }
     };
 
     return (
-        <Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm' PaperProps={{
-            style: { borderRadius: 20 },
-          }}>
-            <DialogTitle>Aquí podrás filtrar por</DialogTitle>
+        <Dialog
+            open={open}
+            onClose={handleClose}
+            PaperProps={{
+                style: { borderRadius: 20 },
+            }}
+        >
+            <DialogTitle sx={{ fontStyle: "" }} >Aquí podrás filtrar por</DialogTitle>
             <DialogContent>
-                <DialogContentText>
-                     
-                </DialogContentText>
-
-                <Paper elevation={3} sx={{ padding: '16px', marginBottom: '16px' }}>
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend" sx={{ paddingBottom: '16px', fontWeight: 'bold' }}>Tipo de actividad</FormLabel>
-                        <FormControlLabel
-                            control={<Checkbox checked={categoria.categoria1} onChange={handleCategoriaChange} name="categoria1" />}
-                            label="Categoría 1"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox checked={categoria.categoria2} onChange={handleCategoriaChange} name="categoria2" />}
-                            label="Categoría 2"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox checked={categoria.categoria3} onChange={handleCategoriaChange} name="categoria3" />}
-                            label="Categoría 3"
-                        />
-                    </FormControl>
-                </Paper>
-
-                <Paper elevation={3} sx={{ padding: '16px' }}>
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend"sx={{ paddingBottom: '16px', fontWeight: 'bold' }}>ODS trabajados</FormLabel>
-                        <FormControlLabel
-                            control={<Checkbox checked={compromiso.compromiso1} onChange={handleCompromisoChange} name="compromiso1" />}
-                            label="Compromiso 1"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox checked={compromiso.compromiso2} onChange={handleCompromisoChange} name="compromiso2" />}
-                            label="Compromiso 2"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox checked={compromiso.compromiso3} onChange={handleCompromisoChange} name="compromiso3" />}
-                            label="Compromiso 3"
-                        />
-                    </FormControl>
-                </Paper>
-                <p>Todavia en desarrollo, solo ilustrativo</p>
+                <DialogContentText></DialogContentText>
+                <FormControl component="fieldset">
+                    <CustomAccordion
+                        summaryLabel="Oferta del proyecto"
+                        checkboxGroupValues={checkboxGroupValues}
+                        checkboxGroupChangeHandler={handleCheckboxGroupChange}
+                        formControlLabels={[
+                            { value: 'manufactura', label: 'Taller de producción textil' },
+                            { value: 'materia-prima', label: 'Proveedor de materia prima' },
+                            { value: 'gestion-descartes', label: 'Gestión de descartes textiles' },
+                            { value: 'marketing', label: 'Servicios de diseño y marketing' },
+                            { value: 'productos', label: 'Marca comercial' },
+                        ]}
+                    />
+                    <CustomAccordion
+                        summaryLabel="Oferta del proyecto"
+                        checkboxGroupValues={checkboxGroupValues}
+                        checkboxGroupChangeHandler={handleCheckboxGroupChange}
+                        formControlLabels={[
+                            { value: '4', label: 'ODS 4: Educación de calidad' },
+                            { value: '5', label: 'ODS 5: Igualdad de género' },
+                            { value: '6', label: 'ODS 6: Agua limpia y saneamiento' },
+                            { value: '7', label: 'ODS 7: Energía asequible y no contaminante' },
+                            { value: '8', label: 'ODS 8: Trabajo decente y crecimiento económico' },
+                            { value: '10', label: 'ODS 10: Reducción de las desigualdades' },
+                            { value: '12', label: 'ODS 12: Producción y consumo responsables' },
+                            { value: '13', label: 'ODS 13: Acción por el clima' },
+                            { value: '17', label: 'ODS 17: Alianzas para lograr los objetivos' },
+                        ]}
+                    />
+                </FormControl>
+                <p>
+                    Todavia en desarrollo, solo ilustrativo. Esperamos tus sugerencias para mejorar la experiencia.
+                </p>
             </DialogContent>
             <DialogActions>
-                
-                
                 <Button onClick={handleClose}>Cerrar</Button>
             </DialogActions>
         </Dialog>
