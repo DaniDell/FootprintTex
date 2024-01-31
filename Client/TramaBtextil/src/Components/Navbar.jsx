@@ -148,7 +148,7 @@ function Navbar({ user }) {
                 }}
                 sx={{ p: 0 }}
               >
-                <Avatar alt="" src={user ? "  " : ""} />
+                {/* <Avatar alt="" src={user ? "  " : ""} /> */}
               </IconButton>
             </Tooltip>
             <Menu
