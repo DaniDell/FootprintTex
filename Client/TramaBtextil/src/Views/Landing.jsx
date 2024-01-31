@@ -70,12 +70,12 @@ const Landing = () => {
   }}
 >
           <Typography
-            variant="h5"
+            variant="h6"
             gutterBottom
             component="h1"
             style={{ opacity: 0.8 , padding: "5px",  marginTop: "0px",}}
           >
-            Sumate a esta red:
+            Para sumarte y conocer más sobre este desarrollo:
           </Typography>
           {/* <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
           

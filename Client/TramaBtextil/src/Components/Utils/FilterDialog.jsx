@@ -10,11 +10,10 @@ import { CustomAccordion } from '../Utils/FilterExpand';
 import { Autocomplete, TextField } from '@mui/material';
 
 const FilterDialog = ({ open, handleClose }) => {
-    const [categoria, setCategoria] = React.useState('');
-    const [compromiso, setCompromiso] = React.useState('');
+
     const [checkboxGroupValues, setCheckboxGroupValues] = React.useState([]);
 
-    const options = ['Option 1', 'Option 2', 'Option 3']; 
+     
     
     const handleCategoriaChange = (event) => {
         setCategoria(event.target.value);
@@ -57,7 +56,7 @@ const FilterDialog = ({ open, handleClose }) => {
                         ]}
                     />
                     <CustomAccordion
-                        summaryLabel="Oferta del proyecto"
+                        summaryLabel="Compromisos con ODS"
                         checkboxGroupValues={checkboxGroupValues}
                         checkboxGroupChangeHandler={handleCheckboxGroupChange}
                         formControlLabels={[
