@@ -33,6 +33,8 @@ const StackedCard = ({
   subtitle,
   description,
   image,
+  instagramLink,
+  linkedinLink,
   redirection,
   ods,
   category,
@@ -70,16 +72,21 @@ const StackedCard = ({
         }
         action={
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-      <Link to="/instagram">
-        <IconButton aria-label="instagram">
-          <InstagramIcon />
-        </IconButton>
-      </Link>
-      <Link to="/linkedin">
-        <IconButton aria-label="linkedin">
-          <LinkedInIcon />
-        </IconButton>
-      </Link>
+    
+    {instagramLink && 
+        <Link to={instagramLink}>
+            <IconButton aria-label="instagram">
+                <InstagramIcon />
+            </IconButton>
+        </Link>
+    }
+    {linkedinLink && 
+        <Link to={linkedinLink}>
+            <IconButton aria-label="linkedin">
+                <LinkedInIcon />
+            </IconButton>
+        </Link>
+    }
       <IconButton
         aria-label="share"
         onClick={async () => {

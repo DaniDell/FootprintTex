@@ -29,7 +29,7 @@ const SearchBar = () => {
     <Box display="flex" justifyContent="end" sx={{ marginRight: 3, marginLeft: 3, marginTop: 2, gap: 1 }}>
       <RoundedTextField
         id="search"
-        label="DEMO: Buscar"
+        label="DEMO (sin funcionalidad)"
         variant="outlined"
         size="small"
         sx={{

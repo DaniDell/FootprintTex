@@ -15,7 +15,9 @@
             { "symbol": "Educación", "text": "educador" },
             { "symbol": "Asesoramiento", "text": "asesoramiento" },
             { "symbol": "Diseño", "text": "Diseño" }
-        ]
+        ],
+        "instagramLink": "https://www.instagram.com/trama_b_textil/",
+         "linkedinLink": "https://www.linkedin.com/company/trama-b-textil/"
     },
     {
         "title": "Hebra Circular",
@@ -32,6 +34,8 @@
             { "symbol": "Educación", "text": "educador" },
             { "symbol": "Asesoramiento", "text": "asesoramiento" },
             { "symbol": "Manufactura", "text": "fabricante textil" }
-        ]
+        ],
+        "instagramLink": "https://www.instagram.com/hebra.circular/",
+        "linkedinLink": "https://www.linkedin.com/company/hebra-circular/"
     }
 ]
