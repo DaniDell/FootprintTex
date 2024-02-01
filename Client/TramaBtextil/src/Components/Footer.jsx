@@ -4,22 +4,35 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { AiFillGoogleCircle } from 'react-icons/ai';
+import { useTheme } from '@mui/material/styles';
 
 const Footer = () => {
+  const theme = useTheme();
+
   return (
-    <Box sx={{ p: 1, position: 'fixed', bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffff', width: "100%", marginTop: "10px" }}>
-       
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, p: 0}}>
-      <Typography variant="h6" align="center" sx={{ color: '#8B5982', fontSize: '1rem' }}>
+    <Box sx={{ p: 1, mt: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.text.primary, width: "100%", padding: "20px" }}>
+      <Typography variant="h2" align="center" sx={{ color: theme.palette.custom2.main, fontSize: '1rem' }}>
         Descubrí Trama B Textil en: 
       </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, p: 1}}>
         <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener" aria-label="Instagram de Trama B Textil">
-          <InstagramIcon />
+          <InstagramIcon style={{ color: theme.palette.custom2.main }} />
         </Link>
+
+        <div>
+          <Link href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener" aria-label="Google de Trama B Textil">
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <AiFillGoogleCircle size={24} style={{ color: theme.palette.custom2.main }} />
+              <Typography variant="body1" sx={{ color: theme.palette.custom2.main }}>sites</Typography>
+            </Box>
+          </Link>
+        </div>
         <Link href="https://www.linkedin.com/company/trama-b-textil/" target="_blank" rel="noopener" aria-label="LinkedIn de Trama B Textil">
-          <LinkedInIcon />
+          <LinkedInIcon style={{ color: theme.palette.custom2.main }} />
         </Link>
       </Box>
+      
     </Box>
   );
 };

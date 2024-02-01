@@ -44,7 +44,7 @@ const Register = () => {
       };
 
     return (
-        <Container maxWidth="sm" sx={{ paddingTop: '60px', paddingBottom: '60px' }}>
+        <Container maxWidth="sm" sx={{ paddingTop: '60px', paddingBottom: '60px', minHeight: "100vh" }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>

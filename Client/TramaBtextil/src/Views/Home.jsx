@@ -5,7 +5,7 @@ import SearchBar from "../Components/SearchBar.jsx";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <SearchBar />
       <div
         style={{

@@ -4,7 +4,7 @@ const Login = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     return (
-        <div style={{ justifyContent: 'center', alignItems: 'center', height: '100vh', paddingTop: "2rem" }}>
+        <div style={{ justifyContent: 'center', alignItems: 'center', height: '1807', paddingTop: "2rem" }}>
             {!isLoaded && <div><h1>Cargando el cuestionario de desarrollo...</h1></div>}
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLScCKcLyQYpZISXeoT5AesDm-4wvAOJ8AZE5hFODfX-y8dLYdg/viewform?embedded=true" 
