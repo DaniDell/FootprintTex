@@ -21,7 +21,7 @@ const pages = [
   { text: "🕸️ Red de proyectos alineados", path: "/home" },
   { text: "🤚 Sumar mi proyecto", path: "/iniciar-sesion" },
   // { text: "🤝 Quienes somos", path: "/nosotros" },
-  { text: "📨 Sugerencias aquí", path: "/retroalimentacion" },
+  // { text: "📨 Sugerencias aquí", path: "/retroalimentacion" },
  
 ];
 
