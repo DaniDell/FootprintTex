@@ -3,9 +3,9 @@ import { CircularProgress } from '@mui/material';
 
 const FeedbackForm = () => {
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: "40px" }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: "40px", minHeight: "100vh" }}>
             <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'  }}><CircularProgress /></div>}>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSsF-rvmafpmX2f5bHGXGD5ELbzBbG_6N6sB0YKuX2MPA8Ng/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginWidth="0">Cargando…</iframe>
+            
             </Suspense>
         </div>
     );
