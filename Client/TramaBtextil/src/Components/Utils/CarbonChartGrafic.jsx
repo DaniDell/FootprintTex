@@ -10,10 +10,10 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
       <BarChart data={data} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : value} />
-        <Bar dataKey="landfill" fill={COLORS[0]} name="Huella vertedero">
+        <Bar dataKey="landfill" fill={COLORS[0]} name="🗑️Vertedero">
           <LabelList dataKey="landfill" position="bottom" />
         </Bar>
-        <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Huella reproceso**">
+        <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="♻️Reciclaje*">
           <LabelList dataKey="closeloop" position="bottom" />
         </Bar>
         <Bar 
