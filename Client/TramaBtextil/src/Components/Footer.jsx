@@ -11,7 +11,7 @@ const Footer = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ p: 1, mt: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.text.primary, width: "100%", padding: "10px" }}>
+    <Box sx={{ p: 0, pb: '0', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.primary.main, width: "100%", padding: "10px" }}>
       <Typography variant="h2" align="center" sx={{ color: theme.palette.custom2.main, fontSize: '1rem' }}>
         Descubrí Trama B Textil en: 
       </Typography>
@@ -23,7 +23,7 @@ const Footer = () => {
         <div>
           <Link href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener" aria-label="Google de Trama B Textil">
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <AiFillGoogleCircle size={24} style={{ color: theme.palette.custom2.main }} />
+              <AiFillGoogleCircle size={0} style={{ color: theme.palette.custom2.main }} />
               <Typography variant="body1" sx={{ color: theme.palette.custom2.main }}>sites</Typography>
             </Box>
           </Link>

@@ -80,7 +80,7 @@ const InputComponent = ({
     } else {
       onCalculateClick();
       setTimeout(() => {
-        document.body.scrollIntoView({ behavior: "smooth", block: "center" });
+        document.body.scrollIntoView({ behavior: "smooth", block: "end" });
       }, 0);
     }
   };
