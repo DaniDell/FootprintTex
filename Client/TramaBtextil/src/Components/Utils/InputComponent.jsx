@@ -80,7 +80,7 @@ const InputComponent = ({
     } else {
       onCalculateClick();
       setTimeout(() => {
-        document.body.scrollIntoView({ behavior: "smooth", block: "end" });
+        document.body.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 0);
     }
   };
@@ -91,54 +91,56 @@ const InputComponent = ({
 
   return (
     <div>
+      <h3>Calculá tu huella textil:</h3>
       <Box mb={1.5}>
+        
         <FormControl fullWidth error={!!compositionError}>
           <InputLabel id="textile-composition-label">
-            Composición fibra textil{" "}
+          Composición base fibra textil{" "}
           </InputLabel>
           <Select
             labelId="textile-composition-label"
             label="Composición base fibra textil"
             value={composition}
             onChange={handleCompositionChange}
-            sx={{ fontSize: "0.9rem", textAlign: "left" }}
+            sx={{  textAlign: "left" }}
           >
             <MenuItem
               value="algodon Reciclado"
               style={{ whiteSpace: "normal" }}
             >
-              ♻️ Algodón gestión para Reciclado
+               Algodón
             </MenuItem>
             <MenuItem
               value="poliester Reciclado"
               style={{ whiteSpace: "normal" }}
             >
-              ♻️ Poliéster gestión para Reciclado
+              Poliéster 
             </MenuItem>
             <MenuItem
               value="Mezcla sin definición Reciclado"
               style={{ whiteSpace: "normal" }}
             >
-              ♻️ Mezcla de fibras para Reciclado
+              Mezcla de fibras 
             </MenuItem>
-            <MenuItem
+            {/* <MenuItem
               value="algodon Reutilizado"
               style={{ whiteSpace: "normal" }}
             >
-              🔄 Tela de algodón recirculado
+              🔄 Recirculado Tela de algodón
             </MenuItem>
             <MenuItem
               value="poliester Reutilizado"
               style={{ whiteSpace: "normal" }}
             >
-              🔄 Tela de Poliéster recirculado
+              🔄 Recirculado Tela de Poliéster
             </MenuItem>
             <MenuItem
               value="Mezcla sin definición Reutilizado"
               style={{ whiteSpace: "normal" }}
             >
-              🔄 Tela mezcla de fibras recirculado
-            </MenuItem>
+              🔄 Recirculado Tela mezcla de fibras
+            </MenuItem> */}
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>
         </FormControl>
