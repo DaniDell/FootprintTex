@@ -4,18 +4,18 @@ import { Button, Typography, Container, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Landing.css";
 const HeadingComponent = React.lazy(() => import('../Components/HeadingComponent'));
+import desktopImage from '../../src/assets/landing.png';
 
 const Landing = () => {
   return (
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    minHeight: "100vh", // Cambiado de height a minHeight
-    width: "100vw",
-  }}
-
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-start",
+        minHeight: "100vh",
+        width: "100vw",
+      }}
     >
       <Container
         style={{
@@ -23,17 +23,20 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: '60px'
+          marginBottom: '60px',
         }}
       >
         <Suspense fallback={<CircularProgress />}>
-        <HeadingComponent />
+          <HeadingComponent />
         </Suspense>
+
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <div style={{ flex: '50%' }}>
         <Typography
           variant="h6"
           component="h2"
           gutterBottom
-          style={{margin: "4px", opacity: 0.8 }}
+          style={{margin: "10px", opacity: 0.8 }}
         >
           Calculá tu huella textil y descubrir formas mitigar tu impacto.
         </Typography>
@@ -42,59 +45,39 @@ const Landing = () => {
           color="custom2"
           component={Link}
           to="/calculadora"
-          style={{ marginTop: "40px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
+          style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
         >
-        Medí tu huella textil
+          Medí tu huella textil aquí
         </Button>
-        {/* <Button
-          variant="contained"
-          color="custom2"
-          component={Link}
-          to="/home"
-          style={{ marginTop: "60px", fontSize: "19px", color: '#fff', backgroundColor: '#4a4a46'}} // Aumenta el tamaño de la fuente a 20px
-        >
-          🕸️ Encontrar aliados
-        </Button> */}
+        </div>
+      <img 
+  src={desktopImage} 
+  alt="Description of image" 
+  className="desktopImage"
+/>
+</div>
         <Box
-  display="flex"
-  flexDirection="row"
-  flexWrap="wrap"
-  alignItems="center"
-  justifyContent="center"
-  style={{
-    marginTop: "4rem",
-    backgroundColor: "#f2f2f2",
-    width: "100%",
-    borderRadius: "25px",
-    padding: "15px"
-  }}
->
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            marginTop: "4rem",
+            backgroundColor: "#D6D6D6",
+            width: "auto",
+            borderRadius: "25px",
+            padding: "30px"
+          }}
+        >
           <Typography
             variant="h6"
             gutterBottom
             component="h1"
-            style={{ opacity: 0.8 , padding: "5px",  marginTop: "0px",}}
+            style={{ opacity: 0.8 , padding: "5px",}}
           >
             Para sumarte y conocer más sobre este desarrollo:
           </Typography>
-          {/* <div style={{ padding: "2px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
-          
-          <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
-            Si es tu primera vez 
-          </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            component={Link}
-            to="/registro"
-            style={{ margin: "10px" }}
-          >
-            Regístrate aquí
-          </Button>
-          
-          <Typography variant="h8" gutterBottom style={{ opacity: 0.8 }}>
-            si ya estás registrado
-          </Typography> */}
           <Button
             variant="contained"
             color="secondary"
@@ -104,10 +87,10 @@ const Landing = () => {
           >
             Completá el cuestionario
           </Button>
-          {/* </div> */}
         </Box>
-
+ 
       </Container>
+
     </div>
   );
 };
