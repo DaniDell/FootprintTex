@@ -74,9 +74,9 @@ const Landing = () => {
             variant="h6"
             gutterBottom
             component="h1"
-            style={{ opacity: 0.8 , padding: "5px",}}
+            style={{ opacity: 0.8 , padding: "8px",}}
           >
-            Para sumarte y conocer más sobre este desarrollo:
+            Para sumarte y conocer más sobre el desarrollo de esta plataforma:
           </Typography>
           <Button
             variant="contained"
