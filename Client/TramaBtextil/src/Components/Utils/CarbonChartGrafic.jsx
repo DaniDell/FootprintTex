@@ -9,7 +9,7 @@ const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name })
       <tspan x={x + width / 2} dy="-4em">{value > 0.00 ? 'Huella' : ''}</tspan>
       <tspan x={x + width / 2} dy="1.2em">{value > 0.00 ? `proyectada` : ''}</tspan>
       <tspan x={x + width / 2} dy="1.2em">{value > 0.00 ? `para ${name}` : ''}</tspan> 
-      <tspan x={x + width / 2} dy="2.4em"> {value > 0.00 ? `${icon} ${value} ${unit}` : ''}</tspan>
+      <tspan x={x + width / 2} dy="2.6em"> {value > 0.00 ? `${icon} ${value} ${unit}` : ''}</tspan>
       </text>
   );
 };
