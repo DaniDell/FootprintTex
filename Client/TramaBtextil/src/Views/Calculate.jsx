@@ -9,7 +9,7 @@ const Calculate = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPosition(window.pageYOffset);
+      setScrollPosition(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -21,7 +21,7 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = scrollPosition > window.innerHeight ? '6rem' : '1rem';
+  const bottomValue = scrollPosition > 100 ? '6rem' : '3rem';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -47,7 +47,7 @@ const Calculate = () => {
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
-      <div style={{ position: "fixed", right: "10px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
+      <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
   <Tooltip title="Ver información adicional">
     <Fab color="custom" onClick={handleOpenDialog}>
       <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
