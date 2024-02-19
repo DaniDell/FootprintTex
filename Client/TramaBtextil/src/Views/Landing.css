@@ -4,12 +4,14 @@ body {
 
 .desktopImage {
   display: none;
-  width: 32%;
-  padding: 20px
+  height: 340px;
+  margin-left: 40px;
 }
 
 @media (min-width: 768px) {
   .desktopImage {
     display: block;
+    height: calc(100vh / 3);
+    object-fit: cover; /* Añade esta línea */
   }
 }

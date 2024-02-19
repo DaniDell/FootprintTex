@@ -58,7 +58,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
         >
           {Math.abs(dataCarbon[0].mitiga) < 0.0001
             ? "Descubrí el impacto positivo de gestionar tus remanetes"
-            : `Mitiga ${formatNumber(dataCarbon[0].mitiga)} Kg de CO2 eq mediante reciclaje:`}
+            : `Evita la liberación de  ${formatNumber(dataCarbon[0].mitiga)} Kg de CO2eq reciclando ♻:`}
         </Typography>
 
         <CarbonChart data={dataCarbon} carbonReductionPercentage={carbonReductionPercentage} formatNumber={formatNumber}/>
@@ -95,7 +95,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
               (datos hídricos Fundación Ellen MacArthur)
                 </a>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.8em', marginTop: '8px', flexWrap: 'wrap' }}>
-              <p style={{ lineHeight: '1', marginBottom: '0',fontWeight: 'bold',  }}>*♻️ Separación en origen, gestión y reciclaje remanentes de tizada.</p>
+              {/* <p style={{ lineHeight: '1', marginBottom: '0', fontWeight: 'bold', color: '#00947A' }}>*♻ Separación en origen, gestión y reciclaje remanentes de tizada.</p> */}
               
             </div> 
               </>

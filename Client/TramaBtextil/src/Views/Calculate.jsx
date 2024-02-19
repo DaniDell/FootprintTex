@@ -1,11 +1,27 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
-import InfoIcon from "@mui/icons-material/Info";
 
 const Calculate = () => {
   const [openDialog, setOpenDialog] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
+    };
+  }, []);
+
+  const bottomValue = scrollPosition > window.innerHeight ? '6rem' : '1rem';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -31,11 +47,11 @@ const Calculate = () => {
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
-      <div style={{ marginTop: "20px", display: "flex", justifyContent: "flex-end" }}>
-        <Tooltip title="Ver información adicional">
-          <Fab color="custom" onClick={handleOpenDialog}>
-            <InfoIcon style={{ fontSize: "2em", color: "#F8F8F8" }} />
-          </Fab>
+      <div style={{ position: "fixed", right: "10px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
+  <Tooltip title="Ver información adicional">
+    <Fab color="custom" onClick={handleOpenDialog}>
+      <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
+    </Fab>
         </Tooltip>
 
         <AlertDialog
