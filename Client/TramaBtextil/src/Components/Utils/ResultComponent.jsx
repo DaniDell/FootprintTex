@@ -94,7 +94,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                   rel="noopener noreferrer"
                   style={{ fontSize: '12px', textAlign: 'center', display: 'block' }}
                 >
-              (datos hídricos Fundación Ellen MacArthur)
+              (datos hídricos Fund. Ellen MacArthur)
                 </a>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.8em', marginTop: '8px', flexWrap: 'wrap' }}>
               {/* <p style={{ lineHeight: '1', marginBottom: '0', fontWeight: 'bold', color: '#00947A' }}>*♻ Separación en origen, gestión y reciclaje remanentes de tizada.</p> */}

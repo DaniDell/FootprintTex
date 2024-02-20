@@ -28,7 +28,8 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '5.5rem' : '3.5rem';
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '15vh';
+  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1rem' : '5vw';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -46,9 +47,9 @@ const Calculate = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "100vw",
-        minHeight: "calc(100vh - 145px)",
+        minHeight: "calc(100vh - 3rem - 4rem)",
         paddingTop: "1vh",
-        paddingBottom: "vh",
+        paddingBottom: "1vh",
       }}
     >
       <Suspense fallback={<CircularProgress />}>
@@ -56,7 +57,7 @@ const Calculate = () => {
       </Suspense>
       <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
   <Tooltip title="Ver información adicional" placement="top">
-    <StyledFab color="custom" onClick={handleOpenDialog}>
+    <StyledFab style={{ position: 'fixed', bottom: bottomValue, right: rightValue }} color="custom" onClick={handleOpenDialog}>
       <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
     </StyledFab>
   </Tooltip>
