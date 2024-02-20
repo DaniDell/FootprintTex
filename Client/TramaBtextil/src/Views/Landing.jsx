@@ -12,8 +12,8 @@ const Landing = () => {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "flex-start",
-        minHeight: "100vh",
+        alignItems: "center",
+        minHeight: "calc(100vh - 146px)",
         width: "100vw",
       }}
     >
@@ -23,7 +23,7 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: '60px',
+          marginBottom: '40px',
         }}
       >
         <Suspense fallback={<CircularProgress />}>

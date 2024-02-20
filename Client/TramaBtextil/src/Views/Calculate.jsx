@@ -1,11 +1,34 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
-import InfoIcon from "@mui/icons-material/Info";
+import { styled } from '@mui/system';
+
+const StyledFab = styled(Fab)({
+  '&:hover': {
+    backgroundColor: "#4AA292",
+  },
+});
 
 const Calculate = () => {
   const [openDialog, setOpenDialog] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
+    };
+  }, []);
+
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '5.5rem' : '3.5rem';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -24,19 +47,19 @@ const Calculate = () => {
         alignItems: "center",
         width: "100vw",
         minHeight: "calc(100vh - 145px)",
-        paddingTop: "60px",
-        paddingBottom: "60px",
+        paddingTop: "1vh",
+        paddingBottom: "vh",
       }}
     >
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
-      <div style={{ marginTop: "20px", display: "flex", justifyContent: "flex-end" }}>
-        <Tooltip title="Ver información adicional">
-          <Fab color="custom" onClick={handleOpenDialog}>
-            <InfoIcon style={{ fontSize: "2em", color: "#F8F8F8" }} />
-          </Fab>
-        </Tooltip>
+      <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
+  <Tooltip title="Ver información adicional" placement="top">
+    <StyledFab color="custom" onClick={handleOpenDialog}>
+      <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
+    </StyledFab>
+  </Tooltip>
 
         <AlertDialog
           open={openDialog}
