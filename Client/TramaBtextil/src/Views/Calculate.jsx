@@ -21,7 +21,7 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = scrollPosition > 100 ? '6rem' : '3rem';
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '5.5rem' : '3.5rem';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -40,8 +40,8 @@ const Calculate = () => {
         alignItems: "center",
         width: "100vw",
         minHeight: "calc(100vh - 145px)",
-        paddingTop: "60px",
-        paddingBottom: "60px",
+        paddingTop: "1vh",
+        paddingBottom: "1vh",
       }}
     >
       <Suspense fallback={<CircularProgress />}>
