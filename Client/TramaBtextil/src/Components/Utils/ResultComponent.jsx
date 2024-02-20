@@ -41,14 +41,14 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
     <Card sx={{ 
       width: '100%', 
       height: '80%',
-      backgroundImage: `url(${svgBackground})`, 
+      background: `url(${svgBackground})`,
       backgroundRepeat: 'repeat',
-      backgroundSize: 'contain', 
+      backgroundSize: 'contain',
       backgroundPosition: 'start',
     }}>
       <CardContent sx={{ marginBottom: '0px' }}>
         <Typography
-          variant="h5"
+          variant="h3"
           sx={{
             fontWeight: 'bold',
             textAlign: 'center',

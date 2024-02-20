@@ -74,7 +74,7 @@ const Landing = () => {
             variant="h6"
             gutterBottom
             component="h1"
-            style={{ opacity: 0.8 , padding: "8px",}}
+            style={{ opacity: 0.8 , padding: "8px", color: '#000' }}
           >
             Para sumarte y conocer más sobre el desarrollo de esta plataforma:
           </Typography>
