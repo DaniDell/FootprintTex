@@ -53,14 +53,14 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
             fontWeight: 'bold',
             textAlign: 'center',
             marginBottom: '0px',
-            paddingLeft: '36px',
-            paddingRight: '36px',
+            paddingLeft: '6px',
+            paddingRight: '6px',
             fontSize: '1rem',
           }}
         >
           {Math.abs(dataCarbon[0].mitiga) < 0.0001
             ? "Descubrí el impacto positivo de gestionar tus remanetes:"
-            : `Reciclando ♻️ ${formatNumber(dataCarbon[0].mitiga)} Kg de CO2 equivalente se mitigan al evitar su disposción final en vertedero:`}
+            : `Mitiga ${formatNumber(carbonReductionPercentage)}% de las emisiones de CO2e mediante el ♻️ reciclaje mecánico, en comparación con su disposición final en vertedero:`}
         </Typography>
 
         <CarbonChart data={dataCarbon} carbonReductionPercentage={carbonReductionPercentage} formatNumber={formatNumber}/>
@@ -87,7 +87,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                     marginBottom: '5px',
                     textAlign: 'center',
                   }}
-                >{`Se reduce en un ${formatNumber(waterReductionPercentage)}% la huella hídrica realizando separación en origen`}</Typography>
+                >{`Se reduce en un ${formatNumber(waterReductionPercentage)}% la huella hídrica realizando separación en origen.`}</Typography>
                 <a 
                   href="https://emf.thirdlight.com/link/2axvc7eob8zx-za4ule/@/preview/1?o" 
                   target="_blank" 
