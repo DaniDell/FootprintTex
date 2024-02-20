@@ -2,6 +2,13 @@ import React, { Suspense, useState, useEffect } from "react";
 import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
+import { styled } from '@mui/system';
+
+const StyledFab = styled(Fab)({
+  '&:hover': {
+    backgroundColor: "#4AA292",
+  },
+});
 
 const Calculate = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -41,18 +48,18 @@ const Calculate = () => {
         width: "100vw",
         minHeight: "calc(100vh - 145px)",
         paddingTop: "1vh",
-        paddingBottom: "1vh",
+        paddingBottom: "vh",
       }}
     >
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
       <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
-  <Tooltip title="Ver información adicional">
-    <Fab color="custom" onClick={handleOpenDialog}>
+  <Tooltip title="Ver información adicional" placement="top">
+    <StyledFab color="custom" onClick={handleOpenDialog}>
       <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
-    </Fab>
-        </Tooltip>
+    </StyledFab>
+  </Tooltip>
 
         <AlertDialog
           open={openDialog}

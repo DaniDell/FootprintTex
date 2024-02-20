@@ -59,8 +59,8 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
           }}
         >
           {Math.abs(dataCarbon[0].mitiga) < 0.0001
-            ? "Descubrí el impacto positivo de gestionar tus remanetes de ✂️ corte:"
-            : `Reciclando ♻ ${formatNumber(dataCarbon[0].mitiga)} Kg de CO2 equivalente se mitigan al evitar su disposción final en vertedero:`}
+            ? "Descubrí el impacto positivo de gestionar tus remanetes:"
+            : `Reciclando ♻️ ${formatNumber(dataCarbon[0].mitiga)} Kg de CO2 equivalente se mitigan al evitar su disposción final en vertedero:`}
         </Typography>
 
         <CarbonChart data={dataCarbon} carbonReductionPercentage={carbonReductionPercentage} formatNumber={formatNumber}/>

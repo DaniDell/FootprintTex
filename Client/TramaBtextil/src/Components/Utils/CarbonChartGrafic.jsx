@@ -4,14 +4,13 @@ import { BarChart, Bar, XAxis, Legend, ResponsiveContainer, LabelList } from 're
 const COLORS = ['#747373', '#00947a', '#F9F4F4'];
 
 const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name }) => {
-  const valueWithComma = String(value).replace('.', ',');
   return (
     <text x={x + width / 2} y={y + height / 1} textAnchor="middle" dominantBaseline="middle" fontWeight="bold"  fill={fill} name={name}>
       <tspan x={x + width / 2} dy="-4em">{value > 0.00 ? 'Huella' : ''}</tspan>
       <tspan x={x + width / 2} dy="1.2em">{value > 0.00 ? `proyectada` : ''}</tspan>
       <tspan x={x + width / 2} dy="1.2em">{value > 0.00 ? `p/${name}` : ''}</tspan> 
-      <tspan x={x + width / 2} dy="2.6em"> {value > 0.00 ? `${icon} ${valueWithComma} ${unit}` : ''}</tspan>
-    </text>
+      <tspan x={x + width / 2} dy="2.6em"> {value > 0.00 ? `${icon} ${value} ${unit}` : ''}</tspan>
+      </text>
   );
 };
 
@@ -26,7 +25,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
         <LabelList dataKey="landfill" position="center" content={(props) => <CustomizedLabel {...props} unit="CO2" icon="🗑️" name="vertedero" />}/>
         </Bar>
         <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Reciclaje">
-        <LabelList dataKey="closeloop" position="bottom" content={(props) => <CustomizedLabel {...props} unit="CO2" icon="♻" name="reciclaje" />} />
+        <LabelList dataKey="closeloop" position="bottom" content={(props) => <CustomizedLabel {...props} unit="CO2" icon="♻️" name="reciclaje" />} />
         </Bar>
         <Bar 
   dataKey="mitiga" 
