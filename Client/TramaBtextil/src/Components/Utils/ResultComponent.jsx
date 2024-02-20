@@ -55,7 +55,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
             marginBottom: '0px',
             paddingLeft: '36px',
             paddingRight: '36px',
-            fontSize: '1.1rem',
+            fontSize: '1rem',
           }}
         >
           {Math.abs(dataCarbon[0].mitiga) < 0.0001
