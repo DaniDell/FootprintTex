@@ -16,6 +16,9 @@ import { Box } from "@mui/material";
 import Label from "./Utils/Label";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useState } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -27,6 +30,9 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
+
+
+
 
 const StackedCard = ({
   title,
@@ -41,7 +47,8 @@ const StackedCard = ({
   ...props
 }) => {
   const [expanded, setExpanded] = React.useState(false);
-
+  const [loading, setLoading] = useState(true);
+  
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -160,12 +167,14 @@ const StackedCard = ({
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <CardMedia
-            component="img"
-            height="280"
-            image={image.length > 1 ? image[1] : image[0]}
-            alt={title}
-          />
+        {loading && <CircularProgress />}
+  <CardMedia
+    component="img"
+    height="280"
+    image={image.length > 1 ? image[1] : image[0]}
+    alt={title}
+    onLoad={() => setLoading(false)}
+  />
           <Typography paragraph></Typography>
           <Typography paragraph>{description}</Typography>
           <a href={redirection} target="_blank" rel="noopener noreferrer">
