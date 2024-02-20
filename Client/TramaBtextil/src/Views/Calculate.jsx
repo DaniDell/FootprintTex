@@ -28,8 +28,8 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '3.8rem' : '14vw';
-  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1.6rem' : '15vw';
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '14vw';
+  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1rem' : '15vw';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
