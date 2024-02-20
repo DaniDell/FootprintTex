@@ -11,11 +11,11 @@ const Footer = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ p: 0, pb: '0', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.primary.main, width: "100%", height: "80px" }}>
+    <Box sx={{ p: 0, pb: '0', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.primary.main, width: "100%", height: "3rem" }}>
       <Typography variant="h2" align="center" sx={{ color: theme.palette.custom2.main, fontSize: '1rem' }}>
         Descubrí Trama B Textil en: 
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, p: 1}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, p: 1}}>
         <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener" aria-label="Instagram de Trama B Textil">
           <InstagramIcon style={{ color: theme.palette.custom2.main }} />
         </Link>
