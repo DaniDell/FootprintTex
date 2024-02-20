@@ -9,10 +9,11 @@ const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name })
   const matches = useMediaQuery('(max-width:600px)');
   const valueWithComma = String(value).replace('.', ',');
   return (
-    <text x={x + width / 1} y={y + height / 1} textAnchor="middle" dominantBaseline="middle" fontSize={matches ? "small" : "middle"} fontWeight="bold"  fill={fill} name={name}>
+    <text x={x + width / 1} y={y + height / 1} textAnchor="middle" dominantBaseline="middle" fontSize={matches ? "xsmall" : "middle"} fontWeight="bold"  fill={fill} name={name}>
 
-      <tspan x={x + width / 2} dy="-1.2em">{value > 0.00 ? `Emisiones ${name}` : ''}</tspan> 
-      <tspan x={x + width / 2} dy="2.2em"> {value > 0.00 ? `${icon} ${valueWithComma} ${unit}` : ''}</tspan>
+      <tspan x={x + width / 2} dy="-1em">{value > 0.00 ? `${name}` : ''}</tspan>
+      <tspan x={x + width / 2} dy="-1.1em">{value > 0.00 ? `Huella ` : ''}</tspan> 
+      <tspan x={x + width / 2} dy="3.4em"> {value > 0.00 ? `${icon} ${valueWithComma} ${unit}` : ''}</tspan>
     </text>
   );
 };
