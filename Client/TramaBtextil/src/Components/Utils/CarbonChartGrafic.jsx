@@ -31,7 +31,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   dataKey="mitiga" 
   stackId="stack" 
   fill={COLORS[2]} 
-  name={isNaN(carbonReductionPercentage) ? 'Mitigación' : `Huella de CO2e reducida  ${formatNumber(carbonReductionPercentage)}%`}
+  name={isNaN(carbonReductionPercentage) ? 'Mitigación' : `Huella de CO2e ☁ se reduce  ${formatNumber(carbonReductionPercentage)}%`}
 />
       </BarChart>
     </ResponsiveContainer>

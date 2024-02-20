@@ -74,7 +74,7 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                 <Typography
                   variant="h6"
                   sx={{
-                    fontSize: '1.1rem',
+                    fontSize: '1rem',
                     marginBottom: '0px',
                     textAlign: 'center',
                     fontWeight: 'bold',

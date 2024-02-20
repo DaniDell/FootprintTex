@@ -73,7 +73,7 @@ const FilterDialog = ({ open, handleClose }) => {
                     />
                 </FormControl>
                 <p>
-                    Todavia en desarrollo, solo ilustrativo. Esperamos tus sugerencias para mejorar la experiencia.
+                🚧 Todavia en desarrollo, solo ilustrativo.
                 </p>
             </DialogContent>
             <DialogActions>
