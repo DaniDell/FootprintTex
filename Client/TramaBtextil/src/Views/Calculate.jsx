@@ -3,11 +3,12 @@ import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from '@mui/system';
-import  recycleImage  from '../assets/r.png';
+
 
 const StyledFab = styled(Fab)({
+  fontSize: '25px',
   '&:hover': {
-    backgroundColor: "#4AA292",
+    backgroundColor: "#f2f2f2",
   },
 });
 
@@ -29,8 +30,8 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '12vh';
-  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1.5rem' : '24vw';
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '20vh';
+  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1.5rem' : '5vw';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -63,13 +64,11 @@ const Calculate = () => {
         position: 'fixed', 
         bottom: bottomValue, 
         right: rightValue, 
-        width: '3.5em', 
-        height: '3.5em' 
       }} 
       color="custom" 
       onClick={handleOpenDialog}
     >
-      <img src={recycleImage} alt="Recycle" style={{ width: "70%", height: "70%" }} />
+      ♻️
     </StyledFab>
   </Tooltip>
 
