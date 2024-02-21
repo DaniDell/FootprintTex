@@ -4,9 +4,11 @@ import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from '@mui/system';
 
+
 const StyledFab = styled(Fab)({
+  fontSize: '25px',
   '&:hover': {
-    backgroundColor: "#4AA292",
+    backgroundColor: "#f2f2f2",
   },
 });
 
@@ -28,8 +30,8 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '15vh';
-  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1rem' : '5vw';
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '20vh';
+  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1.5rem' : '5vw';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -57,8 +59,16 @@ const Calculate = () => {
       </Suspense>
       <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
   <Tooltip title="Ver información adicional" placement="top">
-    <StyledFab style={{ position: 'fixed', bottom: bottomValue, right: rightValue }} color="custom" onClick={handleOpenDialog}>
-      <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
+    <StyledFab 
+      style={{ 
+        position: 'fixed', 
+        bottom: bottomValue, 
+        right: rightValue, 
+      }} 
+      color="custom" 
+      onClick={handleOpenDialog}
+    >
+      ♻️
     </StyledFab>
   </Tooltip>
 
