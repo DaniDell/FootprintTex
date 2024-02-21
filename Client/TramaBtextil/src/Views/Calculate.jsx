@@ -2,12 +2,11 @@ import React, { Suspense, useState, useEffect } from "react";
 import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
-import { styled } from '@mui/system';
-
+import { styled } from "@mui/system";
 
 const StyledFab = styled(Fab)({
-  fontSize: '25px',
-  '&:hover': {
+  fontSize: "25px",
+  "&:hover": {
     backgroundColor: "#f2f2f2",
   },
 });
@@ -21,17 +20,18 @@ const Calculate = () => {
       setScrollPosition(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('touchmove', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("touchmove", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('touchmove', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("touchmove", handleScroll);
     };
   }, []);
 
-  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '20vh';
-  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1.5rem' : '5vw';
+  const bottomValue = scrollPosition > 100 || window.innerWidth <= 768 ? "4rem" : "20vh";
+  const rightValue = scrollPosition > 100 || window.innerWidth <= 768 ? "1.5rem" : "5vw";
+  const buttonPosition = scrollPosition > 100 || window.innerWidth <= 768 ? "fixed" : "absolute";
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -57,21 +57,20 @@ const Calculate = () => {
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
-      <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
-  <Tooltip title="Ver información adicional" placement="top">
-    <StyledFab 
-      style={{ 
-        position: 'fixed', 
-        bottom: bottomValue, 
-        right: rightValue, 
-      }} 
-      color="custom" 
-      onClick={handleOpenDialog}
-    >
-      ♻️
-    </StyledFab>
-  </Tooltip>
-
+      <div
+        style={{
+          position: "fixed",
+          bottom: bottomValue,
+          right: rightValue,
+          position: buttonPosition,
+          transition: "bottom 3.3s ease-out",
+        }}
+      >
+        <Tooltip title="Ver información adicional" placement="top">
+          <StyledFab color="custom" onClick={handleOpenDialog}>
+            ♻️
+          </StyledFab>
+        </Tooltip>
         <AlertDialog
           open={openDialog}
           handleClose={handleCloseDialog}
