@@ -3,6 +3,7 @@ import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from '@mui/system';
+import  recycleImage  from '../assets/r.png';
 
 const StyledFab = styled(Fab)({
   '&:hover': {
@@ -28,8 +29,8 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '15vh';
-  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1rem' : '5vw';
+  const bottomValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '4rem' : '12vh';
+  const rightValue = (scrollPosition > 100 || window.innerWidth <= 768) ? '1.5rem' : '24vw';
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -57,8 +58,18 @@ const Calculate = () => {
       </Suspense>
       <div style={{ position: "fixed", right: "15px", bottom: bottomValue, transition: 'bottom 0.3s ease-out'  }}>
   <Tooltip title="Ver información adicional" placement="top">
-    <StyledFab style={{ position: 'fixed', bottom: bottomValue, right: rightValue }} color="custom" onClick={handleOpenDialog}>
-      <span style={{ fontSize: "3em", color: "#F8F8F8" }}>♻</span>
+    <StyledFab 
+      style={{ 
+        position: 'fixed', 
+        bottom: bottomValue, 
+        right: rightValue, 
+        width: '3.5em', 
+        height: '3.5em' 
+      }} 
+      color="custom" 
+      onClick={handleOpenDialog}
+    >
+      <img src={recycleImage} alt="Recycle" style={{ width: "70%", height: "70%" }} />
     </StyledFab>
   </Tooltip>
 
