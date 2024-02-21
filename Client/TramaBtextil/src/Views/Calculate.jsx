@@ -30,7 +30,7 @@ const Calculate = () => {
   }, []);
 
   const bottomValue = scrollPosition > 100 || window.innerWidth <= 768 ? "4rem" : "20vh";
-  const rightValue = scrollPosition > 100 || window.innerWidth <= 768 ? "1.5rem" : "5vw";
+  const rightValue = scrollPosition > 100 || window.innerWidth <= 768 ? "1.5rem" : "15vw";
   const buttonPosition = scrollPosition > 100 || window.innerWidth <= 768 ? "fixed" : "absolute";
 
   const handleOpenDialog = () => {
