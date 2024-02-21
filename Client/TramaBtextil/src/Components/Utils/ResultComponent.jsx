@@ -79,8 +79,8 @@ const ResultComponent = React.memo(({ waterImpactLandfill, waterImpact2dnChance,
                     marginBottom: '0px',
                     textAlign: 'center',
                     fontWeight: 'bold',
-                    paddingLeft: '3rem',
-            paddingRight: '3rem',
+                    paddingLeft: '3.5rem',
+            paddingRight: '3.5rem',
                   }}
                 >{`💧${formatNumber(waterMitigated)} Lts. = ${formatNumber(waterMitigated / 900)} años de consumo humano`}</Typography>
                  <Typography
