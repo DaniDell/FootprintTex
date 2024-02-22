@@ -7,7 +7,7 @@ import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import { CustomAccordion } from '../Utils/FilterExpand';
-import { Autocomplete, TextField } from '@mui/material';
+// import { Autocomplete, TextField } from '@mui/material';
 
 const FilterDialog = ({ open, handleClose }) => {
 
@@ -15,13 +15,13 @@ const FilterDialog = ({ open, handleClose }) => {
 
      
     
-    const handleCategoriaChange = (event) => {
-        setCategoria(event.target.value);
-    };
+    // const handleCategoriaChange = (event) => {
+    //     setCategoria(event.target.value);
+    // };
 
-    const handleCompromisoChange = (event) => {
-        setCompromiso(event.target.value);
-    };
+    // const handleCompromisoChange = (event) => {
+    //     setCompromiso(event.target.value);
+    // };
 
     const handleCheckboxGroupChange = (event) => {
         if (event.target.checked) {
@@ -39,12 +39,12 @@ const FilterDialog = ({ open, handleClose }) => {
                 style: { borderRadius: 20 },
             }}
         >
-            <DialogTitle sx={{ fontStyle: "" }} >Aquí podrás filtrar por</DialogTitle>
-            <DialogContent>
-                <DialogContentText></DialogContentText>
+<DialogTitle>Filtrado por:</DialogTitle>
+<DialogContent sx={{ gap: 2 }}>
+  <DialogContentText></DialogContentText>
                 <FormControl component="fieldset">
-                    <CustomAccordion
-                        summaryLabel="Oferta del proyecto"
+                    <CustomAccordion sx={{ marginBottom: 2 }}
+                        summaryLabel="Tipo de empresa/proyecto"
                         checkboxGroupValues={checkboxGroupValues}
                         checkboxGroupChangeHandler={handleCheckboxGroupChange}
                         formControlLabels={[
@@ -55,8 +55,8 @@ const FilterDialog = ({ open, handleClose }) => {
                             { value: 'productos', label: 'Marca comercial' },
                         ]}
                     />
-                    <CustomAccordion
-                        summaryLabel="Compromisos con ODS"
+                    <CustomAccordion sx={{ marginBottom: 2 }}
+                        summaryLabel="Compromisos ODS abordados"
                         checkboxGroupValues={checkboxGroupValues}
                         checkboxGroupChangeHandler={handleCheckboxGroupChange}
                         formControlLabels={[
@@ -72,8 +72,14 @@ const FilterDialog = ({ open, handleClose }) => {
                         ]}
                     />
                 </FormControl>
-                <p>
-                🚧 Todavia en desarrollo, solo ilustrativo.
+                <p style={{ color: 'navy',  }}>
+                 🚧 .
+                </p>
+                <p style={{ color: 'navy', fontStyle: 'italic' }}>
+                Este es un prototipo demo  para desarrollo ilustrativo.
+                </p>
+                <p style={{ color: 'navy', fontStyle: 'italic' }}>
+                En breve podrás aplicar estos filtros y otros más.
                 </p>
             </DialogContent>
             <DialogActions>

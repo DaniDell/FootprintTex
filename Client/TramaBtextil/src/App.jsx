@@ -25,7 +25,7 @@ function App() {
     <Router>
       <CssBaseline />
       
-      <div style={{ width: '100vw', height: 'auto'}}>
+      <div style={{ width: '100vw', height: '100vh'}}>
         
         <Navbar user={user} />
         <Routes>

@@ -64,7 +64,7 @@ const StackedCard = ({
     <CardHeader
         avatar={
             <Avatar
-                aria-label="recipe"
+                aria-label="actor"
                 src={image[0]}
                 sx={{
                     width: 100,
@@ -78,7 +78,7 @@ const StackedCard = ({
             </Avatar>
         }
         action={
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', padding: "10px" }}>
     
     {instagramLink && 
         <Link to={instagramLink}>
@@ -126,7 +126,7 @@ const StackedCard = ({
               {subtitle}
             </Typography>
           }
-        sx={{ padding: "6px" }} // reduce padding here
+        sx={{ padding: "6px" }} 
     />
 
       <Box
@@ -176,9 +176,9 @@ const StackedCard = ({
     onLoad={() => setLoading(false)}
   />
           <Typography paragraph></Typography>
-          <Typography paragraph>{description}</Typography>
+          <Typography variant="body2" paragraph>{description}</Typography>
           <a href={redirection} target="_blank" rel="noopener noreferrer">
-            Conocer más
+            Conocer más sobre este actor
           </a>
         </CardContent>
       </Collapse>
