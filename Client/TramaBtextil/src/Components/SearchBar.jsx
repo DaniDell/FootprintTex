@@ -25,27 +25,36 @@ const SearchBar = () => {
     setOpen(false);
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    alert('Esta versión es una demo de prueba que no incluye aún  el buscador por palabras clave.');
+  };
+
   return (
     <Box display="flex" justifyContent="end" sx={{ marginRight: 3, marginLeft: 3, marginTop: 2, gap: 1 }}>
-      <RoundedTextField
-        id="search"
-        label="DEMO (sin funcionalidad)"
-        variant="outlined"
-        size="small"
-        sx={{
-          boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
-          borderRadius: "50px",
-          width: '100%',
-        }}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <SearchIcon />
-            </InputAdornment>
-          ),
-        }}
-      />
-
+      <form onSubmit={handleSearchSubmit}>
+        <RoundedTextField
+          id="search"
+          label=""
+          variant="outlined"
+          size="small"
+          sx={{
+            boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
+            borderRadius: "50px",
+            maxWidth: '300px',
+          }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton type="submit">
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+        <input type="submit" style={{display: 'none'}} />
+      </form>
       <IconButton
         sx={{
           boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",

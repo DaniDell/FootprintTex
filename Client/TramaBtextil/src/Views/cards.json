@@ -1,7 +1,7 @@
 [
     {
         "title": "Trama B Textil",
-        "subtitle": "Impulsamos cadenas de valor 3i",
+        "subtitle": "Impulsamos cadenas de valor",
         "description": "Economía del conocimento, economía circular y social.",
         "image": [ "https://media.licdn.com/dms/image/D4D0BAQGA-lxCXgnf-g/company-logo_100_100/0/1706479381951/trama_b_textil_logo?e=1714608000&v=beta&t=NoqzWl69fyVwxR_H_jsmTf7sGpJu1Ni8MlvI849DbAA","https://www.redaccion.com.ar/wp-content/uploads/2022/12/imagen05-UNGS-Libertate-Trama-B.jpg"],
         "redirection": "https://www.linkedin.com/company/trama-b-textil/",
@@ -13,7 +13,7 @@
         ],
         "category": [
             { "symbol": "Educación", "text": "educador" },
-            { "symbol": "Asesoramiento", "text": "asesoramiento" },
+            { "symbol": "Asesor.", "text": "asesoramiento" },
             { "symbol": "Diseño", "text": "Diseño" }
         ],
         "instagramLink": "https://www.instagram.com/trama_b_textil/",
@@ -32,7 +32,7 @@
         ],
         "category": [
             { "symbol": "Educación", "text": "educador" },
-            { "symbol": "Asesoramiento", "text": "asesoramiento" },
+            { "symbol": "Asesor.", "text": "asesoramiento" },
             { "symbol": "Manufactura", "text": "fabricante textil" }
         ],
         "instagramLink": "https://www.instagram.com/hebra.circular/",

@@ -5,18 +5,19 @@ import SearchBar from "../Components/SearchBar.jsx";
 
 const Home = () => {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{ minHeight: "calc(100vh - 3rem - 5rem)",
+    margin: "0" }}>
       <SearchBar />
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
-          gap: 10,
+          gap: 20,
           justifyContent: "center",
           alignItems: "start",
           height: "auto",
-          marginTop: 20,
-          marginBottom: 50,
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
         }}
       >
         {cards.map((card, index) => (
