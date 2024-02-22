@@ -5,7 +5,7 @@ import SearchBar from "../Components/SearchBar.jsx";
 
 const Home = () => {
   return (
-    <div style={{ minHeight: "calc(100vh - 3rem - 5rem)", width: "100%", alignItems: "center",  
+    <div style={{ minHeight: "calc(100vh - 3rem - 4rem)", width: "100%", alignItems: "center",  
     padding: "0rem" }}>
       <SearchBar />
       <div
@@ -16,7 +16,7 @@ const Home = () => {
           justifyContent: "center",
           alignItems: "start",
           height: "auto",
-          paddingTop: "1rem",
+          paddingTop: "1.5rem",
           paddingBottom: "1rem",
         }}
       >
