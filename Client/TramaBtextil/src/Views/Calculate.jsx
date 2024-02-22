@@ -31,8 +31,7 @@ const Calculate = () => {
 
   const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "10rem" : "20vh";
   const rightValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "1.5rem" : "15vw";
-  const buttonPosition = scrollPosition > 100 || window.innerWidth <= 1100 ? "fixed" : "absolute";
-
+ 
   const handleOpenDialog = () => {
     setOpenDialog(true);
   };
@@ -62,7 +61,6 @@ const Calculate = () => {
           position: "fixed",
           bottom: bottomValue,
           right: rightValue,
-          position: buttonPosition,
           transition: "bottom 3.3s ease-out",
         }}
       >

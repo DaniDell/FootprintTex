@@ -22,6 +22,7 @@ const SearchBar = () => {
     "& .MuiOutlinedInput-root": {
       borderRadius: 50,
       backgroundColor: '#F8F8F8',
+      
     },
   });
 
@@ -44,33 +45,40 @@ const SearchBar = () => {
       justifyContent="end"
       sx={{
         marginRight: "1.5rem",
-        marginLeft: 3,
-        marginTop: "1rem",
+        marginLeft: "1.5rem",
+        marginTop: "1.6rem",
         gap: 1,
+        '@media (min-width:950px)': {
+          marginTop: "0.6rem",
+          position: 'fixed',
+          zIndex: 99999,
+          top: '0', // Ajusta este valor según sea necesario
+          right: '1.5rem', // Ajusta este valor según sea necesario
+        },
       }}
     >
       <form onSubmit={handleSearchSubmit}>
       <RoundedTextField
-    id="search"
-    label=""
-    variant="outlined"
-    size="small"
-    sx={{
-      boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
-      borderRadius: "50px",
-      maxWidth: '250px',
-    }}
-    InputProps={{
-      startAdornment: (
-        <InputAdornment position="start" >
-          <IconButton type="submit" >
-            <SearchIcon />
-          </IconButton>
-        </InputAdornment>
-      ),
-    }}
-  />
-        <input type="submit" style={{display: 'none'}} />
+        id="search"
+        label=""
+        variant="outlined"
+        size="small"
+        sx={{
+          boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
+          borderRadius: "50px",
+          maxWidth: '250px',
+        }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton type="submit">
+                <SearchIcon />
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+      
       </form>
       <IconButton
   sx={{
