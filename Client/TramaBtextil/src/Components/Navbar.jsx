@@ -8,7 +8,7 @@ import {
   Menu,
   MenuItem,
   Container,
-  Avatar,
+  // Avatar,
   Tooltip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -128,6 +128,7 @@ function Navbar({ user }) {
         style={{
           height: "40px",
           width: "180px",
+          paddingTop: "6px",
         }}
       />
       
