@@ -45,11 +45,11 @@ const SearchBar = () => {
       justifyContent="end"
       sx={{
         marginRight: "1.5rem",
-        marginLeft: "1.5rem",
-        marginTop: "1.6rem",
+        marginLeft: "1.4rem",
+        marginTop: "1.5rem",
         gap: 1,
         '@media (min-width:950px)': {
-          marginTop: "0.6rem",
+          marginTop: "0.7rem",
           position: 'fixed',
           zIndex: 99999,
           top: '0', // Ajusta este valor según sea necesario
@@ -66,7 +66,7 @@ const SearchBar = () => {
         sx={{
           boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
           borderRadius: "50px",
-          maxWidth: '250px',
+          maxWidth: '200px',
         }}
         InputProps={{
           endAdornment: (
