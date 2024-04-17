@@ -2,7 +2,7 @@ import React from 'react';
 import { BarChart, Bar, XAxis, Legend, ResponsiveContainer, LabelList } from 'recharts';
 import { useMediaQuery } from '@mui/material';
 
-const COLORS = ['#747373', '#00947a', '#F9F4F4'];
+const COLORS = ['#747373', '#00947a', 'transparent'];
 
 
 const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name }) => {
@@ -37,7 +37,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   dataKey="mitiga" 
   stackId="stack" 
   fill={COLORS[2]} 
-  name={isNaN(carbonReductionPercentage) ? 'Mitigación' : `Evita emision ${formatNumber(data[0]?.mitiga)} Kg.CO₂☁  `}
+  name={isNaN(carbonReductionPercentage) ? '¿Cuál es el impacto de tus descates?' : `Evitando la emisión de ${formatNumber(data[0]?.mitiga)} Kg. de gases CO₂☁eq. en el ambiente`}
 />
       </BarChart>
     </ResponsiveContainer>

@@ -83,7 +83,7 @@ const ResultComponent = React.memo(
               ? ""
               : `Mitiga ${formatNumber(
                   carbonReductionPercentage
-                )}% de las emisiones de CO₂ mediante el ♻️ reciclaje mecánico, en comparación con su disposición final en vertedero:`}
+                )}% de las emisiones de CO₂ mediante el ♻️ reciclaje mecánico, en comparación con su disposición final en vertedero**:`}
           </Typography>
 
           <CarbonChart
@@ -100,18 +100,16 @@ const ResultComponent = React.memo(
                   <Typography
                     variant="h6"
                     sx={{
-                      fontSize: "1.1rem",
+                      fontSize: "1rem",
                       marginBottom: "0px",
                       textAlign: "center",
                       fontWeight: "bold",
                       paddingLeft: "3rem",
                       paddingRight: "3rem",
                     }}
-                  >{`💧 Evita usar ${formatNumber(
+                  >{`💧 Ahorrando ${formatNumber(
                     waterMitigated
-                  )} Lts. = ${Math.floor(
-                    waterMitigated / 900
-                  )} años de consumo humano`}</Typography>
+                  )} Lts. = ${Math.floor(waterMitigated / 900).toLocaleString('de-DE')} años de consumo humano`}</Typography>
                   <Typography
                     variant="body2"
                     sx={{

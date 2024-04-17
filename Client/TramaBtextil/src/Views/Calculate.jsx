@@ -61,7 +61,7 @@ const Calculate = () => {
         paddingBottom: "1vh",
       }}
     >
-<h2 style={{ padding: '0px 14px 14px 14px', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor positivo de la circualidad</h2>
+<h1 style={{lineHeight: '1.2',  padding: '0px 14px 14px 14px', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor positivo de la circualidad textil</h1>
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
@@ -113,7 +113,7 @@ const Calculate = () => {
     width: '95vw',
     textAlign: 'left',
     lineHeight: '1.2', // Ajusta este valor según tus necesidades
-    fontSize: '13px' // Ajusta este valor según tus necesidades
+    fontSize: '16px' // Ajusta este valor según tus necesidades
 }}>
     **Esta es una versión demo con fines de divulgación y educación ambiental. Los datos no alcanzan la huella total de logística y procesos anexos, ya que requiere información más específica de cada caso.
 </p> 
