@@ -18,24 +18,5 @@
         ],
         "instagramLink": "https://www.instagram.com/trama_b_textil/",
          "linkedinLink": "https://www.linkedin.com/company/trama-b-textil/"
-    },
-    {
-        "title": "Hebra Circular",
-        "subtitle": "Soluciones para la industria textil",
-        "description": "Transicionar hacia una producción sostenible♻️",
-        "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREOYsTED7VwoFSQ8QKRiBwLT-16BGZXhPxjA&usqp=CAU","https://www.residuosprofesional.com/wp-content/uploads/2022/06/residuo-textill-berritex.jpg"],
-        "redirection": "https://www.linkedin.com/company/hebra-circular/",
-        "ods": [
-            { "color": "#BE8B2D", "text": "ODS 12:Produccion resp." }, 
-            { "color": "#FF3A21", "text": "ODS 5 : = de género" },
-            { "color": "#19486A", "text": "ODS 17: Alianzas" }
-        ],
-        "category": [
-            { "symbol": "Educación", "text": "educador" },
-            { "symbol": "Asesor.", "text": "asesoramiento" },
-            { "symbol": "Manufactura", "text": "fabricante textil" }
-        ],
-        "instagramLink": "https://www.instagram.com/hebra.circular/",
-        "linkedinLink": "https://www.linkedin.com/company/hebra-circular/"
     }
 ]

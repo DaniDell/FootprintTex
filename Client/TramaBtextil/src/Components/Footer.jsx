@@ -11,7 +11,7 @@ const Footer = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ p: 0, pb: '0', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.primary.main, width: "100%", height: "3rem" }}>
+    <Box sx={{ p: 0, pb: '0', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.secondary.main, width: "100%", height: "3rem" }}>
       <Typography variant="h2" align="center" sx={{ color: theme.palette.custom2.main, fontSize: '1rem' }}>
         Descubrí Trama B Textil en: 
       </Typography>

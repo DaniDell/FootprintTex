@@ -1,13 +1,13 @@
 import StackedCard from "../Components/Card.jsx";
 import React from "react";
 import cards from "./cards.json";
-import SearchBar from "../Components/SearchBar.jsx";
+// import SearchBar from "../Components/SearchBar.jsx";
 
 const Home = () => {
   return (
     <div style={{ minHeight: "calc(100vh - 3rem - 4rem)", width: "100%", alignItems: "center",  
     padding: "0rem" }}>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div
         style={{
           display: "flex",

@@ -10,10 +10,10 @@ const theme = createTheme({
       secondary:  '#737373',
     },
     primary: {
-      main: '#8B5982', 
+      main: '#00947A', 
     },
     secondary: {
-      main: '#CACB4C', 
+      main: '#737373', 
     },
     custom: {
       main: '#00947A', 
@@ -23,7 +23,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'poppins, sans-serif',
+    fontFamily: 'sans-serif',
     styleOverrides: {
       h6: {
         color: '#4a4a46', 

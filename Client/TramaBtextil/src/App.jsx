@@ -37,7 +37,7 @@ function App() {
           <Route path="/detalle/:id" element={<DetailUser />} />
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/retroalimentacion" element={<FeedbackForm />} />
-          <Route
+          {/* <Route
             path="/perfil"
             element={
               <ProtectedRoute
@@ -76,7 +76,7 @@ function App() {
                 component={InformToPrint}
               />
             }
-          />
+          /> */}
           
         </Routes>
         <SpeedInsights />

@@ -91,7 +91,7 @@ const InputComponent = ({
 
   return (
     <div>
-      <h3>Calculá tu huella textil:</h3>
+      <h3>Completá los datos 👇</h3>
       <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
@@ -123,24 +123,7 @@ const InputComponent = ({
             >
               Mezcla de fibras 
             </MenuItem>
-            {/* <MenuItem
-              value="algodon Reutilizado"
-              style={{ whiteSpace: "normal" }}
-            >
-              🔄 Recirculado Tela de algodón
-            </MenuItem>
-            <MenuItem
-              value="poliester Reutilizado"
-              style={{ whiteSpace: "normal" }}
-            >
-              🔄 Recirculado Tela de Poliéster
-            </MenuItem>
-            <MenuItem
-              value="Mezcla sin definición Reutilizado"
-              style={{ whiteSpace: "normal" }}
-            >
-              🔄 Recirculado Tela mezcla de fibras
-            </MenuItem> */}
+
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>
         </FormControl>

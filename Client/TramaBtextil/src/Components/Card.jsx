@@ -178,7 +178,7 @@ const StackedCard = ({
           <Typography paragraph></Typography>
           <Typography variant="body2" paragraph>{description}</Typography>
           <a href={redirection} target="_blank" rel="noopener noreferrer">
-            Conocer más sobre este actor
+            Conocer más 
           </a>
         </CardContent>
       </Collapse>

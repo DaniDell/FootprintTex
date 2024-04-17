@@ -3,9 +3,13 @@ import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 const StyledFab = styled(Fab)({
   fontSize: "25px",
+  float: 'left', // Añade esta línea
   "&:hover": {
     backgroundColor: "#f2f2f2",
   },
@@ -40,6 +44,10 @@ const Calculate = () => {
     setOpenDialog(false);
   };
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+
   return (
     <div
       style={{
@@ -53,9 +61,11 @@ const Calculate = () => {
         paddingBottom: "1vh",
       }}
     >
+<h2 style={{ padding: '0px 14px 14px 14px', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor positivo de la circualidad</h2>
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
+    
       <div
         style={{
           position: "fixed",
@@ -64,11 +74,13 @@ const Calculate = () => {
           transition: "bottom 3.3s ease-out",
         }}
       >
-        <Tooltip title="Ver información adicional" placement="top">
-          <StyledFab color="custom" onClick={handleOpenDialog}>
-            ♻️
-          </StyledFab>
-        </Tooltip>
+        
+<Tooltip title="Ver información adicional" placement="top">
+    <StyledFab color="" onClick={handleOpenDialog} style={{ fontSize: '30px', height: '48px', width: '48px', float: 'left' }}>
+        ♻️
+    </StyledFab>
+</Tooltip>
+        
         <AlertDialog
           open={openDialog}
           handleClose={handleCloseDialog}
@@ -93,7 +105,19 @@ const Calculate = () => {
           onConfirm={handleCloseDialog}
         />
       </div>
-    </div>
+      
+
+<p style={{ 
+    padding: '60px 8px 0px 4px', 
+    color: theme.palette.secondary.main, 
+    width: '95vw',
+    textAlign: 'left',
+    lineHeight: '1.2', // Ajusta este valor según tus necesidades
+    fontSize: '13px' // Ajusta este valor según tus necesidades
+}}>
+    **Esta es una versión demo con fines de divulgación y educación ambiental. Los datos no alcanzan la huella total de logística y procesos anexos, ya que requiere información más específica de cada caso.
+</p> 
+</div>
   );
 };
 

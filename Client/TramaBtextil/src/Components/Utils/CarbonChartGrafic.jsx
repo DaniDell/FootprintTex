@@ -7,7 +7,8 @@ const COLORS = ['#747373', '#00947a', '#F9F4F4'];
 
 const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name }) => {
   const matches = useMediaQuery('(max-width:600px)');
-  const valueWithComma = String(value).replace('.', ',');
+  const valueWithOneDecimal = Math.floor(value * 10) / 10;
+const valueWithComma = String(valueWithOneDecimal).replace('.', ',');
   return (
     <text x={x + width / 1} y={y + height / 1} textAnchor="middle" dominantBaseline="middle" fontSize={matches ? "xsmall" : "middle"} fontWeight="bold"  fill={fill} name={name}>
 
@@ -26,17 +27,17 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
       <BarChart data={data} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : <span style={{ fontWeight: 'bold' }}>{value}</span>} />
-        <Bar dataKey="landfill" fill={COLORS[0]} name="Vertedero">
-        <LabelList dataKey="landfill" position="center" content={(props) => <CustomizedLabel {...props} unit="CO2e" icon="🗑️" name="vertedero" />}/>
+        <Bar dataKey="landfill" fill={COLORS[0]} name="Fin de vida en vertedero">
+        <LabelList dataKey="landfill" position="center" content={(props) => <CustomizedLabel {...props} unit="CO₂" icon="🗑️" name="vertedero" />}/>
         </Bar>
         <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Reciclaje">
-        <LabelList dataKey="closeloop" position="bottom" content={(props) => <CustomizedLabel {...props} unit="CO2e" icon="♻️" name="reciclaje" />} />
+        <LabelList dataKey="closeloop" position="bottom" content={(props) => <CustomizedLabel {...props} unit="CO₂" icon="♻️" name="reciclaje" />} />
         </Bar>
         <Bar 
   dataKey="mitiga" 
   stackId="stack" 
   fill={COLORS[2]} 
-  name={isNaN(carbonReductionPercentage) ? 'Mitigación' : `Evita emision ${formatNumber(data[0]?.mitiga)} Kg.CO2e  ☁  `}
+  name={isNaN(carbonReductionPercentage) ? 'Mitigación' : `Evita emision ${formatNumber(data[0]?.mitiga)} Kg.CO₂☁  `}
 />
       </BarChart>
     </ResponsiveContainer>

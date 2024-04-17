@@ -38,7 +38,7 @@ const Landing = () => {
           gutterBottom
           style={{margin: "10px", opacity: 0.8 }}
         >
-          Calculá tu huella textil y descubrir formas mitigar tu impacto.
+          Conocer la huella de CO₂☁ e hídrica de la industria textil es urgente:
         </Typography>
         <Button
           variant="contained"
@@ -47,7 +47,7 @@ const Landing = () => {
           to="/calculadora"
           style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
         >
-          Medí tu huella textil aquí
+          Medí tu impacto textil aquí
         </Button>
         </div>
       <img 
@@ -65,28 +65,30 @@ const Landing = () => {
           style={{
             marginTop: "4rem",
             backgroundColor: "#D6D6D6",
-            width: "auto",
+            width: "90%",
             borderRadius: "25px",
             padding: "30px"
           }}
         >
           <Typography
-            variant="h6"
+            variant="h8"
             gutterBottom
-            component="h1"
+            component="h4"
             style={{ opacity: 0.8 , padding: "8px", color: '#000' }}
           >
             Para sumarte y conocer más sobre el desarrollo de esta plataforma:
           </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            component={Link}
-            to="/iniciar-sesion"
-            style={{ margin: "10px" }}
-          >
-            Completá el cuestionario
-          </Button>
+<Button
+  variant="text"
+  color="secondary"
+  component="a"
+  href="https://docs.google.com/forms/d/1-hE4D2OTIx7QY-lo98m_69NQtqIQyxht5oaV9RHzXFk/viewform?edit_requested=true"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ margin: "10px" }}
+>
+  Completá el cuestionario
+</Button>
         </Box>
  
       </Container>
