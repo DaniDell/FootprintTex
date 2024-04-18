@@ -105,8 +105,7 @@ const ResultComponent = React.memo(
                       marginBottom: "0px",
                       textAlign: "center",
                       fontWeight: "bold",
-                      paddingLeft: "0.5rem",
-                      paddingRight: "0.5rem",
+                      padding: "0.5rem",                      
                       lineHeight: '1.2',
                        fontFamily: 'Poppins' ,
                        backgroundColor: 'rgba(255, 255, 255, 0.5)'  
@@ -117,12 +116,12 @@ const ResultComponent = React.memo(
  <Typography
   variant="body2"
   sx={{
-    fontSize: "1 rem",
+    fontSize: "1.2 rem",
     marginBottom: "5px",
     textAlign: "center",
-    paddingLeft: "16px", 
-    paddingRight: "16px", 
-    backgroundColor: 'rgba(255, 255, 255, 0.5)' 
+    padding: " 0 0.5rem 0.5rem 0.5rem",
+    backgroundColor: 'rgba(255, 255, 255, 0.5)' ,
+    lineHeight: '1',
   }}
 
                   >{`Se reduce en un ${formatNumber(
