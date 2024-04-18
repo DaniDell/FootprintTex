@@ -24,7 +24,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   
   return (
     <ResponsiveContainer width="100%" height={220}>
-      <BarChart data={data} margin={{ top: 5, right: 5, left: 10, bottom: 5 }}>
+      <BarChart data={data} margin={{ top: 0, right: 0, left: 0, bottom:0 }}>
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : <span style={{ fontWeight: 'bold' }}>{value}</span>} />
         <Bar dataKey="landfill" fill={COLORS[0]} name="Fin de vida en vertedero">

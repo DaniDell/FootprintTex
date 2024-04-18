@@ -9,7 +9,7 @@ import svgBackground from "../../assets/background.svg";
 // Move formatNumber function outside of the component to avoid re-creation on each render
 function formatNumber(num) {
   return Number(num).toLocaleString("de-DE", {
-    minimumFractionDigits: 1,
+    minimumFractionDigits: 0,
     maximumFractionDigits: 1,
   });
 }
@@ -105,15 +105,15 @@ const ResultComponent = React.memo(
                       marginBottom: "0px",
                       textAlign: "center",
                       fontWeight: "bold",
-                      paddingLeft: "3rem",
-                      paddingRight: "3rem",
+                      paddingLeft: "0.5rem",
+                      paddingRight: "0.5rem",
                       lineHeight: '1.2',
                        fontFamily: 'Poppins' ,
                        backgroundColor: 'rgba(255, 255, 255, 0.5)'  
                     }}
                   >{`💧 Ahorrando ${formatNumber(
                     waterMitigated
-                  )} litros de agua =  ${Math.floor(waterMitigated / 900).toLocaleString('de-DE')} años de consumo humano promedio `}</Typography>
+                  )} litros de agua =  ${Math.floor(waterMitigated / 900).toLocaleString('de-DE', { minimumFractionDigits: 0 })} años de consumo humano promedio `}</Typography>
  <Typography
   variant="body2"
   sx={{
