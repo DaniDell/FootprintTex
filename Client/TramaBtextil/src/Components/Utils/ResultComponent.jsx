@@ -57,26 +57,27 @@ const ResultComponent = React.memo(
     );
 
     return (
-      <Card
-        sx={{
-          width: "100%",
-          height: "80%",
-          background: `url(${svgBackground})`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "contain",
-          backgroundPosition: "start",
-        }}
-      >
+<Card
+  sx={{
+    width: "100%",
+    height: "80%",
+    background: `url(${svgBackground})`,
+    backgroundRepeat: "repeat",
+    backgroundSize: "contain",
+    backgroundPosition: "start",
+    borderRadius: '25px', 
+  }}
+>
         <CardContent sx={{ marginBottom: "0px" }}>
           <Typography
             variant="h3"
             sx={{
               fontWeight: "bold",
               textAlign: "center",
-              marginBottom: "0px",
+              marginBottom: "20px",
               paddingLeft: "6px",
               paddingRight: "6px",
-              fontSize: "1rem",
+              fontSize: "1.1rem",  fontFamily: 'Poppins' 
             }}
           >
             {Math.abs(dataCarbon[0].mitiga) < 0.0001
@@ -93,10 +94,10 @@ const ResultComponent = React.memo(
           />
 
           <Box display="flex" justifyContent="center">
-            <Box>
+            <Box >
               {waterReductionPercentage > 0 && waterMitigated > 0 && (
                 <>
-                  <hr />
+                 <hr style={{ marginTop: '20px', marginBottom: '20px' }} />
                   <Typography
                     variant="h6"
                     sx={{
@@ -106,17 +107,24 @@ const ResultComponent = React.memo(
                       fontWeight: "bold",
                       paddingLeft: "3rem",
                       paddingRight: "3rem",
+                      lineHeight: '1.2',
+                       fontFamily: 'Poppins' ,
+                       backgroundColor: 'rgba(255, 255, 255, 0.5)'  
                     }}
                   >{`💧 Ahorrando ${formatNumber(
                     waterMitigated
-                  )} Lts. = ${Math.floor(waterMitigated / 900).toLocaleString('de-DE')} años de consumo humano`}</Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontSize: "1 rem",
-                      marginBottom: "5px",
-                      textAlign: "center",
-                    }}
+                  )} Lts. que respresenta ${Math.floor(waterMitigated / 900).toLocaleString('de-DE')} años de consumo humano`}</Typography>
+ <Typography
+  variant="body2"
+  sx={{
+    fontSize: "1 rem",
+    marginBottom: "5px",
+    textAlign: "center",
+    paddingLeft: "16px", 
+    paddingRight: "16px", 
+    backgroundColor: 'rgba(255, 255, 255, 0.5)' 
+  }}
+
                   >{`Se reduce en un ${formatNumber(
                     waterReductionPercentage
                   )}% la huella hídrica realizando separación en origen.`}</Typography>
