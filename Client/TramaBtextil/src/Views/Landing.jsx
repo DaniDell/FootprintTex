@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./Landing.css";
 const HeadingComponent = React.lazy(() => import('../Components/HeadingComponent'));
 import desktopImage from '../../src/assets/landing.png';
+import Calculate from "./Calculate";
 
 const Landing = () => {
   return (
@@ -23,7 +24,7 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: '40px',
+          marginBottom: '30px',
         }}
       >
         <Suspense fallback={<CircularProgress />}>
@@ -36,11 +37,12 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{margin: "10px", opacity: 0.8 }}
+          style={{padding: " 0 30px 0 30px", opacity: 0.8 , lineHeight: '1.2', }}
         >
-          Conocer la huella de CO₂☁ e hídrica de la industria textil es urgente:
-        </Typography>
-        <Button
+          Conocer la huella de la industria textil es el primer paso</Typography>
+        
+        <Calculate />
+        {/* <Button
           variant="contained"
           color="custom2"
           component={Link}
@@ -48,14 +50,11 @@ const Landing = () => {
           style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
         >
           Medí tu impacto textil aquí
-        </Button>
+        </Button> */}
         </div>
-      <img 
-  src={desktopImage} 
-  alt="Description of image" 
-  className="desktopImage"
-/>
+      
 </div>
+
         <Box
           display="flex"
           flexDirection="row"
@@ -63,23 +62,23 @@ const Landing = () => {
           alignItems="center"
           justifyContent="center"
           style={{
-            marginTop: "4rem",
-            backgroundColor: "#D6D6D6",
+            marginTop: "1rem",
+            backgroundColor: "#FFFFFF",
             width: "90%",
             borderRadius: "25px",
-            padding: "30px"
+            padding: "10px"
           }}
         >
           <Typography
             variant="h8"
             gutterBottom
             component="h4"
-            style={{ opacity: 0.8 , padding: "8px", color: '#000' }}
+            style={{ opacity: 0.8 , padding: "6px", color: '#000', lineHeight: '1.2',  }}
           >
-            Para sumarte y conocer más sobre el desarrollo de esta plataforma:
+            Para conocer más sobre este proyecto, completá nuestra encuesta:
           </Typography>
 <Button
-  variant="text"
+  variant="outlined"
   color="secondary"
   component="a"
   href="https://docs.google.com/forms/d/1-hE4D2OTIx7QY-lo98m_69NQtqIQyxht5oaV9RHzXFk/viewform?edit_requested=true"
@@ -87,7 +86,7 @@ const Landing = () => {
   rel="noopener noreferrer"
   style={{ margin: "10px" }}
 >
-  Completá el cuestionario
+  link al cuestionario
 </Button>
         </Box>
  

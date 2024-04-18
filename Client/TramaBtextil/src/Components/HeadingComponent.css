@@ -1,5 +1,5 @@
 .Land {
-    margin-top: 35px;
+    margin-top: 0px;
     overflow-x: hidden; /* Añade esto para evitar el desbordamiento horizontal */
     overflow-y: auto; /* Añade esto para permitir el desplazamiento vertical cuando sea necesario */
     text-align: center;
@@ -50,7 +50,7 @@
     
     .h1-landing1 {
       animation: slideInFromLeft 2s;
-      margin-top: 20px;
+      margin-top: 10px;
       margin-bottom: 0em; 
     }
     
@@ -60,13 +60,13 @@
       margin-bottom: 0.5em; 
     }
     
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       .h1-landing1, .h1-landing2 {
-        font-size: 4rem;
+        font-size: 2rem;
       }
   
       .h1-landing1 {
-        margin-top: 36px;
+        margin-top: 26px;
       }
      
     

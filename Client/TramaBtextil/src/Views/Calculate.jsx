@@ -33,7 +33,7 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "10rem" : "20vh";
+  const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "5rem" : "10vh";
   const rightValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "5vw" : "5vw";
  
   const handleOpenDialog = () => {
@@ -56,11 +56,10 @@ const Calculate = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "100vw",
-        minHeight: "calc(100vh - 3rem - 4rem)",
-
+       
       }}
     >
-<h2 style={{lineHeight: '1.2', margin: 0,  padding: '0px 15vw 5vw 10vw', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor de la circualidad textil</h2>
+
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
@@ -107,7 +106,7 @@ const Calculate = () => {
       
 
 <p style={{ 
-    padding: '60px 4vw 0px 4px', 
+    padding: '4px 4px 0px 4px', 
     color: theme.palette.secondary.main, 
     width: '95vw',
     textAlign: 'center',

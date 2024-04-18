@@ -27,16 +27,16 @@ function App() {
       
       <div style={{ width: '100vw', height: '100vh'}}>
         
-        <Navbar user={user} />
+        {/* <Navbar user={user} /> */}
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/calculadora" element={<Calculate />} />
+          <Route path="/" element={<Landing /> } />
+          {/* <Route path="/calculadora" element={<Calculate />} />
           <Route path="/registro" element={<Register />} />
           <Route path="/iniciar-sesion" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/detalle/:id" element={<DetailUser />} />
           <Route path="/nosotros" element={<AboutUs />} />
-          <Route path="/retroalimentacion" element={<FeedbackForm />} />
+          <Route path="/retroalimentacion" element={<FeedbackForm />} /> */}
           {/* <Route
             path="/perfil"
             element={
