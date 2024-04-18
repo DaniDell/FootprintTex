@@ -37,9 +37,9 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{padding: " 0 30px 30px 30px", opacity: 0.8 , lineHeight: '1.2', }}
+          style={{padding: " 0 30px 3vw 30px", opacity: 0.8 , lineHeight: '1.1', }}
         >
-          Conocer la huella de la industria textil es el 1er paso</Typography>
+          Conocer la huella de la industria textil es el primer paso </Typography>
         
         <Calculate />
         {/* <Button
@@ -56,26 +56,28 @@ const Landing = () => {
 </div>
 
         <Box
-          display="flex"
-          flexDirection="row"
-          flexWrap="wrap"
-          alignItems="center"
-          justifyContent="center"
-          style={{
-            marginTop: "1rem",
-            backgroundColor: "#FFFFFF",
-            width: "90%",
-            borderRadius: "25px",
-            padding: "10px"
-          }}
-        >
+  display="flex"
+  flexDirection="row"
+  flexWrap="wrap"
+  alignItems="center"
+  justifyContent="center"
+  style={{
+    marginTop: "1rem",
+    backgroundColor: "#FFFFFF",
+    width: "90%",
+    borderRadius: "25px",
+    padding: "10px",
+    border: "1px solid #0000",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", 
+  }}
+>
           <Typography
             variant="h8"
             gutterBottom
             component="h4"
-            style={{ opacity: 0.8 , padding: "4px", color: '#000', lineHeight: '1.2',  }}
+            style={{ opacity: 0.8 , padding: " 6px 10px 0 ", color: '#000', lineHeight: '1', fontWeight: '300' }}
           >
-            Para conocer más sobre este proyecto, completá nuestra encuesta:
+            Si deseas recibir más información sobre la gestión y reciclaje de residuos textiles:
           </Typography>
 <Button
   variant="outlined"
@@ -86,7 +88,7 @@ const Landing = () => {
   rel="noopener noreferrer"
   style={{ margin: "10px" }}
 >
-  link al cuestionario
+completá nuestra encuesta
 </Button>
         </Box>
  

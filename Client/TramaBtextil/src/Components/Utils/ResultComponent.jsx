@@ -66,6 +66,8 @@ const ResultComponent = React.memo(
     backgroundSize: "contain",
     backgroundPosition: "start",
     borderRadius: '25px', 
+    border: "1px solid #0000",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
   }}
 >
         <CardContent sx={{ marginBottom: "0px" }}>
