@@ -55,7 +55,7 @@ const Landing = () => {
       
 </div>
 
-        <Box
+        {/* <Box
   display="flex"
   flexDirection="row"
   flexWrap="wrap"
@@ -90,7 +90,7 @@ const Landing = () => {
 >
 completá nuestra encuesta
 </Button>
-        </Box>
+        </Box> */}
  
       </Container>
 
