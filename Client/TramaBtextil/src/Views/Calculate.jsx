@@ -34,7 +34,7 @@ const Calculate = () => {
   }, []);
 
   const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "10rem" : "20vh";
-  const rightValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "1.5rem" : "15vw";
+  const rightValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "5vw" : "5vw";
  
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -57,23 +57,22 @@ const Calculate = () => {
         alignItems: "center",
         width: "100vw",
         minHeight: "calc(100vh - 3rem - 4rem)",
-        paddingTop: "1vh",
-        paddingBottom: "1vh",
+
       }}
     >
-<h1 style={{lineHeight: '1.2',  padding: '0px 14px 14px 14px', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor positivo de la circualidad textil</h1>
+<h2 style={{lineHeight: '1.2', margin: 0,  padding: '0px 15vw 1vw 10vw', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor de la circualidad textil</h2>
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
     
-      <div
-        style={{
-          position: "fixed",
-          bottom: bottomValue,
-          right: rightValue,
-          transition: "bottom 3.3s ease-out",
-        }}
-      >
+<div
+  style={{
+    position: "fixed",
+    bottom: bottomValue,
+    right: rightValue,
+    transition: "bottom 1s ease-out, right 1s ease-out", 
+  }}
+>
         
 <Tooltip title="Ver información adicional" placement="top">
     <StyledFab color="" onClick={handleOpenDialog} style={{ fontSize: '30px', height: '48px', width: '48px', float: 'left' }}>
@@ -108,12 +107,12 @@ const Calculate = () => {
       
 
 <p style={{ 
-    padding: '60px 8px 0px 4px', 
+    padding: '60px 4vw 0px 4px', 
     color: theme.palette.secondary.main, 
     width: '95vw',
-    textAlign: 'left',
-    lineHeight: '1.2', // Ajusta este valor según tus necesidades
-    fontSize: '16px' // Ajusta este valor según tus necesidades
+    textAlign: 'center',
+    lineHeight: '1.2', 
+    fontSize: '16px' 
 }}>
     **Esta es una versión demo con fines de divulgación y educación ambiental. Los datos no alcanzan la huella total de logística y procesos anexos, ya que requiere información más específica de cada caso.
 </p> 
