@@ -60,7 +60,7 @@ const Calculate = () => {
 
       }}
     >
-<h2 style={{lineHeight: '1.2', margin: 0,  padding: '0px 15vw 1vw 10vw', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor de la circualidad textil</h2>
+<h2 style={{lineHeight: '1.2', margin: 0,  padding: '0px 15vw 5vw 10vw', color: theme.palette.secondary.main, fontFamily: 'Poppins' }}>Descubrí el valor de la circualidad textil</h2>
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
