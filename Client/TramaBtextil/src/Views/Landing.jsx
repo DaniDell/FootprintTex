@@ -39,7 +39,7 @@ const Landing = () => {
           gutterBottom
           style={{padding: " 0 30px 30px 30px", opacity: 0.8 , lineHeight: '1.2', }}
         >
-          Conocer la huella de la industria textil es el primer paso</Typography>
+          Conocer la huella de la industria textil es el 1er paso</Typography>
         
         <Calculate />
         {/* <Button
