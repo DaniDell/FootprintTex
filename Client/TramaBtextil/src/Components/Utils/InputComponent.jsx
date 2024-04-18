@@ -91,7 +91,7 @@ const InputComponent = ({
 
   return (
     <div>
-      <h3>Completá los datos de tus descartes👇</h3>
+      <h3>Completá los datos 👇</h3>
       <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
