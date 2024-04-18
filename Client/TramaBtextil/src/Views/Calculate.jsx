@@ -33,7 +33,7 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "5rem" : "10vh";
+  const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "10rem" : "10vh";
   const rightValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "5vw" : "5vw";
  
   const handleOpenDialog = () => {
@@ -106,9 +106,9 @@ const Calculate = () => {
       
 
 <p style={{ 
-    padding: '8px 4px 0px 4px', 
+    padding: '8px 10wv 0px 10wv', 
     color: theme.palette.secondary.main, 
-    width: '95vw',
+    width: '90vw',
     textAlign: 'center',
     lineHeight: '1.2', 
     fontSize: '16px' 

@@ -113,7 +113,7 @@ const ResultComponent = React.memo(
                     }}
                   >{`💧 Ahorrando ${formatNumber(
                     waterMitigated
-                  )} Lts. que respresenta ${Math.floor(waterMitigated / 900).toLocaleString('de-DE')} años de consumo humano`}</Typography>
+                  )} litros de agua =  ${Math.floor(waterMitigated / 900).toLocaleString('de-DE')} años de consumo humano promedio `}</Typography>
  <Typography
   variant="body2"
   sx={{
