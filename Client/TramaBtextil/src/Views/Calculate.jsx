@@ -3,13 +3,12 @@ import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const StyledFab = styled(Fab)({
   fontSize: "25px",
-  float: 'left', // Añade esta línea
+  float: "left", // Añade esta línea
   "&:hover": {
     backgroundColor: "#f2f2f2",
   },
@@ -33,9 +32,11 @@ const Calculate = () => {
     };
   }, []);
 
-  const bottomValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "10rem" : "10vh";
-  const rightValue = scrollPosition > 100 || window.innerWidth <= 1100 ? "5vw" : "5vw";
- 
+  const bottomValue =
+    scrollPosition > 100 || window.innerWidth <= 1100 ? "10rem" : "10vh";
+  const rightValue =
+    scrollPosition > 100 || window.innerWidth <= 1100 ? "5vw" : "5vw";
+
   const handleOpenDialog = () => {
     setOpenDialog(true);
   };
@@ -45,8 +46,7 @@ const Calculate = () => {
   };
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
+ 
 
   return (
     <div
@@ -55,30 +55,35 @@ const Calculate = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-      
-       
       }}
     >
-
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
-    
-<div
-  style={{
-    position: "fixed",
-    bottom: bottomValue,
-    right: rightValue,
-    transition: "bottom 1s ease-out, right 1s ease-out", 
-  }}
->
-        
-<Tooltip title="Ver información adicional" placement="top">
-    <StyledFab color="" onClick={handleOpenDialog} style={{ fontSize: '30px', height: '48px', width: '48px', float: 'left' }}>
-        ♻️
-    </StyledFab>
-</Tooltip>
-        
+
+      <div
+        style={{
+          position: "fixed",
+          bottom: bottomValue,
+          right: rightValue,
+          transition: "bottom 1s ease-out, right 1s ease-out",
+        }}
+      >
+        <Tooltip title="Ver información adicional" placement="top">
+          <StyledFab
+            color=""
+            onClick={handleOpenDialog}
+            style={{
+              fontSize: "30px",
+              height: "48px",
+              width: "48px",
+              float: "left",
+            }}
+          >
+            ♻️
+          </StyledFab>
+        </Tooltip>
+
         <AlertDialog
           open={openDialog}
           handleClose={handleCloseDialog}
@@ -103,19 +108,22 @@ const Calculate = () => {
           onConfirm={handleCloseDialog}
         />
       </div>
-      
 
-<p style={{ 
-    padding: '8px 10wv 0px 10wv', 
-    color: theme.palette.secondary.main, 
-    width: '90vw',
-    textAlign: 'center',
-    lineHeight: '1.2', 
-    fontSize: '16px' 
-}}>
-    **Esta es una versión demo con fines de divulgación y educación ambiental. Los datos no alcanzan la huella total de logística y procesos anexos, ya que requiere información más específica de cada caso.
-</p> 
-</div>
+      <p
+        style={{
+          padding: "8px 10wv 0px 10wv",
+          color: theme.palette.secondary.main,
+          width: "90vw",
+          textAlign: "center",
+          lineHeight: "1.2",
+          fontSize: "16px",
+        }}
+      >
+        **Esta es una versión demo con fines de divulgación y educación
+        ambiental. Los datos no alcanzan la huella total de logística y procesos
+        anexos, ya que requiere información más específica de cada caso.
+      </p>
+    </div>
   );
 };
 

@@ -57,19 +57,19 @@ const ResultComponent = React.memo(
     );
 
     return (
-<Card
-  sx={{
-    width: "100%",
-    height: "80%",
-    background: `url(${svgBackground})`,
-    backgroundRepeat: "repeat",
-    backgroundSize: "contain",
-    backgroundPosition: "start",
-    borderRadius: '25px', 
-    border: "1px solid #0000",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
-  }}
->
+      <Card
+        sx={{
+          width: "100%",
+          height: "80%",
+          background: `url(${svgBackground})`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "contain",
+          backgroundPosition: "start",
+          borderRadius: "25px",
+          border: "1px solid #0000",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+        }}
+      >
         <CardContent sx={{ marginBottom: "0px" }}>
           <Typography
             variant="h3"
@@ -79,7 +79,8 @@ const ResultComponent = React.memo(
               marginBottom: "20px",
               paddingLeft: "6px",
               paddingRight: "6px",
-              fontSize: "1.1rem",  fontFamily: 'Poppins' 
+              fontSize: "1.1rem",
+              fontFamily: "Poppins",
             }}
           >
             {Math.abs(dataCarbon[0].mitiga) < 0.0001
@@ -96,10 +97,10 @@ const ResultComponent = React.memo(
           />
 
           <Box display="flex" justifyContent="center">
-            <Box >
+            <Box>
               {waterReductionPercentage > 0 && waterMitigated > 0 && (
                 <>
-                 <hr style={{ marginTop: '20px', marginBottom: '20px' }} />
+                  <hr style={{ marginTop: "20px", marginBottom: "20px" }} />
                   <Typography
                     variant="h6"
                     sx={{
@@ -107,25 +108,28 @@ const ResultComponent = React.memo(
                       marginBottom: "0px",
                       textAlign: "center",
                       fontWeight: "bold",
-                      padding: "0.5rem",                      
-                      lineHeight: '1.2',
-                       fontFamily: 'Poppins' ,
-                       backgroundColor: 'rgba(255, 255, 255, 0.5)'  
+                      padding: "0.5rem",
+                      lineHeight: "1.2",
+                      fontFamily: "Poppins",
+                      backgroundColor: "rgba(255, 255, 255, 0.5)",
                     }}
                   >{`💧 Ahorrando ${formatNumber(
                     waterMitigated
-                  )} litros de agua =  ${Math.floor(waterMitigated / 900).toLocaleString('de-DE', { minimumFractionDigits: 0 })} años de consumo humano promedio `}</Typography>
- <Typography
-  variant="body2"
-  sx={{
-    fontSize: "1.2 rem",
-    marginBottom: "5px",
-    textAlign: "center",
-    padding: " 0 0.5rem 0.5rem 0.5rem",
-    backgroundColor: 'rgba(255, 255, 255, 0.5)' ,
-    lineHeight: '1',
-  }}
-
+                  )} litros de agua =  ${Math.floor(
+                    waterMitigated / 900
+                  ).toLocaleString("de-DE", {
+                    minimumFractionDigits: 0,
+                  })} años de consumo humano promedio `}</Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontSize: "1.2 rem",
+                      marginBottom: "5px",
+                      textAlign: "center",
+                      padding: " 0 0.5rem 0.5rem 0.5rem",
+                      backgroundColor: "rgba(255, 255, 255, 0.5)",
+                      lineHeight: "1",
+                    }}
                   >{`Se reduce en un ${formatNumber(
                     waterReductionPercentage
                   )}% la huella hídrica realizando separación en origen.`}</Typography>
@@ -151,7 +155,7 @@ const ResultComponent = React.memo(
                       flexWrap: "wrap",
                     }}
                   >
-                    {/* <p style={{ lineHeight: '1', marginBottom: '0', fontWeight: 'bold', color: '#00947A' }}>*♻ Separación en origen, gestión y reciclaje remanentes de tizada.</p> */}
+                  
                   </div>
                 </>
               )}
