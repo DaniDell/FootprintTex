@@ -24,7 +24,7 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: '30px',
+          marginBottom: '60px',
         }}
       >
         <Suspense fallback={<CircularProgress />}>
@@ -37,7 +37,7 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{padding: " 0 30px 3vw 30px", opacity: 0.8 , lineHeight: '1.1', }}
+          style={{padding: " 0 30px 8vw 30px", opacity: 0.8 , lineHeight: '1.1', }}
         >
           Conocer la huella de la industria textil es el primer paso </Typography>
         

@@ -55,7 +55,7 @@ const Calculate = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        width: "100vw",
+      
        
       }}
     >
