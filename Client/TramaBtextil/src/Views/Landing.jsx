@@ -14,7 +14,7 @@ const Landing = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "calc(100vh - 146px)",
+        minHeight: "calc(100vh - 3rem)",
         width: "100vw",
       }}
     >
@@ -37,7 +37,7 @@ const Landing = () => {
           variant="h6"
           component="h2"
           gutterBottom
-          style={{padding: " 0 30px 0 30px", opacity: 0.8 , lineHeight: '1.2', }}
+          style={{padding: " 0 30px 30px 30px", opacity: 0.8 , lineHeight: '1.2', }}
         >
           Conocer la huella de la industria textil es el primer paso</Typography>
         
@@ -73,7 +73,7 @@ const Landing = () => {
             variant="h8"
             gutterBottom
             component="h4"
-            style={{ opacity: 0.8 , padding: "6px", color: '#000', lineHeight: '1.2',  }}
+            style={{ opacity: 0.8 , padding: "4px", color: '#000', lineHeight: '1.2',  }}
           >
             Para conocer más sobre este proyecto, completá nuestra encuesta:
           </Typography>

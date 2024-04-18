@@ -106,7 +106,7 @@ const Calculate = () => {
       
 
 <p style={{ 
-    padding: '4px 4px 0px 4px', 
+    padding: '8px 4px 0px 4px', 
     color: theme.palette.secondary.main, 
     width: '95vw',
     textAlign: 'center',
