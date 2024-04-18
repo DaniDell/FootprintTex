@@ -75,7 +75,7 @@ const Landing = () => {
             variant="h8"
             gutterBottom
             component="h4"
-            style={{ opacity: 0.8 , padding: " 6px 10px 0 ", color: '#000', lineHeight: '1', fontWeight: '300' }}
+            style={{ opacity: 0.8 , padding: " 6px 25px 0 25px ", color: '#000', lineHeight: '1', fontWeight: '300' }}
           >
             Si deseas recibir más información sobre la gestión y reciclaje de residuos textiles:
           </Typography>
