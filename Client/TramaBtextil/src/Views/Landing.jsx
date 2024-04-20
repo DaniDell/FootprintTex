@@ -15,7 +15,7 @@ const Landing = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowCalculate(true);
-    }, 8000); // Change this to the desired delay in milliseconds
+    }, 4000); // Change this to the desired delay in milliseconds
 
     return () => clearTimeout(timer); // This will clear the timer when the component unmounts
   }, []);
