@@ -4,7 +4,7 @@ import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
 
 const StyledFab = styled(Fab)({
   fontSize: "25px",
@@ -17,6 +17,15 @@ const StyledFab = styled(Fab)({
 const Calculate = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +55,6 @@ const Calculate = () => {
   };
 
   const theme = useTheme();
- 
 
   return (
     <div
@@ -108,20 +116,43 @@ const Calculate = () => {
           onConfirm={handleCloseDialog}
         />
       </div>
-
-      <p
+      <div
         style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           padding: "8px 10wv 0px 10wv",
           color: theme.palette.secondary.main,
           width: "90vw",
-          textAlign: "center",
-          lineHeight: "1.2",
-          fontSize: "16px",
         }}
       >
-        **Esta es una versión demo con fines de divulgación y educación
-        ambiental. 
-      </p>
+        <p
+          style={{
+            lineHeight: "1.2",
+            fontSize: "16px",
+          }}
+        >
+          **Esta es una versión demo con fines de divulgación y educación
+          ambiental. Si necesitas má info, hace click aquí.
+        </p>
+      <InfoOutlined 
+  onClick={handleOpen} 
+style={{ cursor: 'pointer', margin: '20px', height: '48dp', width: '48dp' }} 
+/>
+
+<AlertDialog 
+  open={open} 
+  handleClose={handleClose} 
+  title="¿Que representan los valores de CO2 equivalente?" 
+  content="Los valores de CO2 equivalente representan una medida utilizada para comparar las emisiones de diferentes gases de efecto invernadero (GEI) en función de su potencial de calentamiento global (GWP). 
+
+  El CO2 es el gas de referencia y se le asigna un valor de 1. Los demás gases se comparan con el CO2 y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO2, por lo que se le asigna un valor de 25." 
+  confirmText="ver fuente greenpeace"
+  cancelText="Cerrar" 
+onConfirm={() => window.open('https://www.greenpeace.org/mexico/blog/9386/huella-de-carbono/', '_blank')}
+  onCancel={handleClose} 
+/>
+      </div>
     </div>
   );
 };
