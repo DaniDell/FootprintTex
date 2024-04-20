@@ -1,0 +1,21 @@
+{
+    "short_name": "TramaB",
+    "name": "Trama B Application",
+    "icons": [
+      {
+        "src": "/logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#f2f2f2",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#00947A" 
+  }

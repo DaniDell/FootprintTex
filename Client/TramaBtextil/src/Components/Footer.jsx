@@ -21,10 +21,10 @@ const Footer = () => {
         </Link>
 
         <div>
-          <Link href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener" aria-label="Google de Trama B Textil">
+          <Link href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener" aria-label="Google Site Trama B Textil">
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <AiFillGoogleCircle size={0} style={{ color: theme.palette.custom2.main }} />
-              <Typography variant="body1" sx={{ color: theme.palette.custom2.main }}>sites</Typography>
+<Typography variant="body1" sx={{ color: theme.palette.custom2.main, fontWeight: 'bold', fontSize: '18px' }}>sites</Typography>
             </Box>
           </Link>
         </div>
