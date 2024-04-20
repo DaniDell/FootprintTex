@@ -14,7 +14,7 @@ const FullScreenComponent = () => {
       backgroundColor: '#f2f2f2',
       zIndex: 9999 
     }}>
-<h1>Trama B Textil</h1>
+      <img src="/log.png" alt="Logo" />
     </div>
   );
 };

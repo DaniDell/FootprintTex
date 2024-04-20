@@ -16,7 +16,7 @@ const Landing = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-    }, 3000); // 3000ms = 3s
+    }, 6000); // 3000ms = 3s
 
     return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
   }, []);
