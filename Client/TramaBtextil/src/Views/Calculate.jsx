@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useEffect } from "react";
-import { CircularProgress, Fab, Tooltip } from "@mui/material";
+import { CircularProgress, Fab, Tooltip, IconButton } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
@@ -27,7 +27,7 @@ const Calculate = () => {
 
     return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
   }, []);
-  
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -84,6 +84,7 @@ const Calculate = () => {
           bottom: bottomValue,
           right: rightValue,
           transition: "bottom 1s ease-out, right 1s ease-out",
+          
         }}
       >
         <Tooltip title="Ver información adicional" placement="top">
@@ -125,43 +126,50 @@ const Calculate = () => {
           onConfirm={handleCloseDialog}
         />
       </div>
-      {show && (<div
+
+
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
+       width: "90vw",
+       minHeight: "5rem",
+       marginTop: '50px'
+  }}
+>
+  {show && (
+    <>
+    
+
+      <p
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "8px 10wv 0px 10wv",
-          color: theme.palette.secondary.main,
-          width: "90vw",
+          lineHeight: "1.2",
+          fontSize: "16px", margin: '0px', 
         }}
       >
-        <p
-          style={{
-            lineHeight: "1.2",
-            fontSize: "16px",
-          }}
-        >
-          **Esta es una versión demo con fines de divulgación y educación
-          ambiental. Si necesitas má info, hace click aquí.
-        </p>
-      <InfoOutlined 
-  onClick={handleOpen} 
-style={{ cursor: 'pointer', margin: '20px', height: '48dp', width: '48dp' }} 
-/>
+        **Esta es una versión demo con fines de divulgación y educación
+        ambiental. Conocé más sobre CO2e aquí
+      </p>
+      <IconButton onClick={handleOpen}>
+  <InfoOutlined style={{ cursor: 'pointer', margin: '5px', fontSize: '30px'}} />
+</IconButton>
+      <AlertDialog 
+        open={open} 
+        handleClose={handleClose} 
+        title="¿Que representan los valores de CO2 equivalente?" 
+        content="Los valores de CO2 equivalente representan una medida utilizada para comparar las emisiones de diferentes gases de efecto invernadero (GEI) en función de su potencial de calentamiento global (GWP). 
 
-<AlertDialog 
-  open={open} 
-  handleClose={handleClose} 
-  title="¿Que representan los valores de CO2 equivalente?" 
-  content="Los valores de CO2 equivalente representan una medida utilizada para comparar las emisiones de diferentes gases de efecto invernadero (GEI) en función de su potencial de calentamiento global (GWP). 
-
-  El CO2 es el gas de referencia y se le asigna un valor de 1. Los demás gases se comparan con el CO2 y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO2, por lo que se le asigna un valor de 25." 
-  confirmText="ver fuente greenpeace"
-  cancelText="Cerrar" 
-onConfirm={() => window.open('https://www.greenpeace.org/mexico/blog/9386/huella-de-carbono/', '_blank')}
-  onCancel={handleClose} 
-/>
-      </div>)}
+        El CO2 es el gas de referencia y se le asigna un valor de 1. Los demás gases se comparan con el CO2 y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO2, por lo que se le asigna un valor de 25." 
+        confirmText="ver fuente greenpeace"
+        cancelText="Cerrar" 
+        onConfirm={() => window.open('https://www.greenpeace.org/mexico/blog/9386/huella-de-carbono/', '_blank')}
+        onCancel={handleClose} 
+      />
+    </>
+  )}
+</div>
     </div>
   );
 };
