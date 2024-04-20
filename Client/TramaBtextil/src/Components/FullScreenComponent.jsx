@@ -11,8 +11,8 @@ const FullScreenComponent = () => {
       position: 'fixed', 
       top: 0, 
       left: 0, 
-      backgroundColor: 'white',
-      zIndex: 9999 // Add this line
+      backgroundColor: '#f2f2f2',
+      zIndex: 9999 
     }}>
 <img src="/logo.png" alt="logo Trama B" style={{ width: '160px', height: '160px' }} />
     </div>
