@@ -91,7 +91,7 @@ const InputComponent = ({
 
   return (
     <div>
-      <h3>Completá los datos 👇</h3>
+    <h2 style={{ fontSize: '18px' }}>Completá los datos 👇</h2>
       <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
