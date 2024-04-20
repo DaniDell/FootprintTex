@@ -91,7 +91,7 @@ const InputComponent = ({
 
   return (
     <div>
-    <h2 style={{ fontSize: '18px' }}>Completá los datos 👇</h2>
+<h2 style={{ fontSize: '18px', fontFamily: 'Poppins, sans-serif' }}>Completá los datos 👇</h2>
       <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
@@ -133,8 +133,8 @@ const InputComponent = ({
           <TextField
             type="number"
             onChange={(event) => {
-              if (event.target.value.length > 7) {
-                event.target.value = event.target.value.slice(0, 7);
+              if (event.target.value.length > 4) {
+                event.target.value = event.target.value.slice(0, 4);
               }
               handleKilosChange(event);
             }}
