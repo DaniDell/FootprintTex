@@ -47,7 +47,7 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "start",
           alignItems: "center",
-          marginBottom: "60px",
+          marginBottom: "0px",
         }}
       >
         
