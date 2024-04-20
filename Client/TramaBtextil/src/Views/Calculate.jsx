@@ -120,8 +120,7 @@ const Calculate = () => {
         }}
       >
         **Esta es una versión demo con fines de divulgación y educación
-        ambiental. Los datos no alcanzan la huella total de logística y procesos
-        anexos, ya que requiere información más específica de cada caso.
+        ambiental. 
       </p>
     </div>
   );
