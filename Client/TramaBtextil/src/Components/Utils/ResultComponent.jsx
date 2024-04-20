@@ -79,7 +79,7 @@ const ResultComponent = React.memo(
               marginBottom: "20px",
               paddingLeft: "6px",
               paddingRight: "6px",
-              fontSize: "1.1rem",
+              fontSize: "1rem",
               fontFamily: "Poppins",
             }}
           >
@@ -87,7 +87,7 @@ const ResultComponent = React.memo(
               ? ""
               : `Mitiga ${formatNumber(
                   carbonReductionPercentage
-                )}% de las emisiones de CO₂ mediante el ♻️ reciclaje mecánico, en comparación con su disposición final en vertedero**:`}
+                )}% de las emisiones CO₂eq. mediante el ♻️ reciclaje mecánico, en comparación con su disposición final en vertedero**:`}
           </Typography>
 
           <CarbonChart

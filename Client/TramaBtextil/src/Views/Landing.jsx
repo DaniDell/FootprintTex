@@ -1,15 +1,27 @@
-import React, { Suspense } from "react";
-import { CircularProgress } from "@mui/material";
-import { Typography, Container } from "@mui/material";
+import React, { useState, useEffect, Suspense } from "react";
+import FullScreenComponent from "../Components/FullScreenComponent";
+import { Container } from "@mui/material";
 
 import "./Landing.css";
 const HeadingComponent = React.lazy(() =>
   import("../Components/HeadingComponent")
 );
 
-import Calculate from "./Calculate";
+const Calculate = React.lazy(() => import('./Calculate'));
 
 const Landing = () => {
+  const [showCalculate, setShowCalculate] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCalculate(true);
+    }, 3000); // Change this to the desired delay in milliseconds
+
+    return () => clearTimeout(timer); // This will clear the timer when the component unmounts
+  }, []);
+
+
+
   return (
     <div
       style={{
@@ -24,13 +36,19 @@ const Landing = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "start",
           alignItems: "center",
           marginBottom: "60px",
         }}
       >
-        <Suspense fallback={<CircularProgress />}>
-          <HeadingComponent />
+        
+        <Suspense fallback={<FullScreenComponent />}>
+        <div style={{
+      
+      transition: 'top 0.5s ease-in-out'
+    }}>
+      <HeadingComponent />
+    </div>
         </Suspense>
 
         <div
@@ -41,21 +59,9 @@ const Landing = () => {
           }}
         >
           <div style={{ flex: "50%" }}>
-            <Typography
-              variant="h6"
-              component="h2"
-              gutterBottom
-              style={{
-                padding: " 0 30px 8vw 30px",
-                opacity: 0.8,
-                lineHeight: "1.1",
-              }}
-            >
-              Conocer la huella de la industria textil es el primer paso
-            </Typography>
-
-            <Calculate />
-
+          <Suspense fallback={<div>"Solo se puede mejorar lo que se puede medir"</div>}>
+        {showCalculate && <Calculate />}
+      </Suspense>
           </div>
         </div>
       </Container>
