@@ -11,6 +11,15 @@ const Calculate = React.lazy(() => import('./Calculate'));
 
 const Landing = () => {
   const [showCalculate, setShowCalculate] = useState(false);
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 3000); // 3000ms = 3s
+
+    return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -59,9 +68,10 @@ const Landing = () => {
           }}
         >
           <div style={{ flex: "50%" }}>
-          <Suspense fallback={<div>"Solo se puede mejorar lo que se puede medir"</div>}>
+          <Suspense fallback={<div></div>}>
         {showCalculate && <Calculate />}
       </Suspense>
+      {show && <div>"Solo podemos mejorar aquello que somos capaces de medir📏"</div>}
           </div>
         </div>
       </Container>

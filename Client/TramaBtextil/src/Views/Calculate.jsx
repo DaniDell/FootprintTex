@@ -18,7 +18,16 @@ const Calculate = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(true);
+    }, 3000); // 3000ms = 3s
+
+    return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+  }, []);
+  
   const handleOpen = () => {
     setOpen(true);
   };
@@ -116,7 +125,7 @@ const Calculate = () => {
           onConfirm={handleCloseDialog}
         />
       </div>
-      <div
+      {show && (<div
         style={{
           display: "flex",
           alignItems: "center",
@@ -152,7 +161,7 @@ style={{ cursor: 'pointer', margin: '20px', height: '48dp', width: '48dp' }}
 onConfirm={() => window.open('https://www.greenpeace.org/mexico/blog/9386/huella-de-carbono/', '_blank')}
   onCancel={handleClose} 
 />
-      </div>
+      </div>)}
     </div>
   );
 };
