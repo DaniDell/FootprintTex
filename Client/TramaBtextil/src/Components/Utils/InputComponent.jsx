@@ -130,7 +130,7 @@ const InputComponent = ({
       </Box>
       <Grid container spacing={2} alignItems="start">
       <Grid item xs={8} sm={7}>
-          <TextField
+          <TextField sx= {{  minHeight: '48px', marginRight: "48px"}}
             type="number"
             onChange={(event) => {
               if (event.target.value.length > 4) {
@@ -148,6 +148,7 @@ const InputComponent = ({
             size="small"
             error={!!newKilosError}
             helperText={newKilosError}
+            
           />
         </Grid>
 
@@ -157,7 +158,10 @@ const InputComponent = ({
             variant="contained"
             color="primary"
             onClick={handleCalculateClick}
-            sx={{
+            sx={{ 
+            
+            padding: '8px',
+           
               boxShadow:
                 "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)", // Agrega sombra
             }}
