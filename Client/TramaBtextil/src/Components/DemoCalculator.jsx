@@ -67,8 +67,9 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
               onTextileCompositionChange={handleCompositionChange} 
               onCalculateClick={handleCalculateClick} 
             />
-<Typography variant="body2" sx={{ fontSize: '10px', marginTop: '10px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
-  <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer" style={{ padding: '24px', textDecoration: 'none', color: 'inherit' }}>
+           <div style={{ height: '8px' }}></div>
+<Typography variant="body2" sx={{ fontSize: '10px', marginTop: '10px', textAlign: '', fontStyle: 'italic', color: 'black' }}>
+  <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer" style={{ padding: '14px', textDecoration: 'none', color: 'inherit' }}>
     *en base a datos de Idemat. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
   </a>
 </Typography>
