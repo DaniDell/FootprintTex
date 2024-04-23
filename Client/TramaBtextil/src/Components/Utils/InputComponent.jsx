@@ -13,7 +13,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  Box,
+  Box, Paper
 } from "@mui/material";
 
 const InputComponent = ({
@@ -100,14 +100,26 @@ const InputComponent = ({
   return (
     <div>
 {!isSubmitted && (
-<h2 style={{ 
-  fontSize: '15px', 
-  textAlign: 'center', 
-  fontFamily: 'Poppins, sans-serif', 
-  backgroundColor: '#E3E461' 
-}}>
-  Para iniciar completá los datos aqui 👇
-</h2>
+<Paper 
+  elevation={10} // Aumenta la elevación
+  style={{ 
+    marginBottom: '1rem', 
+    padding: '0.1rem 1.2rem 0.1rem 1.2rem',
+    backgroundColor: '#E3E461AA', 
+    borderRadius: '5px',
+  }}
+>
+
+  <h2 style={{ 
+    fontSize: '15px', 
+   textAlign: 'center',
+    fontFamily: 'Poppins, sans-serif'
+  }}>
+    Explorá como la sepación y gestión responsable de su scrap textil mitiga su impacto negativo en tu mundo.
+    <br/> Comenzá completando aqui 👇
+  </h2>
+</Paper>
+
 )}     <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
