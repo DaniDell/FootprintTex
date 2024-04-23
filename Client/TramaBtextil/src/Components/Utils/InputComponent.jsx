@@ -111,13 +111,13 @@ const InputComponent = ({
   }}
 >
 <h2 style={{ 
-  fontSize: '15.8px', 
-  textAlign: 'justify',
+  fontSize: '14px', 
+  textAlign: 'start',
   lineHeight: '1.2',
   fontFamily: 'Poppins',
   fontWeight: 500,
 }}>
-Con cada corte industrial, se genera hasta <strong>15%</strong> de merma (retazos textiles), los que se convierten en residuos<strong> (RSU)</strong>. Mediante una gestión con destino reciclaje o reutilización es posible <strong>reducir impacto negativo </strong> ambiental. <br/> <br/>Conocé su huella completando aquí<strong> 👇</strong>
+Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (retazos textiles), los que se convierten en residuos<strong> (RSU)</strong>. Mediante una gestión responsable circular es posible <strong>mitigar su impacto ambiental negativo </strong> <br/> <br/>Explorá completando los datos<strong> aquí 👇</strong>
 </h2>
   
 
