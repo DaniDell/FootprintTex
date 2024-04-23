@@ -52,7 +52,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   }, [dispatch]);
 
   return (
-    <Box maxWidth={9000} >
+    <Box maxWidth={1100} >
             <Container
       style={{
         display: "flex",
@@ -69,7 +69,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
             />
            <div style={{ height: '6px' }}></div>
 <Typography variant="body2" sx={{ fontSize: '10px', marginTop: '8px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
-  <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer" style={{ padding: '0px', color: 'inherit' }}>**en base a datos de Idemat. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
+  <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer" style={{ padding: '0px', color: 'inherit' }}>*en base a datos de Idemat. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
   </a>
 </Typography>
           </Grid>

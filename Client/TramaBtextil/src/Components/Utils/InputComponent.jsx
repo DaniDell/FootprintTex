@@ -117,7 +117,7 @@ const InputComponent = ({
   fontFamily: 'Poppins',
   fontWeight: 500,
 }}>
-En cada corte industrial, se genera un hasta <strong>15%</strong> de merma retazos textiles, convirtiéndose en residuos sólidos urbanos<strong> (RSU)</strong>. Mediante una gestión con destino reciclaje o reutilización se <strong>reduce impacto negativo </strong> ambiental. <br/> <br/><strong> Comenzá completando aqui👇</strong>
+Con cada corte industrial, se genera hasta <strong>15%</strong> de merma (retazos textiles), los que se convierten en residuos<strong> (RSU)</strong>. Mediante una gestión con destino reciclaje o reutilización es posible <strong>reducir impacto negativo </strong> ambiental. <br/> <br/>Conocé su huella completando aquí<strong> 👇</strong>
 </h2>
   
 

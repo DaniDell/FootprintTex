@@ -39,7 +39,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   dataKey="mitiga" 
   stackId="stack" 
   fill={COLORS[2]} 
-  name={isNaN(carbonReductionPercentage) ? '"Cada acción tiene su costo ambiental 🌎, medirlo permite dimensionarlo"' : `♻️ Evitaría la emisión de ${formatNumber(data[0]?.mitiga)} Kg. de gases CO₂☁ que equivale lo que pueden absorver ${formatNumber((data[0]?.mitiga) / 150)} 🌳 arboles adultos en 1 año (ONU).`}
+  name={isNaN(carbonReductionPercentage) ? '❝Cada acción tiene su costo ambiental 🌎, medirlo permite dimensionarlo❞' : `♻️ Evitaría la emisión de ${formatNumber(data[0]?.mitiga)} Kg. de gases CO₂☁eq. lo que equivale a la capacidad de absorción de ${formatNumber((data[0]?.mitiga) / 150)} 🌳 arboles adultos en 1 año (ONU).`}
 />
       </BarChart>
     </ResponsiveContainer>

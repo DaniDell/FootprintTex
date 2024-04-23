@@ -144,7 +144,7 @@ style={{
     
 <IconButton onClick={handleOpen} style={{ display: 'flex', alignItems: 'flex-start', paddingRight: "30px" }}>
   <InfoOutlined style={{ cursor: 'pointer', margin: '0px', fontSize: '20px'}} />
-  <p style={{ cursor: 'pointer', margin: '0px', fontSize: '18px', }}> ¿Qué representan los valores de CO₂☁ equivalente?</p>
+  <p style={{ cursor: 'pointer', margin: '0px', fontSize: '18px', }}> ¿Qué es el CO₂☁ equivalente?</p>
 </IconButton>
 
       
