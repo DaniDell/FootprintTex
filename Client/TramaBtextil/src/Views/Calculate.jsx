@@ -74,7 +74,7 @@ const Calculate = () => {
         alignItems: "center",
       }}
     >
-      <Suspense fallback={<CircularProgress size={200} />}>
+      <Suspense fallback={<CircularProgress size={200} aria-label="Loading" />}>
         <DemoCalculator />
       </Suspense>
 
