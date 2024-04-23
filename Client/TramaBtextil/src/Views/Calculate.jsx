@@ -155,8 +155,7 @@ style={{
         title="¿Qué el valor de CO2 equivalente?" 
         content="Los valores de CO2 equivalente representan una medida utilizada para comparar las emisiones de diferentes gases de efecto invernadero (GEI) en función de su potencial de calentamiento global (GWP). 
 
-        El CO2 es el gas de referencia y se le asigna un valor de 1. Los demás gases se comparan con el CO2 y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO2, por lo que se le asigna un valor de 25. **Aclaración: esta es una versión demo con fines de divulgación y educación
-        ambiental." 
+        El CO2 es el gas de referencia y se le asigna un valor de 1. Los demás gases se comparan con el CO2 y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO2, por lo que se le asigna un valor de 25." 
         confirmText="Más info en greenpeace.com"
         cancelText="Cerrar" 
         onConfirm={() => window.open('https://www.greenpeace.org/mexico/blog/9386/huella-de-carbono/', '_blank')}
