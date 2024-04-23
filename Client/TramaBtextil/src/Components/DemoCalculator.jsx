@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { calculateImpact } from './../Funtions/calculateImpact';
 import { setImpact, clearImpact } from './../redux/actions'
@@ -75,12 +75,14 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 </Typography>
           </Grid>
           <Grid item xs={12} sm={8}>
-            <ResultComponent 
-              waterImpactLandfill={waterImpactLandfill} 
-              waterImpact2dnChance={waterImpact2dnChance} 
-              carbonImpactLandfill={carbonImpactLandfill} 
-              carbonImpact2dnChance={carbonImpact2dnChance} 
-            />
+          <Suspense fallback={<div>Loading...</div>}>
+  <ResultComponent 
+    waterImpactLandfill={waterImpactLandfill} 
+    waterImpact2dnChance={waterImpact2dnChance} 
+    carbonImpactLandfill={carbonImpactLandfill} 
+    carbonImpact2dnChance={carbonImpact2dnChance} 
+  />
+</Suspense>
             
           </Grid>
         </Grid>

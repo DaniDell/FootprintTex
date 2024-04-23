@@ -13,22 +13,22 @@ const Footer = () => {
   return (
     <Box sx={{ p: 0, pb: '0', display: 'flex', gap: 0, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.secondary.main, width: "100%", height: "3rem" }}>
 <Typography variant="h2" align="center" sx={{ fontFamily: 'Poppins, sans-serif', color: theme.palette.custom2.main, fontSize: '18px' }}>
-  Desarrollado por Trama B Textil  
+  Desarrollado x Trama B Textil  
 </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, p: 1}}>
-        <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener" aria-label="Instagram de Trama B Textil">
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 0.6, pl: 1}}>
+        <Link href="https://www.instagram.com/trama_b_textil/" target="_blank" rel="noopener" aria-label="Instagram de Trama B Textil" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <InstagramIcon style={{ color: theme.palette.custom2.main }} />
         </Link>
 
         <div>
-          <Link href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener" aria-label="Google Site Trama B Textil">
+          <Link href="https://sites.google.com/view/tramabtextil/inicio" target="_blank" rel="noopener" aria-label="Google Site Trama B Textil" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             {/* <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <AiFillGoogleCircle size={0} style={{ color: theme.palette.custom2.main }} />
 <Typography variant="body1" sx={{ color: theme.palette.custom2.main, fontWeight: 'bold', fontSize: '18px' }}>sites</Typography>
             </Box> */}
           </Link>
         </div>
-        <Link href="https://www.linkedin.com/company/trama-b-textil/" target="_blank" rel="noopener" aria-label="LinkedIn de Trama B Textil">
+        <Link href="https://www.linkedin.com/company/trama-b-textil/" target="_blank" rel="noopener" aria-label="LinkedIn de Trama B Textil" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <LinkedInIcon style={{ color: theme.palette.custom2.main }} />
         </Link>
       </Box>

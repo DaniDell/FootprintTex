@@ -142,16 +142,16 @@ style={{
   {show && (
     <>
     
-    <IconButton onClick={handleOpen}>
-  <InfoOutlined style={{ cursor: 'pointer', margin: '5px', fontSize: '20px'}} />
-  <p style={{ cursor: 'pointer', margin: '5px', fontSize: '18px'}}> ¿Qué es el CO₂☁ equivalente?</p>
+<IconButton onClick={handleOpen} style={{ display: 'flex', alignItems: 'flex-start', paddingRight: "30px" }}>
+  <InfoOutlined style={{ cursor: 'pointer', margin: '0px', fontSize: '20px'}} />
+  <p style={{ cursor: 'pointer', margin: '0px', fontSize: '18px', }}> ¿Que representan los valores de CO₂☁ equivalente?</p>
 </IconButton>
 
       
 <p
         style={{
           lineHeight: "1.2",
-          fontSize: "16px", margin: '0px', 
+          fontSize: "14px", marginTop: '20px', marginBottom: '10px',
         }}
       >
         **Aclaración: esta es una versión demo con fines de divulgación y educación
