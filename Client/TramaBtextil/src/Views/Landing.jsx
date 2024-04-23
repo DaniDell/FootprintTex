@@ -71,7 +71,7 @@ const Landing = () => {
           <Suspense fallback={<div></div>}>
         {showCalculate && <Calculate />}
       </Suspense>
-      {show && <div>"Solo podemos mejorar aquello que somos capaces de medir📏"</div>}
+      {show && <div>❝Solo podemos mejorar aquello que somos capaces de medir📏❞</div>}
           </div>
         </div>
       </Container>
