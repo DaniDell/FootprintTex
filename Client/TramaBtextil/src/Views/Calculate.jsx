@@ -108,9 +108,9 @@ const Calculate = () => {
           title="Gestión y Reciclaje en Argentina:"
           content={
             <>
-              Hebra Circular puede reciclar todo tipo de fibras mediante el
+              <strong>Hebra Circular</strong> puede reciclar todo tipo de fibras mediante el
               reciclaje mecánico, generando paños reconstituidos para variados
-              usos. Gestionando el remanente textil desde la mesa de corte.
+              usos. Gestionando el remanente textil  desde la mesa de corte con trazabilidad.
               <br />
               <br />
               <a
@@ -118,7 +118,7 @@ const Calculate = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Si deseas más información, por favor completa el formulario.
+              Si deseas más información, completá el formulario haciendo click en este enlace.
               </a>
             </>
           }
