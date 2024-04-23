@@ -36,7 +36,7 @@ const Landing = () => {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "start",
         minHeight: "calc(100vh - 3rem)",
         width: "100vw",
       }}

@@ -52,25 +52,24 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   }, [dispatch]);
 
   return (
-    <Box maxWidth={1000} >
+    <Box maxWidth={9000} >
             <Container
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          }}>
-        <Grid container spacing={2} justify="center" alignItems="center">
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "start",
+        alignItems: "center",
+      }}>
+        <Grid container spacing={4} justify="center" alignItems="center">
           <Grid item xs={12} sm={4}>
             <InputComponent 
               onInputChange={handleInputChange} 
               onTextileCompositionChange={handleCompositionChange} 
               onCalculateClick={handleCalculateClick} 
             />
-           <div style={{ height: '8px' }}></div>
-<Typography variant="body2" sx={{ fontSize: '10px', marginTop: '10px', textAlign: '', fontStyle: 'italic', color: 'black' }}>
-  <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer" style={{ padding: '14px', textDecoration: 'none', color: 'inherit' }}>
-    *en base a datos de Idemat. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
+           <div style={{ height: '6px' }}></div>
+<Typography variant="body2" sx={{ fontSize: '10px', marginTop: '8px', textAlign: 'center', fontStyle: 'italic', color: 'black' }}>
+  <a href="http://www.idematapp.com" target="_blank" rel="noopener noreferrer" style={{ padding: '0px', color: 'inherit' }}>**en base a datos de Idemat. Sustainability (Universidad Tecnológica de Delft) licenciada bajo CC BY-4.0.
   </a>
 </Typography>
           </Grid>

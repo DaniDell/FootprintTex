@@ -6,7 +6,7 @@ import { Box } from "@mui/system";
 const CarbonChart = lazy(() => import("../Utils/CarbonChartGrafic"));
 import svgBackground from "../../assets/background.svg";
 
-// Move formatNumber function outside of the component to avoid re-creation on each render
+
 function formatNumber(num) {
   return Number(num).toLocaleString("de-DE", {
     minimumFractionDigits: 0,
@@ -36,7 +36,7 @@ const ResultComponent = React.memo(
       [carbonImpactLandfill, carbonImpact2dnChance]
     );
 
-    // Use useMemo for waterMitigated calculation
+  
     const waterMitigated = useMemo(
       () => waterImpactLandfill - waterImpact2dnChance,
       [waterImpactLandfill, waterImpact2dnChance]
@@ -111,7 +111,7 @@ const ResultComponent = React.memo(
                       padding: "0.5rem",
                       lineHeight: "1.2",
                       fontFamily: "Poppins",
-                      backgroundColor: "rgba(255, 255, 255, 0.5)",
+                      backgroundColor: "rgba(255, 255, 255, 0.3)",
                     }}
                   >{`💧 Ahorrando ${formatNumber(
                     waterMitigated
@@ -119,7 +119,7 @@ const ResultComponent = React.memo(
                     waterMitigated / 900
                   ).toLocaleString("de-DE", {
                     minimumFractionDigits: 0,
-                  })} años de consumo humano promedio `}</Typography>
+                  })} años de consumo humano`}</Typography>
                   <Typography
                     variant="body2"
                     sx={{
@@ -127,12 +127,12 @@ const ResultComponent = React.memo(
                       marginBottom: "5px",
                       textAlign: "center",
                       padding: " 0 0.5rem 0.5rem 0.5rem",
-                      backgroundColor: "rgba(255, 255, 255, 0.5)",
+                      backgroundColor: "rgba(255, 255, 255, 0.3)",
                       lineHeight: "1",
                     }}
                   >{`Se reduce en un ${formatNumber(
                     waterReductionPercentage
-                  )}% la huella hídrica realizando separación en origen.`}</Typography>
+                  )}% la huella hídrica realizando separación en origen.`}
                   <a
                     href="https://emf.thirdlight.com/link/2axvc7eob8zx-za4ule/@/preview/1?o"
                     target="_blank"
@@ -144,7 +144,7 @@ const ResultComponent = React.memo(
                     }}
                   >
                     (datos hídricos Fund. Ellen MacArthur)
-                  </a>
+                  </a> </Typography>
                   <div
                     style={{
                       display: "flex",
