@@ -26,7 +26,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   
   return (
     <ResponsiveContainer width="100%" height={240}>
-      <BarChart data={data} margin={{ top: 0, right: 0, left: 0, bottom:0 }}>
+      <BarChart data={data} margin={{ top: 0, right: 20, left: 20, bottom:0 }}>
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : <span style={{ fontWeight: 'bold' }}>{value}</span>} />
         <Bar dataKey="landfill" fill={COLORS[0]} name="Fin de vida en vertedero">
@@ -39,7 +39,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   dataKey="mitiga" 
   stackId="stack" 
   fill={COLORS[2]} 
-  name={isNaN(carbonReductionPercentage) ? '¿Cuál el costo ambiental 🌎 en emisiones CO₂☁ de cada proceso?' : `♻️ Evitaría la emisión de ${formatNumber(data[0]?.mitiga)} Kg. de gases CO₂☁ = lo que pueden absorver ${formatNumber((data[0]?.mitiga) / 150)} 🌳 arboles adultos en 1 año. (dato ONU)`}
+  name={isNaN(carbonReductionPercentage) ? '¿Cuál el costo ambiental 🌎 en emisiones CO₂☁ de cada proceso?' : `♻️ Evitaría la emisión de ${formatNumber(data[0]?.mitiga)} Kg. de gases CO₂☁ que equivale lo que pueden absorver ${formatNumber((data[0]?.mitiga) / 150)} 🌳 arboles adultos en 1 año.***`}
 />
       </BarChart>
     </ResponsiveContainer>
