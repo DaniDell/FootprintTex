@@ -28,6 +28,13 @@ const InputComponent = ({
   const [compositionError, setCompositionError] = useState("");
   const [open, setOpen] = useState(false);
   const [newKilosError, setNewKilosError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const getYValue = () => {
+    return window.innerWidth <= 768 ? 80 : 160;
+  };
+  
+  const y = getYValue();
 
   useEffect(() => {
     setIsValid(composition !== "" && kilos !== "" && kilos >= 0.001);
@@ -80,8 +87,9 @@ const InputComponent = ({
     } else {
       onCalculateClick();
       setTimeout(() => {
-        document.body.scrollIntoView({ behavior: "smooth", block: "end" });
-      }, 0);
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}, 0);
+      setIsSubmitted(true);
     }
   };
 
@@ -91,8 +99,16 @@ const InputComponent = ({
 
   return (
     <div>
-<h2 style={{ fontSize: '18px', fontFamily: 'Poppins, sans-serif' }}>Completá los datos 👇</h2>
-      <Box mb={1.5}>
+{!isSubmitted && (
+<h2 style={{ 
+  fontSize: '15px', 
+  textAlign: 'center', 
+  fontFamily: 'Poppins, sans-serif', 
+  backgroundColor: '#E3E461' 
+}}>
+  Para iniciar completá los datos aqui 👇
+</h2>
+)}     <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
           <InputLabel id="textile-composition-label">
