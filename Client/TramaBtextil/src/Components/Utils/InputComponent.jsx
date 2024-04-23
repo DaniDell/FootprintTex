@@ -101,23 +101,26 @@ const InputComponent = ({
     <div>
 {!isSubmitted && (
 <Paper 
-  elevation={10} // Aumenta la elevación
+  elevation={0} 
   style={{ 
     marginBottom: '1rem', 
-    padding: '0.1rem 1.2rem 0.1rem 1.2rem',
+    padding: '0.1rem 1rem 0.1rem 1rem',
     backgroundColor: '#E3E461AA', 
     borderRadius: '5px',
+   
   }}
 >
+<h2 style={{ 
+  fontSize: '15.8px', 
+  textAlign: 'justify',
+  lineHeight: '1.2',
+  fontFamily: 'Poppins',
+  fontWeight: 500,
+}}>
+En cada corte industrial, se genera un hasta <strong>15%</strong> de merma retazos textiles, convirtiéndose en residuos sólidos urbanos<strong> (RSU)</strong>. Mediante una gestión con destino reciclaje o reutilización se <strong>reduce impacto negativo </strong> ambiental. <br/> <br/><strong> Completá tus datos aqui 👇</strong>
+</h2>
+  
 
-  <h2 style={{ 
-    fontSize: '15px', 
-   textAlign: 'center',
-    fontFamily: 'Poppins, sans-serif'
-  }}>
-    Explorá como la sepación y gestión responsable de su scrap textil mitiga su impacto negativo en tu mundo.
-    <br/> Comenzá completando aqui 👇
-  </h2>
 </Paper>
 
 )}     <Box mb={1.5}>
