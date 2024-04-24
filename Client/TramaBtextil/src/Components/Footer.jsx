@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <Box sx={{ p: 0, pb: '0', display: 'flex', gap: 0, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', backgroundColor: theme.palette.secondary.main, width: "100%", height: "3rem" }}>
-<Typography variant="h2" align="center" sx={{ fontFamily: 'Poppins, sans-serif', color: theme.palette.custom2.main, fontSize: '18px', }}>
+<Typography variant="h2" align="center" sx={{ color: theme.palette.custom2.main, fontSize: '18px', }}>
   Desarrollado x Trama B Textil  
 </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1, pl: 1}}>
