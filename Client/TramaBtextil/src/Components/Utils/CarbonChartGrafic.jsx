@@ -25,7 +25,7 @@ const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name })
 const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) => {
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={280}>
       <BarChart data={data} margin={{ top: 0, right: 5, left: 5, bottom:0 }}>
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : <span style={{ fontWeight: 'bold' }}>{value}</span>} />
