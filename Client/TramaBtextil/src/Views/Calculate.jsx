@@ -144,7 +144,7 @@ const Calculate = () => {
                   height: "48px",
                   width: "48px",
                   float: "left",
-                  padding: "0px",
+                  padding: "4px 0 4px 0",
                   lineHeight: "1",
                 }}
               >
