@@ -68,4 +68,17 @@
   }
 }
 
+@media (max-height: 800px) {
+  .h1-landing1, .h1-landing2 {
+    font-size: 3rem;
+  }
+  
+  .h1-landing1 {
+    margin-top: 26px;
+  }
+
+  .h1-landing2 {
+    margin-bottom: 1.2em;
+  }
+}
 

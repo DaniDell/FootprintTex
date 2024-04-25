@@ -42,9 +42,9 @@ const Calculate = () => {
   }, []);
 
   const bottomValue =
-    scrollPosition > 100 || window.innerWidth <= 1100 ? "5rem" : "10vh";
+    scrollPosition > 100 || window.innerWidth <= 1100 ? "5rem" : "20vh";
   const rightValue =
-    scrollPosition > 100 || window.innerWidth <= 1100 ? "5vw" : "5vw";
+    scrollPosition > 100 || window.innerWidth <= 1100 ? "1rem" : "5vw";
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
