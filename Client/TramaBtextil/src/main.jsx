@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -6,7 +6,6 @@ import App from './App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
-import Hotjar from '@hotjar/browser';
 
 const root = document.getElementById('root');
 
@@ -35,24 +34,11 @@ const customTheme = createTheme({
   },
 });
 
-
-
-const Main = () => {
-  useEffect(() => {
-    const siteId = 4958279;
-    const hotjarVersion = 6;
-
-    Hotjar.init(siteId, hotjarVersion);
-  }, []);
-
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={customTheme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
-    </Provider>
-  );
-};
-
-ReactDOM.createRoot(root).render(<Main />);
+ReactDOM.createRoot(root).render(
+  <Provider store={store}>
+    <ThemeProvider theme={customTheme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </Provider>
+);
