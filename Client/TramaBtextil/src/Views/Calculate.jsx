@@ -42,9 +42,10 @@ const Calculate = () => {
   }, []);
 
   const bottomValue =
-    scrollPosition > 100 || window.innerWidth <= 1100 ? "5rem" : "20vh";
+    scrollPosition > 100 || window.innerWidth <= 1100 ? "4rem" : "20vh";
+
   const rightValue =
-    scrollPosition > 100 || window.innerWidth <= 1100 ? "1rem" : "5vw";
+    scrollPosition > 100 || window.innerWidth <= 1100 ? "0.5rem" : "5vw";
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -90,6 +91,7 @@ const Calculate = () => {
               height: "48px",
               width: "48px",
               float: "left",
+              zIndex: 9999,
             }}
           >
             ♻️
@@ -131,7 +133,7 @@ const Calculate = () => {
           }}
         >
           <>
-            <Tooltip title="¿Qué es el CO₂☁ equivalente?" arrow>
+            <Tooltip title="¿Qué representa el CO₂☁ equivalente?" arrow>
               <StyledFab
                 color="secondary"
                 onClick={handleOpen}
@@ -146,6 +148,7 @@ const Calculate = () => {
                   float: "left",
                   padding: "4px 0 4px 0",
                   lineHeight: "1",
+                  zIndex: 9999,
                 }}
               >
                 <InfoOutlined style={{ margin: 0, padding: 0 }} />
@@ -155,10 +158,11 @@ const Calculate = () => {
             <AlertDialog
               open={open}
               handleClose={handleClose}
-              title="¿Qué el valor de CO2 equivalente?"
-              content="Los valores de CO2 equivalente representan una medida utilizada para comparar las emisiones de diferentes gases de efecto invernadero (GEI) en función de su potencial de calentamiento global (GWP). 
-
-        El CO2 es el gas de referencia y se le asigna un valor de 1. Los demás gases se comparan con el CO2 y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO2, por lo que se le asigna un valor de 25."
+              title="¿Qué representa el CO₂☁ equivalente?"
+              content={<>Los <strong>valores de CO₂☁ equivalente </strong> representan una medida utilizada para comparar 
+              las emisiones de diferentes <strong>gases de efecto invernadero (GEI)</strong> en función de <strong>su potencial de calentamiento global</strong>. 
+              <br /><u>El dióxido de carbono (CO₂) es el gas de referencia y se le asigna un valor de 1.</u> Los demás gases se comparan con él y se les asigna un valor de equivalencia en función de su potencial de calentamiento global. 
+        <br /><em>Por ejemplo, el metano (CH4) tiene un potencial de calentamiento global 25 veces mayor que el CO₂, por lo que se le asigna un valor de 25.</em></>}
               confirmText="Más info en greenpeace.com"
               cancelText="Cerrar"
               onConfirm={() =>

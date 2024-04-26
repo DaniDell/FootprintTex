@@ -67,7 +67,7 @@ const ResultComponent = React.memo(
           backgroundPosition: "start",
           borderRadius: "25px",
           border: "1px solid #0000",
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", padding:"0", margin:"0",
         }}
       >
         <CardContent sx={{ marginBottom: "0px" }}>
@@ -77,8 +77,8 @@ const ResultComponent = React.memo(
               fontWeight: "bold",
               textAlign: "center",
               marginBottom: "20px",
-              paddingLeft: "6px",
-              paddingRight: "6px",
+              paddingLeft: "0px",
+              paddingRight: "0px",
               fontSize: "1rem",
               fontFamily: "Poppins",
             }}
@@ -90,11 +90,13 @@ const ResultComponent = React.memo(
                 )}% de las emisiones CO₂☁eq. mediante el ♻️ reciclaje mecánico, en comparación con su disposición final en vertedero*:`}
           </Typography>
 
-          <CarbonChart
-            data={dataCarbon}
-            carbonReductionPercentage={carbonReductionPercentage}
-            formatNumber={formatNumber}
-          />
+     <Box display="flex" justifyContent="center" alignItems="center" padding={0} margin={0}>
+  <CarbonChart
+    data={dataCarbon}
+    carbonReductionPercentage={carbonReductionPercentage}
+    formatNumber={formatNumber}
+  />
+</Box>
 
           <Box display="flex" justifyContent="center">
             <Box>

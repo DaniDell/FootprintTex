@@ -160,7 +160,7 @@ Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (reta
         </FormControl>
       </Box>
       <Grid container spacing={2} alignItems="start">
-      <Grid item xs={8} sm={7}>
+      <Grid item xs={6} sm={7}>
           <TextField sx= {{  minHeight: '48px', marginRight: "48px"}}
             type="number"
             onChange={(event) => {
@@ -183,7 +183,7 @@ Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (reta
           />
         </Grid>
 
-        <Grid item xs={4} sm={5}>
+        <Grid item xs={6} sm={5}>
           <Button
             fullWidth
             variant="contained"

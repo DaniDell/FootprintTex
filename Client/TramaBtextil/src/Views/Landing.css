@@ -16,3 +16,9 @@ body {
     object-fit: cover; /* Añade esta línea */
   }
 }
+
+@media (max-width: 230px) {
+  body {
+    padding: 0;
+  }
+}
