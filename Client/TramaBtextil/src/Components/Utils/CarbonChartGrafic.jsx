@@ -9,7 +9,7 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
   const COLORS = ['#747373', '#00947a', 'transparent'];
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('s'));
-  const chartSize = isMobile ? {width: "100%", height: 500, padding:0} : {width: "100%", height:280};
+  const chartSize = isMobile ? {width: "100%", height: 300, padding:0} : {width: "100%", height:280};
 
   const CustomizedLabel = ({ x, y, width, height, value, unit, icon, fill, name }) => {
     const valueWithOneDecimal = Math.floor(value * 10) / 10;
