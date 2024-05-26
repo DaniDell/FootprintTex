@@ -5,6 +5,7 @@ import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import InfoOutlined from "@mui/icons-material/InfoOutlined";
+import SetfinalImpact from "../Components/SetFinalImpact";
 
 const StyledFab = styled(Fab)({
   fontSize: "25px",
@@ -64,12 +65,14 @@ const Calculate = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        margin: 0, 
+        padding: 0,
       }}
     >
       <Suspense fallback={<CircularProgress size={200} aria-label="Loading" />}>
         <DemoCalculator />
       </Suspense>
-      <div style={{ height: "2rem" }}></div>
+      <div style={{ height: "2rem", margin: 0, padding: 0, }}></div>
 
       <div
         style={{
@@ -176,6 +179,7 @@ const Calculate = () => {
           </>
         </div>
       </div>
+      <SetfinalImpact />
     </div>
   );
 };

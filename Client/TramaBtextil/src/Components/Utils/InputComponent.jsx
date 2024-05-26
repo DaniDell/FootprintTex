@@ -98,16 +98,23 @@ const InputComponent = ({
   };
 
   return (
-    <div>
+    <div  style={{
+      justifyContent:  "center",
+      alignItems: "center",
+      margin: 0, 
+     
+    }}>
 {!isSubmitted && (
 <Paper 
   elevation={0} 
   style={{ 
     marginBottom: '1rem', 
-    padding: '0rem 1rem 0rem 1rem',
+    padding: '0rem 0.8rem 0rem 0.8rem',
     backgroundColor: '#E3E461AA', 
     borderRadius: '5px',
    border: '2px solid #E3E461AA',
+   margin: '0rem 0rem 0.8rem 0rem', 
+  
   }}
 >
 <h2 style={{ 
@@ -123,7 +130,7 @@ Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (reta
 
 </Paper>
 
-)}     <Box mb={1.5}>
+)}     <Box mb={1.5}  margin={0} >
         
         <FormControl fullWidth error={!!compositionError}>
           <InputLabel id="textile-composition-label">
@@ -134,7 +141,7 @@ Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (reta
             label="Composición base fibra textil"
             value={composition}
             onChange={handleCompositionChange}
-            sx={{  textAlign: "left" }}
+            sx={{  textAlign: "left", marginBottom: "0.8rem" }}
           >
             <MenuItem
               value="algodon Reciclado"
@@ -154,6 +161,7 @@ Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (reta
             >
               Mezcla de fibras 
             </MenuItem>
+            
 
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>

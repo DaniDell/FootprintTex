@@ -52,13 +52,15 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   }, [dispatch]);
 
   return (
-    <Box maxWidth={1100} >
+    <Box maxWidth={1100} margin={0} padding={0}>
             <Container
       style={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "center",
+        margin: 0, 
+        padding: 0,
       }}>
         <Grid container spacing={4} justify="center" alignItems="center">
           <Grid item xs={12} sm={4}>
