@@ -56,8 +56,8 @@ if (openDialog === 'Recircular') {
  
  let customContent = (
   <>
-    <Typography component="div">Huella Hídrica: {waterImpact}</Typography>
-    <Typography component="div">Huella de Carbono: {carbonImpact}</Typography>
+    <div>Huella Hídrica: {waterImpact}</div>
+    <div>Huella de Carbono: {carbonImpact}</div>
   </>
 );
 
@@ -65,9 +65,9 @@ if (selectedOption === 'Recircular') {
   customContent = (
     <>
      
-<Typography component="div">
+<div>
   Recircular es una estrategia que busca reintroducir los materiales en el ciclo de producción, evitando su descarte. Esto puede incluir el reuso de productos o materiales en su forma original.
-</Typography>
+</div>
 <br />
 {customContent}
 <div style={{ height: '100px', overflow: 'hidden' }}>
