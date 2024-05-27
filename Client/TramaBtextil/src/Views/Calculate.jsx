@@ -5,7 +5,7 @@ import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import InfoOutlined from "@mui/icons-material/InfoOutlined";
-import SetfinalImpact from "../Components/SetFinalImpact";
+
 
 const StyledFab = styled(Fab)({
   fontSize: "25px",
@@ -179,7 +179,7 @@ const Calculate = () => {
           </>
         </div>
       </div>
-      <SetfinalImpact />
+     
     </div>
   );
 };
