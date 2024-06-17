@@ -110,9 +110,9 @@ const InputComponent = ({
   style={{ 
     marginBottom: '1rem', 
     padding: '0rem 0.8rem 0rem 0.8rem',
-    backgroundColor: '#E3E461AA', 
+    backgroundColor: '#EEDB94', 
     borderRadius: '5px',
-   border: '2px solid #E3E461AA',
+   border: '2px solid #EEDB94',
    margin: '0rem 0rem 0.8rem 0rem', 
   
   }}
